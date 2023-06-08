@@ -8,6 +8,7 @@ public class HumanPlayer : MonoBehaviour
 
     private int _drunkLevel;
     private int _score;
+    public int Score => _score;
     [SerializeField] private int _StaminaLevel;
     public SobrietyLevel Sobriety { get; private set; }
     public CircleCollider2D PlayerCollider { get; private set; }
@@ -30,6 +31,8 @@ public class HumanPlayer : MonoBehaviour
         _score = 0;
         _drunkLevel = 0;
         PlayerIsOFF = false;
+        SobrietyChanged?.Invoke(Sobriety);
+
     }
 
     public void Drink(DrinkSO drink)
@@ -60,7 +63,7 @@ public class HumanPlayer : MonoBehaviour
             yield return new WaitForSeconds(1f);
             while (_drunkLevel > 0)
             {
-                _drunkLevel = Math.Clamp(_drunkLevel - _StaminaLevel/(int)(Game.Instance.PlayerOFFTime -1), 0, _StaminaLevel);
+                _drunkLevel = Math.Clamp(_drunkLevel - 20, 0, _StaminaLevel);
                 CheckSobriety();
                 yield return new WaitForSeconds(1f);
             }

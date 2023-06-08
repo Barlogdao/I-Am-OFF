@@ -17,6 +17,7 @@ public class PlayerScoreDisplay : MonoBehaviour
     private void OnScoreLevelChanged(int newScore)
     {
         _scoreText.text = newScore.ToString();
+        
     }
     private void OnDisable()
     {

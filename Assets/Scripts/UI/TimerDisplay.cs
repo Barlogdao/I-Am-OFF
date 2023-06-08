@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class TimerDisplay : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class TimerDisplay : MonoBehaviour
     private void OnTick(int timeleft)
     {
         _timer.text = timeleft.ToString();
+        _timer.transform.DOScale(1.1f, 0.3f).OnComplete(() => _timer.transform.DOScale(1f, 0.3f));
     }
 
     private void OnDisable()

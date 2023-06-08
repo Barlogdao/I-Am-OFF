@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using DG.Tweening;
 using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
@@ -25,6 +25,7 @@ public class Drink : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _circleCollider.enabled = false;
         _spriteRenderer.enabled = false;
+        _questionLabel.enabled = false;
     }
     
     public void Init(Game game)
@@ -55,6 +56,7 @@ public class Drink : MonoBehaviour
 
     private void OnPlayerOFF(bool playerIsOFF)
     {
+        //if (Game.Instance.State == GameState.GameOver) return;
 
         _circleCollider.enabled = !playerIsOFF;
         _spriteRenderer.color = playerIsOFF ? Color.gray : Color.white;
@@ -97,6 +99,7 @@ public class Drink : MonoBehaviour
         StopAllCoroutines();
         _circleCollider.enabled = false;
         _spriteRenderer.enabled = false;
+        _questionLabel.enabled = false;
     }
 
     public static Vector3 GetMousePos()
@@ -122,10 +125,12 @@ public class Drink : MonoBehaviour
         _spriteRenderer.enabled = false;
         _questionLabel.enabled = false;
         // проходит время
-        _drinkData = DrinkChanged?.Invoke();
+        yield return new WaitForSeconds(1f);
         // обновляется СО
         // появляется новый Дринк
-        yield return new WaitForSeconds(1f);
+        _drinkData = DrinkChanged?.Invoke();
+        transform.localScale = Vector3.zero;
+        transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
         _circleCollider.enabled = !_player.PlayerIsOFF;
         _spriteRenderer.enabled = true;
         DrinkVisibility(_player.Sobriety);

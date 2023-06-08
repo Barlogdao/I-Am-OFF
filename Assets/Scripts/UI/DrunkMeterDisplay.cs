@@ -1,6 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class DrunkMeterDisplay : MonoBehaviour
 {
@@ -20,20 +20,20 @@ public class DrunkMeterDisplay : MonoBehaviour
         switch (soberLevel)
         {
             case SobrietyLevel.Sober:
-                _filler.color = _soberColor;
+                _filler.DOColor(_soberColor, 0.3f);
                 break;
             case SobrietyLevel.Drunk:
-                _filler.color = _drunkColor;
+                _filler.DOColor(_drunkColor, 0.3f);
                 break;
             case SobrietyLevel.DrunkAsHell:
-                _filler.color = _drunkAsHellColor;
+                _filler.DOColor(_drunkAsHellColor, 0.3f);
                 break;
         }
     }
 
     private void OnDrunkLevelChanged(float newValue)
     {
-        _filler.fillAmount = newValue;
+        _filler.DOFillAmount(newValue, 0.4f);
     }
 
     private void Start()
