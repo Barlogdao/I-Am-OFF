@@ -1,24 +1,30 @@
 using UnityEngine;
 using System;
 using System.Collections;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 
 public class HumanPlayer : MonoBehaviour
 {
 
     private int _drunkLevel;
     private int _score;
+    private List<DrinkSO> _stomach = new();
+    [SerializeField] private Canvas _offCanvas;
     public int Score => _score;
     [SerializeField] private int _StaminaLevel;
     public SobrietyLevel Sobriety { get; private set; }
     public CircleCollider2D PlayerCollider { get; private set; }
 
     public bool PlayerIsOFF { get; private set; }
+    public bool PlayerIsDrinking { get; private set; }
+    public int DrunkStrikeCount { get; private set; }
 
     public static event Action<float> DrunkLevelChanged;
     public static event Action<int> ScoreChanged;
     public static event Action<bool> PlayerMindChanged;
     public static event Action<SobrietyLevel> SobrietyChanged;
+    public static event Action<List<DrinkSO>> StomachUpdated;
+    public static event Action<CoctailRecipeSO> CoctailDrinked;
     private void Awake()
     {
         PlayerCollider = GetComponent<CircleCollider2D>();
@@ -31,19 +37,53 @@ public class HumanPlayer : MonoBehaviour
         _score = 0;
         _drunkLevel = 0;
         PlayerIsOFF = false;
+        PlayerIsDrinking = false;
         SobrietyChanged?.Invoke(Sobriety);
-
+        DrunkStrikeCount = 0;
+        _offCanvas.gameObject.SetActive(false);
     }
 
     public void Drink(DrinkSO drink)
     {
+        AddDrinkToStomach(drink);
         ScoreResolve(drink);
         DrunkResolve(drink);
+        
     }
+
+    private void CoctailCheck()
+    {
+        var coctail = DrinkProvider.Instance.CheckCoctail(_stomach);
+        if (coctail != null)
+        {
+            _score += coctail.BonusScore;
+            ScoreChanged?.Invoke(_score);
+            CoctailDrinked?.Invoke(coctail);
+            _stomach.Clear();
+            StomachUpdated?.Invoke(_stomach);
+        }
+    }
+
+    private void AddDrinkToStomach(DrinkSO drink)
+    {
+        if(_stomach.Count < 3)
+        {
+            _stomach.Add(drink);
+        }
+        else
+        {
+            _stomach.Clear();
+            StomachUpdated?.Invoke(_stomach);
+            _stomach.Add(drink);
+        }
+        StomachUpdated?.Invoke(_stomach);
+    }
+
     private void ScoreResolve(DrinkSO drink)
     {
         _score += drink.Reward;
         ScoreChanged?.Invoke(_score);
+        
     }
 
     private void DrunkResolve(DrinkSO drink)
@@ -55,19 +95,26 @@ public class HumanPlayer : MonoBehaviour
 
     private IEnumerator DrunkProcess()
     {
-        yield return null;
+        DrinkAnimation();
+        PlayerIsDrinking = true;
+        yield return new WaitForSeconds(0.3f);
+        PlayerIsDrinking = false;
+        CoctailCheck();
         if (_drunkLevel >= _StaminaLevel)
         {
+            _offCanvas.gameObject.SetActive(true);
+            DrunkAnimation();
             PlayerIsOFF = true;
+            DrunkStrikeCount += 1;
             PlayerMindChanged?.Invoke(PlayerIsOFF);
             yield return new WaitForSeconds(1f);
-            while (_drunkLevel > 0)
-            {
-                _drunkLevel = Math.Clamp(_drunkLevel - 20, 0, _StaminaLevel);
-                CheckSobriety();
-                yield return new WaitForSeconds(1f);
-            }
+            _offCanvas.gameObject.SetActive(false);
+            yield return new WaitForSeconds(Game.Instance.PlayerOFFTime - 1f);
+
+            _drunkLevel = 0;
             PlayerIsOFF = false;
+            
+            CheckSobriety();
             PlayerMindChanged?.Invoke(PlayerIsOFF);
             yield break;
         }
@@ -78,6 +125,7 @@ public class HumanPlayer : MonoBehaviour
 
         
     }
+
 
     private void CheckSobriety()
     {
@@ -111,6 +159,14 @@ public class HumanPlayer : MonoBehaviour
             return 0f;
         }
         return (float)_drunkLevel / _StaminaLevel;
+    }
+    private void DrinkAnimation()
+    {
+       
+    }
+    private void DrunkAnimation()
+    {
+        
     }
 
     

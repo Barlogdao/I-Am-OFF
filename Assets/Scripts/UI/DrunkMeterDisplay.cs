@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
+using Unity.Collections.LowLevel.Unsafe;
 
 public class DrunkMeterDisplay : MonoBehaviour
 {
@@ -13,6 +15,15 @@ public class DrunkMeterDisplay : MonoBehaviour
     {
         HumanPlayer.DrunkLevelChanged += OnDrunkLevelChanged;
         HumanPlayer.SobrietyChanged += OnSobrietyChanged;
+        HumanPlayer.PlayerMindChanged += OnPlayerMindChanged;
+    }
+
+    private void OnPlayerMindChanged(bool playerIsOFF)
+    {
+        if (playerIsOFF)
+        {
+            _filler.DOFillAmount(0, Game.Instance.PlayerOFFTime - 0.05f).SetEase(Ease.Linear);
+        }
     }
 
     private void OnSobrietyChanged(SobrietyLevel soberLevel)
@@ -44,6 +55,7 @@ public class DrunkMeterDisplay : MonoBehaviour
     {
         HumanPlayer.DrunkLevelChanged -= OnDrunkLevelChanged;
         HumanPlayer.SobrietyChanged -= OnSobrietyChanged;
+        HumanPlayer.PlayerMindChanged -= OnPlayerMindChanged;
     }
 
 

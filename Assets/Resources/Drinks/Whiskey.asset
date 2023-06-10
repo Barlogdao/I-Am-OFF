@@ -16,5 +16,5 @@ MonoBehaviour:
   Image: {fileID: 1759676672, guid: b8fdb18242a827e4bb020ad5caa20e8f, type: 3}
   Strenght: 10
   Reward: 10
-  Rarity: 1
+  Rarity: 2
   Type: 1

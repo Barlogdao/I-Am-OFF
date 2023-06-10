@@ -7,13 +7,13 @@ public class DrinkWheel : MonoBehaviour
 
     [SerializeField] float _speed;
     [SerializeField] float _fastSpeed;
-    [SerializeField] private List<DrinkSO> _drinkSheet;
+    
     private float _currentSpead;
     
 
     private void OnEnable()
     {
-        Drink.DrinkChanged += OnDrinkChanged;
+        
         HumanPlayer.SobrietyChanged += OnSobrietyChanged;
     }
     private void Start()
@@ -39,10 +39,7 @@ public class DrinkWheel : MonoBehaviour
         }
     }
 
-    private DrinkSO OnDrinkChanged()
-    {
-        return _drinkSheet[UnityEngine.Random.Range(0,_drinkSheet.Count)];
-    }
+
 
     void Update()
     {
@@ -51,7 +48,7 @@ public class DrinkWheel : MonoBehaviour
 
     private void OnDisable()
     {
-        Drink.DrinkChanged -= OnDrinkChanged;
+        
         HumanPlayer.SobrietyChanged -= OnSobrietyChanged;
     }
 }

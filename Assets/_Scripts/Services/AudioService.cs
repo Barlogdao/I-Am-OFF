@@ -17,6 +17,7 @@ namespace RB.Services.Audio
         private SoundPlayer _soundPlayer;
         [SerializeField] private AudioSource _musicSource;
         [SerializeField] private AudioSource _soundSource;
+        [SerializeField] private AudioSource _musicSource2;
 
         public static event Action<bool> MuteStateChanged;
 
@@ -29,7 +30,7 @@ namespace RB.Services.Audio
             Instance = this;
             DontDestroyOnLoad(gameObject);
             LoadMuteValue();
-            _musicPlayer = new MusicPlayer(_musicVolumeEvent.PrefsTag, _generalVolumeEvent.PrefsTag, this, _musicSource);
+            _musicPlayer = new MusicPlayer(_musicVolumeEvent.PrefsTag, _generalVolumeEvent.PrefsTag, this, _musicSource,_musicSource2);
             _soundPlayer = new SoundPlayer(_soundVolumeEvent.PrefsTag, _generalVolumeEvent.PrefsTag, this, _soundSource);
         }
 

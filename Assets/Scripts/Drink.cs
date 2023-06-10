@@ -15,6 +15,7 @@ public class Drink : MonoBehaviour
     private HumanPlayer _player;
     [SerializeField] SpriteRenderer _questionLabel;
     private bool _drinkIsTaken = false;
+    private Tweener _tweener;
 
 
     public static event Func<DrinkSO> DrinkChanged;
@@ -56,7 +57,7 @@ public class Drink : MonoBehaviour
 
     private void OnPlayerOFF(bool playerIsOFF)
     {
-        //if (Game.Instance.State == GameState.GameOver) return;
+        
 
         _circleCollider.enabled = !playerIsOFF;
         _spriteRenderer.color = playerIsOFF ? Color.gray : Color.white;
@@ -77,9 +78,8 @@ public class Drink : MonoBehaviour
 
     private void OnMouseUp()
     {
-        
-  
-        if (Physics2D.OverlapPoint(GetMousePos(),_mask) == _player.PlayerCollider && Game.Instance.State != GameState.GameOver)
+ 
+        if (_circleCollider.IsTouching(_player.PlayerCollider) && Game.Instance.State != GameState.GameOver && !_player.PlayerIsDrinking)
         {
             _player.Drink(_drinkData);
             StartCoroutine(DestroyDrink());
@@ -127,8 +127,8 @@ public class Drink : MonoBehaviour
         // проходит время
         yield return new WaitForSeconds(1f);
         // обновляется СО
-        // появляется новый Дринк
         _drinkData = DrinkChanged?.Invoke();
+        // появляется новый Дринк
         transform.localScale = Vector3.zero;
         transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
         _circleCollider.enabled = !_player.PlayerIsOFF;
@@ -146,6 +146,8 @@ public class Drink : MonoBehaviour
             {
                 _drinkData = DrinkChanged?.Invoke();
                 _spriteRenderer.sprite = _drinkData.Image;
+                transform.localScale = Vector3.zero;
+                transform.DOScale(1f, 0.2f).SetEase(Ease.OutBack);
 
             }
             yield return new WaitForSeconds(UnityEngine.Random.Range(3f,5f));
@@ -170,6 +172,18 @@ public class Drink : MonoBehaviour
                 _questionLabel.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
                 break;
         }
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _tweener = transform.DOScale(1.15f, 0.2f).SetLoops(-1, LoopType.Yoyo);
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        _tweener.Kill();
+        transform.localScale = Vector3.one;
     }
 }
    
