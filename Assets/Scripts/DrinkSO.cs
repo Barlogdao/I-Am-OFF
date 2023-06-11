@@ -7,7 +7,7 @@ public class DrinkSO : ScriptableObject
     public string Name;
     public Sprite Image;
     public int Strenght;
-    public int Reward;
+    
     public DrinkRarity Rarity;
     public DrinkType Type;
     

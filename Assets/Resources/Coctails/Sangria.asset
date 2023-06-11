@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacbec8bfc823a64f80388e6a0156fcd, type: 3}
+  m_Name: Sangria
+  m_EditorClassIdentifier: 
+  Image: {fileID: -2045687486, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
+  Name: Sangria
+  Description: 
+  Recipe:
+  - {fileID: 11400000, guid: 151972ea8463e164dac60ed3fe0105b2, type: 2}
+  - {fileID: 11400000, guid: 54d1fcb728e3ec346b7e309915f295da, type: 2}
+  - {fileID: 11400000, guid: c9a9ee204b3c66246b17d7324a283e4e, type: 2}
+  BonusScore: 300
+  BonusTime: 5

@@ -807,6 +807,21 @@ MonoBehaviour:
   _levelOneSobriety: {fileID: 8300000, guid: ae365c9da5beae347a0562c7e1dc0dbb, type: 3}
   _levelTwoSobriety: {fileID: 8300000, guid: 873ea2fc3f5b4ab4c94374071833bdc7, type: 3}
   _levelThreeSobriety: {fileID: 8300000, guid: 2d721ea2bb0a3b94ea17b9f7e76d4b36, type: 3}
+  _drinkSounds:
+  - {fileID: 8300000, guid: f620a4ffeda712a46967ffe98d8b2774, type: 3}
+  - {fileID: 8300000, guid: c7aab65987b462348ad082f3acb916bc, type: 3}
+  - {fileID: 8300000, guid: 2810f98c51f14bb4096652e621ed824b, type: 3}
+  - {fileID: 8300000, guid: e0b4892e228cdcf43b1ec394b6c7eeb4, type: 3}
+  - {fileID: 8300000, guid: b2378f53d031c374aa5fd7c8f2504334, type: 3}
+  _coctalSound: {fileID: 8300000, guid: feeece42705fee44c91cb3089760f056, type: 3}
+  _winSound: {fileID: 8300000, guid: 266362ff8a1daf14682efee45a8f93bb, type: 3}
+  _menuButtonSound: {fileID: 8300000, guid: e3b3060000d077644aaf9395cac818ba, type: 3}
+  _othodos: {fileID: 8300000, guid: 1c376faf541f44c468a65b1d30141f67, type: 3}
+  _lightDrunkStage: {fileID: 8300000, guid: 3ee4e71104f493948aa524270d22063e, type: 3}
+  _veryDrunkStageSounds:
+  - {fileID: 8300000, guid: 3ac22fc64203f1845b731269f1763ef2, type: 3}
+  - {fileID: 8300000, guid: a1a21eaeeb9962643b69aa0eae4a6666, type: 3}
+  - {fileID: 8300000, guid: 90b903c32855897449b20484fa21905a, type: 3}
 --- !u!4 &1983702191
 Transform:
   m_ObjectHideFlags: 0

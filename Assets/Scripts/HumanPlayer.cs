@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class HumanPlayer : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class HumanPlayer : MonoBehaviour
     public static event Action<SobrietyLevel> SobrietyChanged;
     public static event Action<List<DrinkSO>> StomachUpdated;
     public static event Action<CoctailRecipeSO> CoctailDrinked;
+    public static event Action PlayerDrinked;
+    public static event Action CoctailUnlocked;
     private void Awake()
     {
         PlayerCollider = GetComponent<CircleCollider2D>();
@@ -50,10 +53,19 @@ public class HumanPlayer : MonoBehaviour
         SobrietyChanged?.Invoke(Sobriety);
         DrunkStrikeCount = 0;
         _offCanvas.gameObject.SetActive(false);
+        Game.GameOvered += OnGameOvered;
+    }
+
+    private void OnGameOvered()
+    {
+        var sr = GetComponent<SpriteRenderer>();
+        sr.sortingLayerName = "UI";
+        sr.sortingOrder = 2;
     }
 
     public void Drink(DrinkSO drink)
     {
+        PlayerDrinked?.Invoke();
         _drinkVisual.sprite = drink.Image;
         AddDrinkToStomach(drink);
         ScoreResolve(drink);
@@ -68,9 +80,17 @@ public class HumanPlayer : MonoBehaviour
         {
             _score += coctail.BonusScore;
             ScoreChanged?.Invoke(_score);
+            Game.Instance.GameTimer += coctail.BonusTime;
             CoctailDrinked?.Invoke(coctail);
             _stomach.Clear();
             StomachUpdated?.Invoke(_stomach);
+            // If Coctail Not Unlocked
+            if (!SaveProvider.Instace.SaveData.RecipeIsUnlocked(coctail))
+            {
+                SaveProvider.Instace.SaveData.UnlockRecipe(coctail);
+                CoctailUnlocked?.Invoke();
+            }
+
         }
     }
 
@@ -91,9 +111,22 @@ public class HumanPlayer : MonoBehaviour
 
     private void ScoreResolve(DrinkSO drink)
     {
-        _score += drink.Reward;
+        int drinkScore = 0;
+        switch (drink.Rarity)
+        {
+            case DrinkRarity.Common:
+                drinkScore = 5;
+                break;
+            case DrinkRarity.Uncommon:
+                drinkScore = 10;
+                break;
+            case DrinkRarity.Rare:
+                drinkScore = 15;
+                break;
+        }
+        _score += drinkScore;
         ScoreChanged?.Invoke(_score);
-        
+
     }
 
     private void DrunkResolve(DrinkSO drink)
@@ -181,7 +214,13 @@ public class HumanPlayer : MonoBehaviour
         _animator.Play("OFF");
     }
 
-    
+    private void OnDestroy()
+    {
+        Game.GameOvered -= OnGameOvered;
+        DOTween.KillAll();
+    }
+
+
 }
 
 public enum SobrietyLevel

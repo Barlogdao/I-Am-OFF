@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Gundos
   m_EditorClassIdentifier: 
   Name: Gundos
-  Stamina: 100
-  SceondStageLevel: 20
+  Stamina: 105
+  SceondStageLevel: 25
   ThirdStageLevel: 90
   OFFTime: 4
   Animator: {fileID: 22100000, guid: 9a940efda8852e4429fdce5fe5aaae0f, type: 2}
-  DrinkStrenghtModifier: 0
+  DrinkStrenghtModifier: 1

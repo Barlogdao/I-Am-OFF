@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacbec8bfc823a64f80388e6a0156fcd, type: 3}
+  m_Name: Mega Beer
+  m_EditorClassIdentifier: 
+  Image: {fileID: 1856775992, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
+  Name: Mega Beer
+  Description: 
+  Recipe:
+  - {fileID: 11400000, guid: 10cc345144c9ccd4e83ec99183c4c0de, type: 2}
+  - {fileID: 11400000, guid: 10cc345144c9ccd4e83ec99183c4c0de, type: 2}
+  - {fileID: 11400000, guid: 10cc345144c9ccd4e83ec99183c4c0de, type: 2}
+  BonusScore: 250
+  BonusTime: 4

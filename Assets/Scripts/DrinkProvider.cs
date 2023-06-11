@@ -70,7 +70,10 @@ public class DrinkProvider : MonoBehaviour
         }
         return null;
     }
-
+    public CoctailRecipeSO[] GetAllRecipies()
+    {
+        return _coctailLibrary;
+    }
 
     private void OnDestroy()
     {

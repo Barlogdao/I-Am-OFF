@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Wine
   m_EditorClassIdentifier: 
   Name: Wine
-  Image: {fileID: -1774404286, guid: b8fdb18242a827e4bb020ad5caa20e8f, type: 3}
-  Strenght: 10
-  Reward: 10
-  Rarity: 1
+  Image: {fileID: -1662285664, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
+  Strenght: 4
+  Rarity: 0
   Type: 1

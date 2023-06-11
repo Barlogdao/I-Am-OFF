@@ -1,18 +1,28 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class SaveData : MonoBehaviour
+[System.Serializable]
+public class SaveData
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool AlkodzillaUnlocked;
+    public bool SoberManUnlocked;
+
+    public List<string> UnlockedRecipies;
+
+
+    public SaveData()
     {
-        
+        UnlockedRecipies = new List<string>();
+        SoberManUnlocked = false;
+        AlkodzillaUnlocked = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool RecipeIsUnlocked(CoctailRecipeSO recipe)
     {
-        
+        return UnlockedRecipies.Contains(recipe.Name);
+    }
+
+    public void UnlockRecipe(CoctailRecipeSO recipe)
+    {
+        UnlockedRecipies.Add(recipe.Name);
     }
 }

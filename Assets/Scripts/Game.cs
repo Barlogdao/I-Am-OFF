@@ -1,20 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
 using System;
-
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
 
-    [SerializeField] private  int _gameTimer;
+    public int GameTimer;
     public static Game Instance { get; private set; }
     public GameState State {  get; private set; }
     [field: SerializeField] public LayerMask PlayerMask { get; private set; }
     public HumanPlayer Player { get; private set; }
-    [field: SerializeField] public float PlayerOFFTime { get; private set; }
+    public float PlayerOFFTime { get; private set; }
     [field: SerializeField] public int OffStrikeBonusScore { get; private set; }
-    [SerializeField] PlayerData _playerData;
+    private PlayerData _playerData;
 
     public static event Action<int> TimerTicked;
     public static event Action GameStarted;
@@ -59,13 +58,13 @@ public class Game : MonoBehaviour
     {
         State = GameState.Play;
         GameStarted?.Invoke();
-        int timer = _gameTimer;
-        TimerTicked?.Invoke(timer);
-        while (timer > 0)
+        
+        TimerTicked?.Invoke(GameTimer);
+        while (GameTimer > 0)
         {
             yield return new WaitForSeconds(1f);
-            timer--;
-            TimerTicked?.Invoke(timer);
+            GameTimer--;
+            TimerTicked?.Invoke(GameTimer);
         }
         StartCoroutine(GameOver());
     }
@@ -75,6 +74,14 @@ public class Game : MonoBehaviour
         State = GameState.GameOver;
         GameOvered?.Invoke();
         yield return null;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
 }

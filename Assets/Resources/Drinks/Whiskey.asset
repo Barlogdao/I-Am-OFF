@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Whiskey
   m_EditorClassIdentifier: 
   Name: Whiskey
-  Image: {fileID: 1759676672, guid: b8fdb18242a827e4bb020ad5caa20e8f, type: 3}
-  Strenght: 10
-  Reward: 10
-  Rarity: 2
-  Type: 1
+  Image: {fileID: -415357677, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
+  Strenght: 6
+  Rarity: 0
+  Type: 2
