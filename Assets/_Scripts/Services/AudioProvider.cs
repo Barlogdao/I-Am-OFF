@@ -33,6 +33,10 @@ public class AudioProvider : MonoBehaviour
         {
             _audioService.PlayMusic(_levelOneSobriety);
         }
+        else if(scene.buildIndex == 3)
+        {
+            _audioService.PlayMusic(_levelThreeSobriety);
+        }
     }
 
     private void OnSobrietyChanged(SobrietyLevel sobrietyLevel)

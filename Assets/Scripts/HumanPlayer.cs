@@ -11,10 +11,15 @@ public class HumanPlayer : MonoBehaviour
     private List<DrinkSO> _stomach = new();
     [SerializeField] private Canvas _offCanvas;
     public int Score => _score;
-    [SerializeField] private int _StaminaLevel;
+    private int _StaminaLevel;
     public SobrietyLevel Sobriety { get; private set; }
     public CircleCollider2D PlayerCollider { get; private set; }
-
+    private Animator _animator;
+    [SerializeField]
+    private SpriteRenderer _drinkVisual;
+    private int _drinkStrengtModifier;
+    private int _secondStageLevel;
+    private int _thirdStageLevel;
     public bool PlayerIsOFF { get; private set; }
     public bool PlayerIsDrinking { get; private set; }
     public int DrunkStrikeCount { get; private set; }
@@ -30,12 +35,16 @@ public class HumanPlayer : MonoBehaviour
         PlayerCollider = GetComponent<CircleCollider2D>();
     }
 
-    public void Init()
+    public void Init(PlayerData data)
     {
-
+        _animator = GetComponent<Animator>();
         Sobriety = SobrietyLevel.Sober;
         _score = 0;
         _drunkLevel = 0;
+        _StaminaLevel = data.Stamina;
+        _secondStageLevel = data.SceondStageLevel;
+        _thirdStageLevel = data.ThirdStageLevel;
+        _animator.runtimeAnimatorController = data.Animator;
         PlayerIsOFF = false;
         PlayerIsDrinking = false;
         SobrietyChanged?.Invoke(Sobriety);
@@ -45,6 +54,7 @@ public class HumanPlayer : MonoBehaviour
 
     public void Drink(DrinkSO drink)
     {
+        _drinkVisual.sprite = drink.Image;
         AddDrinkToStomach(drink);
         ScoreResolve(drink);
         DrunkResolve(drink);
@@ -88,7 +98,7 @@ public class HumanPlayer : MonoBehaviour
 
     private void DrunkResolve(DrinkSO drink)
     {
-        _drunkLevel = Math.Clamp(_drunkLevel + drink.Strenght,0,_StaminaLevel);
+        _drunkLevel = Math.Clamp(_drunkLevel + drink.Strenght + _drinkStrengtModifier,0,_StaminaLevel);
         StartCoroutine(DrunkProcess());
        
     }
@@ -105,8 +115,8 @@ public class HumanPlayer : MonoBehaviour
             _offCanvas.gameObject.SetActive(true);
             DrunkAnimation();
             PlayerIsOFF = true;
-            DrunkStrikeCount += 1;
             PlayerMindChanged?.Invoke(PlayerIsOFF);
+            DrunkStrikeCount += 1;
             yield return new WaitForSeconds(1f);
             _offCanvas.gameObject.SetActive(false);
             yield return new WaitForSeconds(Game.Instance.PlayerOFFTime - 1f);
@@ -116,6 +126,7 @@ public class HumanPlayer : MonoBehaviour
             
             CheckSobriety();
             PlayerMindChanged?.Invoke(PlayerIsOFF);
+            _animator.Play("Idle");
             yield break;
         }
         else
@@ -131,11 +142,11 @@ public class HumanPlayer : MonoBehaviour
     {
         SobrietyLevel level;
 
-        if (_drunkLevel < _StaminaLevel * 0.33f)
+        if (_drunkLevel < _secondStageLevel)
         {
             level = SobrietyLevel.Sober;
         }
-        else if (_drunkLevel < _StaminaLevel * 0.66f)
+        else if (_drunkLevel < _thirdStageLevel)
         {
             level = SobrietyLevel.Drunk;
         }
@@ -162,11 +173,12 @@ public class HumanPlayer : MonoBehaviour
     }
     private void DrinkAnimation()
     {
-       
+        
+        _animator.Play("Drink");
     }
     private void DrunkAnimation()
     {
-        
+        _animator.Play("OFF");
     }
 
     

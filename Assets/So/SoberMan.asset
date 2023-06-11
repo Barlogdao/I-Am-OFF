@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ecc428c2119504d9ad6a5079fe5d9f, type: 3}
+  m_Name: SoberMan
+  m_EditorClassIdentifier: 
+  Name: SoberMan
+  Stamina: 60
+  SceondStageLevel: 10
+  ThirdStageLevel: 45
+  OFFTime: 2
+  Animator: {fileID: 22100000, guid: 47967c338c1ba5f46a5a7b714e19b5cc, type: 2}
+  DrinkStrenghtModifier: 5

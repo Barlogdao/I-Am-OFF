@@ -13,6 +13,8 @@ public class Game : MonoBehaviour
     [field: SerializeField] public LayerMask PlayerMask { get; private set; }
     public HumanPlayer Player { get; private set; }
     [field: SerializeField] public float PlayerOFFTime { get; private set; }
+    [field: SerializeField] public int OffStrikeBonusScore { get; private set; }
+    [SerializeField] PlayerData _playerData;
 
     public static event Action<int> TimerTicked;
     public static event Action GameStarted;
@@ -24,6 +26,8 @@ public class Game : MonoBehaviour
     }
     private void Start()
     {
+        _playerData = SaveProvider.Instace.CurrentPlayer;
+        PlayerOFFTime = _playerData.OFFTime;
         State = GameState.Init;
         StartCoroutine(InitGame());
     }
@@ -41,7 +45,7 @@ public class Game : MonoBehaviour
     private void InitPlayer()
     {
         Player = FindObjectOfType<HumanPlayer>();
-        Player.Init();
+        Player.Init(_playerData);
     }
     private void InitDrinks()
     {

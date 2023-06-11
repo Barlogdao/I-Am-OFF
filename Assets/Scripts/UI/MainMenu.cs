@@ -20,4 +20,9 @@ public class MainMenu : MonoBehaviour
      _exitButton.gameObject.SetActive(false);
 #endif
     }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene(3);
+    }
 }

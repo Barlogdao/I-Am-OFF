@@ -7,6 +7,7 @@ public class CoctailCanvas : MonoBehaviour
 {
     [SerializeField] Image _coctailImage;
     [SerializeField] TextMeshProUGUI _score, _coctailName;
+    [SerializeField] float _showDuration;
 
     private void Start()
     {
@@ -28,13 +29,13 @@ public class CoctailCanvas : MonoBehaviour
         _coctailImage.sprite = coctail.Image;
         _score.text = $"+{coctail.BonusScore}";
         _coctailName.text = coctail.Name;
-        _score.transform.DOScale(1.2f, 0.5f).SetEase(Ease.OutSine).OnComplete(() =>
+        _score.transform.DOScale(1.2f, _showDuration).SetEase(Ease.OutSine).OnComplete(() =>
         {
             _score.transform.localScale = Vector3.one;
             _coctailImage.enabled = false;
             _score.enabled = false;
         });
-        _coctailName.transform.DOScale(1.2f,0.5f).SetEase(Ease.OutSine).OnComplete(() =>
+        _coctailName.transform.DOScale(1.2f, _showDuration).SetEase(Ease.OutSine).OnComplete(() =>
         {
             _coctailName.transform.localScale = Vector3.one;
             _coctailName.enabled = false;
