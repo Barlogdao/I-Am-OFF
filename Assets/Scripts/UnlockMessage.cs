@@ -40,5 +40,6 @@ public class UnlockMessage : MonoBehaviour
     private void OnDisable()
     {
         EndGameWindow.ChampionUnlocked -= OnChampinoUnlocked;
+        HumanPlayer.CoctailUnlocked -= OnCoctailUnlocked;
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Gundos
   Stamina: 105
   SceondStageLevel: 25
-  ThirdStageLevel: 90
+  ThirdStageLevel: 85
   OFFTime: 4
   Animator: {fileID: 22100000, guid: 9a940efda8852e4429fdce5fe5aaae0f, type: 2}
   DrinkStrenghtModifier: 1

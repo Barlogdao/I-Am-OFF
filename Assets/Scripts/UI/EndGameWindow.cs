@@ -44,14 +44,14 @@ public class EndGameWindow : MonoBehaviour
         int oldScore = PlayerPrefs.GetInt(PLAYER_SCORE, 0);
         _gameScore.text = newScore.ToString();
         _bestScore.enabled = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         for (int i = 1; i <= Game.Instance.Player.DrunkStrikeCount; i++)
         {
             newScore += Game.Instance.OffStrikeBonusScore * i;
             _gameScore.text = newScore.ToString();
             
             coinPanel.DestroyChild();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
         }
         _bestScore.enabled = true;
         if (oldScore < newScore)
@@ -68,7 +68,7 @@ public class EndGameWindow : MonoBehaviour
             SaveProvider.Instace.SaveData.SoberManUnlocked = true;
             ChampionUnlocked?.Invoke();
         }
-        if(!SaveProvider.Instace.SaveData.AlkodzillaUnlocked && Game.Instance.Player.DrunkStrikeCount >= 5)
+        if(!SaveProvider.Instace.SaveData.AlkodzillaUnlocked && Game.Instance.Player.DrunkStrikeCount >= 3)
         {
             SaveProvider.Instace.SaveData.AlkodzillaUnlocked = true;
             ChampionUnlocked?.Invoke();

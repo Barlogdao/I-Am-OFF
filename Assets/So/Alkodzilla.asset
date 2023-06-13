@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Alkodzilla
   Stamina: 160
-  SceondStageLevel: 60
+  SceondStageLevel: 20
   ThirdStageLevel: 110
   OFFTime: 10
   Animator: {fileID: 22100000, guid: bc1fc5421aff7024a85e5cb6b46dd424, type: 2}

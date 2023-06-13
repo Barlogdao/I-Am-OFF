@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Bayles
   Description: 
   Recipe:
-  - {fileID: 11400000, guid: 8787708574a7a3a4485497b6ef75a042, type: 2}
   - {fileID: 11400000, guid: 9688a484859c6764fa6647249c3dc01f, type: 2}
+  - {fileID: 11400000, guid: 8787708574a7a3a4485497b6ef75a042, type: 2}
   BonusScore: 400
   BonusTime: 6

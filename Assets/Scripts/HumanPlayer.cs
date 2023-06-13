@@ -47,6 +47,7 @@ public class HumanPlayer : MonoBehaviour
         _StaminaLevel = data.Stamina;
         _secondStageLevel = data.SceondStageLevel;
         _thirdStageLevel = data.ThirdStageLevel;
+        _drinkStrengtModifier = data.DrinkStrenghtModifier;
         _animator.runtimeAnimatorController = data.Animator;
         PlayerIsOFF = false;
         PlayerIsDrinking = false;

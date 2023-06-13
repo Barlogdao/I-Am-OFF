@@ -20,4 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 10cc345144c9ccd4e83ec99183c4c0de, type: 2}
   - {fileID: 11400000, guid: 10cc345144c9ccd4e83ec99183c4c0de, type: 2}
   BonusScore: 250
-  BonusTime: 4
+  BonusTime: 3

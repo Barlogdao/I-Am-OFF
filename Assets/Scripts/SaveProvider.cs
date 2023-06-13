@@ -62,6 +62,6 @@ public class SaveProvider : MonoBehaviour
 
     public void Reset()
     {
-        PlayerPrefs.DeleteKey(SAVEDATA);
+        PlayerPrefs.DeleteAll();
     }
 }

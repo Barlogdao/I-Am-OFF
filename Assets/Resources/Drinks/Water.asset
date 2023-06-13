@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Water
   Image: {fileID: 1402158999, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
-  Strenght: -5
+  Strenght: 0
   Rarity: 1
   Type: 1
