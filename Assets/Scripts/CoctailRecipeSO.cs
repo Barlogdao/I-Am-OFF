@@ -12,6 +12,7 @@ public class CoctailRecipeSO : ScriptableObject
     public List<DrinkSO> Recipe;
     public int BonusScore;
     public int BonusTime;
+    public int CoinCost = 1;
 
     public bool StomachHasRecipe(List<DrinkSO> stomach)
     {

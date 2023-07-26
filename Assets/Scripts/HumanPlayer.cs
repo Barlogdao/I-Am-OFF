@@ -86,11 +86,11 @@ public class HumanPlayer : MonoBehaviour
             _stomach.Clear();
             StomachUpdated?.Invoke(_stomach);
             // If Coctail Not Unlocked
-            if (!SaveProvider.Instace.SaveData.RecipeIsUnlocked(coctail))
-            {
-                SaveProvider.Instace.SaveData.UnlockRecipe(coctail);
-                CoctailUnlocked?.Invoke();
-            }
+            //if (!SaveProvider.Instace.SaveData.RecipeIsUnlocked(coctail))
+            //{
+            //    SaveProvider.Instace.SaveData.UnlockRecipe(coctail);
+            //    CoctailUnlocked?.Invoke();
+            //}
 
         }
     }

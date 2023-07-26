@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DrinkProvider : MonoBehaviour
@@ -72,7 +73,8 @@ public class DrinkProvider : MonoBehaviour
     }
     public CoctailRecipeSO[] GetAllRecipies()
     {
-        return _coctailLibrary;
+        
+        return _coctailLibrary.OrderBy(x => x.CoinCost).ThenBy(y => !SaveProvider.Instace.SaveData.RecipeIsUnlocked(y)).ToArray(); 
     }
 
     private void OnDestroy()

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
+using UnityEngine.Events;
 
 public class EndGameWindow : MonoBehaviour
 {
@@ -18,9 +19,15 @@ public class EndGameWindow : MonoBehaviour
     private void Awake()
     {
         _restartButton.onClick.AddListener(() => SceneManager.LoadScene(2));
-        _exitButton.onClick.AddListener(() => SceneManager.LoadScene(1));
+        _exitButton.onClick.AddListener(() => OnExitGame());
         Game.GameOvered += OnGameOvered;
         gameObject.SetActive(false);
+    }
+
+    private void OnExitGame()
+    {
+        SaveProvider.Instace.AddCoins(Game.Instance.Player.DrunkStrikeCount);
+        SceneManager.LoadScene(1);
     }
 
     private void OnGameOvered()
@@ -37,11 +44,14 @@ public class EndGameWindow : MonoBehaviour
 
     private IEnumerator GameEndProcess()
     {
+        SaveProvider saveProvider = SaveProvider.Instace;
+
         _restartButton.gameObject.SetActive(false);
         _exitButton.gameObject.SetActive(false);
         var coinPanel = FindObjectOfType<OffCoinPanel>();
         int newScore = Game.Instance.Player.Score;
-        int oldScore = PlayerPrefs.GetInt(PLAYER_SCORE, 0);
+        int oldScore = saveProvider.SaveData.MaxScore;
+
         _gameScore.text = newScore.ToString();
         _bestScore.enabled = false;
         yield return new WaitForSeconds(1f);
@@ -57,22 +67,23 @@ public class EndGameWindow : MonoBehaviour
         if (oldScore < newScore)
         {
             _bestScore.text = $" New Best Score: {newScore}";
-            PlayerPrefs.SetInt(PLAYER_SCORE, newScore);
+            saveProvider.ChangeMaxScore(newScore);
         }
         else
         {
             _bestScore.text = $"Best Score: {oldScore}";
         }
-        if(!SaveProvider.Instace.SaveData.SoberManUnlocked && newScore <= 0)
+        if(!saveProvider.SaveData.SoberManUnlocked && newScore <= 0)
         {
-            SaveProvider.Instace.SaveData.SoberManUnlocked = true;
+            saveProvider.SaveData.SoberManUnlocked = true;
             ChampionUnlocked?.Invoke();
         }
-        if(!SaveProvider.Instace.SaveData.AlkodzillaUnlocked && Game.Instance.Player.DrunkStrikeCount >= 3)
+        if(!saveProvider.SaveData.AlkodzillaUnlocked && Game.Instance.Player.DrunkStrikeCount >= 3)
         {
-            SaveProvider.Instace.SaveData.AlkodzillaUnlocked = true;
+            saveProvider.SaveData.AlkodzillaUnlocked = true;
             ChampionUnlocked?.Invoke();
         }
+
         _restartButton.gameObject.SetActive(true);
         _exitButton.gameObject.SetActive(true);
     }

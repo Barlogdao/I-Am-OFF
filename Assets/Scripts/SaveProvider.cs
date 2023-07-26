@@ -6,25 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class SaveProvider : MonoBehaviour
 {
+    private const string SAVEDATA = "SAVE_DATA";
     public static SaveProvider Instace { get; private set; }
     public SaveData SaveData { get; private set; }
-    private const string SAVEDATA = "SAVE_DATA";
+    public PlayerData CurrentPlayer;
+    private ISaveSystem _saveSystem;
+    public static event Action<int> CoinAmountChanged;
+
 
     private void Awake()
     {
         Instace = this;
         DontDestroyOnLoad(gameObject);
-        if (PlayerPrefs.HasKey(SAVEDATA))
-        {
-            SaveData = JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(SAVEDATA));
-            Debug.Log("Has");
-            Debug.Log(SaveData.SoberManUnlocked);
-            Debug.Log(SaveData.UnlockedRecipies.Count);
-        }
-        else
-        {
-            SaveData = new SaveData();
-        }
+        _saveSystem = new PlayerPrefSaveSystem();
+        SaveData = _saveSystem.Load();
         SceneManager.sceneLoaded += OnSceneLoadded;
 
     }
@@ -33,28 +28,35 @@ public class SaveProvider : MonoBehaviour
     {
         if (scene.buildIndex == 1)
         {
-            string json = JsonUtility.ToJson(SaveData);
-            PlayerPrefs.SetString(SAVEDATA, json);
-            PlayerPrefs.Save();
-            Debug.Log("Saved");
-            Debug.Log(SaveData.SoberManUnlocked);
-            Debug.Log(SaveData.UnlockedRecipies.Count);
+            _saveSystem.Save(SaveData);
+
         }
     }
 
-    public PlayerData CurrentPlayer;
+    public void SpendCoins (int cost)
+    {
+        SaveData.PlayerCoins -= cost;
+        CoinAmountChanged?.Invoke(SaveData.PlayerCoins);
+        _saveSystem.Save(SaveData);
+    }
+    public void AddCoins(int amount)
+    {
+        SaveData.PlayerCoins += amount;
+        CoinAmountChanged?.Invoke(SaveData.PlayerCoins);
+        _saveSystem.Save(SaveData);
+    }
+
+    public void ChangeMaxScore(int score)
+    {
+        SaveData.MaxScore = score;
+        _saveSystem.Save(SaveData);
+    }
 
 
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoadded;
-        string json = JsonUtility.ToJson(SaveData);
-        
-        PlayerPrefs.SetString(SAVEDATA, json);
-        PlayerPrefs.Save();
-        Debug.Log("Saved");
-        Debug.Log(SaveData.SoberManUnlocked);
-        Debug.Log(SaveData.UnlockedRecipies.Count);
+        _saveSystem.Save(SaveData);
     }
 
     [ContextMenu ("Reset")]

@@ -5,15 +5,19 @@ public class SaveData
 {
     public bool AlkodzillaUnlocked;
     public bool SoberManUnlocked;
+    public int PlayerCoins;
+    public int MaxScore;
 
-    public List<string> UnlockedRecipies;
-
+    
+    public string UnlockedRecipies = "Mega Beer";
 
     public SaveData()
     {
-        UnlockedRecipies = new List<string>();
+        UnlockedRecipies = "Mega Beer";
         SoberManUnlocked = false;
         AlkodzillaUnlocked = false;
+        PlayerCoins = 0;
+        MaxScore = 0;
     }
 
     public bool RecipeIsUnlocked(CoctailRecipeSO recipe)
@@ -23,6 +27,6 @@ public class SaveData
 
     public void UnlockRecipe(CoctailRecipeSO recipe)
     {
-        UnlockedRecipies.Add(recipe.Name);
+        UnlockedRecipies += $",{recipe.Name}";
     }
 }
