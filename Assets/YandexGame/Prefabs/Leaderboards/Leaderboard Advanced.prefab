@@ -680,7 +680,7 @@ RectTransform:
   m_Children:
   - {fileID: 6759729123827367368}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -707,15 +707,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423e13a42d313f948a13bcedae13febe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameLB: Time
+  nameLB: ScoreLeaderboard
   maxQuantityPlayers: 20
-  quantityTop: 3
+  quantityTop: 4
   quantityAround: 3
   updateLBMethod: 1
   entriesText: {fileID: 0}
   advanced: 1
   playerPhoto: 1
+  isHiddenPlayerPhoto: {fileID: 0}
   timeTypeConvert: 0
+  decimalSize: 1
+  onUpdateData:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6759729124415291193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,5 +855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLoad: 0
   rawImage: {fileID: 6759729124399269824}
+  spriteImage: {fileID: 0}
   urlImage: 
   loadAnimObj: {fileID: 0}
+  debug: 0

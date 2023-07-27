@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Alkodzilla
   m_EditorClassIdentifier: 
   Name: Alkodzilla
-  Stamina: 160
+  Stamina: 180
   SceondStageLevel: 20
   ThirdStageLevel: 110
   OFFTime: 10

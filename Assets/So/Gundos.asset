@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gundos
   m_EditorClassIdentifier: 
   Name: Gundos
-  Stamina: 105
+  Stamina: 110
   SceondStageLevel: 25
   ThirdStageLevel: 85
   OFFTime: 4

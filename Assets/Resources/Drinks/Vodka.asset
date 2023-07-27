@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Vodka
   Image: {fileID: -1577493537, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
-  Strenght: 6
+  BonusStrength: 0
   Rarity: 0
-  Type: 1
+  Strength: 3

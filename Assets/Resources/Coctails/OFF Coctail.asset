@@ -20,5 +20,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 151972ea8463e164dac60ed3fe0105b2, type: 2}
   - {fileID: 11400000, guid: 20aec1359247d1544b4c15c77861d7f9, type: 2}
   BonusScore: 1000
-  BonusTime: 6
+  BonusTime: 10
   CoinCost: 4

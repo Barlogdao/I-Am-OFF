@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Liquor
   Image: {fileID: -1074589878, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
-  Strenght: 4
+  BonusStrength: 0
   Rarity: 2
-  Type: 2
+  Strength: 2

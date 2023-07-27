@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SoberMan
   m_EditorClassIdentifier: 
   Name: SoberMan
-  Stamina: 60
+  Stamina: 100
   SceondStageLevel: 10
-  ThirdStageLevel: 45
+  ThirdStageLevel: 50
   OFFTime: 2
   Animator: {fileID: 22100000, guid: 47967c338c1ba5f46a5a7b714e19b5cc, type: 2}
-  DrinkStrenghtModifier: 5
+  DrinkStrenghtModifier: 3

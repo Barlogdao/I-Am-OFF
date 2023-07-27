@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Beer
   Image: {fileID: 438636708, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
-  Strenght: 3
+  BonusStrength: 0
   Rarity: 0
-  Type: 0
+  Strength: 1
