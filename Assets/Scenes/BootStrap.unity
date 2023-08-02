@@ -1055,8 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9469e699ef357454796b54dcafbd758b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uncommonDrinkChance: 50
-  _rareDrinkChance: 10
+  _gameConfig: {fileID: 11400000, guid: 30116352f7d426a4dbb7f3ca1e2d1bf2, type: 2}
 --- !u!4 &2139808861
 Transform:
   m_ObjectHideFlags: 0

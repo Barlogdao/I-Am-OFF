@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class Game : MonoBehaviour
 {
 
-    public int GameTimer;
+    private int _gameTimer;
+    [SerializeField] private GameConfig _gameConfig;
     public static Game Instance { get; private set; }
     public GameState State {  get; private set; }
-    [field: SerializeField] public LayerMask PlayerMask { get; private set; }
     public HumanPlayer Player { get; private set; }
     public float PlayerOFFTime { get; private set; }
     [field: SerializeField] public int OffStrikeBonusScore { get; private set; }
@@ -34,12 +34,17 @@ public class Game : MonoBehaviour
 
     private IEnumerator InitGame()
     {
+        _gameTimer = _gameConfig.GameDuration;
         InitPlayer();
         yield return null;
         InitDrinks();
         StartCoroutine(StartGame());
     }
 
+    public void AddBonusTime(int bonusTime)
+    {
+        _gameTimer += bonusTime;
+    }
 
     private void InitPlayer()
     {
@@ -57,14 +62,15 @@ public class Game : MonoBehaviour
     private IEnumerator StartGame()
     {
         State = GameState.Play;
+
         GameStarted?.Invoke();
         
-        TimerTicked?.Invoke(GameTimer);
-        while (GameTimer > 0)
+        TimerTicked?.Invoke(_gameTimer);
+        while (_gameTimer > 0)
         {
             yield return new WaitForSeconds(1f);
-            GameTimer--;
-            TimerTicked?.Invoke(GameTimer);
+            _gameTimer--;
+            TimerTicked?.Invoke(_gameTimer);
         }
         StartCoroutine(GameOver());
     }

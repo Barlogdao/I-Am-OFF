@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13ecc428c2119504d9ad6a5079fe5d9f, type: 3}
-  m_Name: Bob
+  m_Name: Alkodzilla
   m_EditorClassIdentifier: 
-  Name: Bob
-  Stamina: 100
-  SceondStageLevel: 30
-  ThirdStageLevel: 80
-  OFFTime: 4
-  Animator: {fileID: 9100000, guid: 52a01be5e3c13724f8bd7db56a71952a, type: 2}
-  DrinkStrenghtModifier: 0
+  Name: Alkodzilla
+  Stamina: 200
+  SceondStageLevel: 20
+  ThirdStageLevel: 150
+  OFFTime: 10
+  Animator: {fileID: 22100000, guid: bc1fc5421aff7024a85e5cb6b46dd424, type: 2}
+  DrinkStrenghtModifier: -2

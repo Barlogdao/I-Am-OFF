@@ -1,24 +1,21 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class DrinkWheel : MonoBehaviour
 {
 
-    [SerializeField] float _speed;
-    [SerializeField] float _fastSpeed;
+    [SerializeField] private GameConfig _gameConfig;
     
     private float _currentSpead;
     
 
     private void OnEnable()
     {
-        
         HumanPlayer.SobrietyChanged += OnSobrietyChanged;
     }
     private void Start()
     {
-        _currentSpead = _speed;
+        _currentSpead = _gameConfig.NormalSpeed;
     }
 
 
@@ -27,18 +24,22 @@ public class DrinkWheel : MonoBehaviour
         switch (sobriety)
         {
             case SobrietyLevel.Sober:
-                _currentSpead = _speed;
+                
+                SpeedTransition(_gameConfig.NormalSpeed);
                 break;
             case SobrietyLevel.Drunk:
-                _currentSpead = _fastSpeed;
+               SpeedTransition(_gameConfig.FastSpeed);
 
                 break;
             case SobrietyLevel.DrunkAsHell:
-                _currentSpead = _fastSpeed;
+                SpeedTransition(_gameConfig.SuperFastSpeed);
                 break;
         }
     }
-
+    private void SpeedTransition(float targetSpeed)
+    {
+        DOTween.To(() => _currentSpead, x => _currentSpead = x, targetSpeed, 0.9f);
+    }
 
 
     void Update()
@@ -48,7 +49,6 @@ public class DrinkWheel : MonoBehaviour
 
     private void OnDisable()
     {
-        
         HumanPlayer.SobrietyChanged -= OnSobrietyChanged;
     }
 }

@@ -1,18 +1,17 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class DrinkProvider : MonoBehaviour
 {
+    [SerializeField] private GameConfig _gameConfig;
     public static DrinkProvider Instance { get; private set; } 
 
     private Dictionary<DrinkRarity, List<DrinkSO>> _drinkTable = new();
     private CoctailRecipeSO[] _coctailLibrary;
 
-    [SerializeField] private int _uncommonDrinkChance;
-    [SerializeField] private int _rareDrinkChance;
+    private int _uncommonDrinkChance;
+    private int _rareDrinkChance;
 
 
     private void Awake()
@@ -23,6 +22,9 @@ public class DrinkProvider : MonoBehaviour
 
     private void Start()
     {
+        _uncommonDrinkChance = _gameConfig.UncommonDrinkAppearanceChance;
+        _rareDrinkChance = _gameConfig.RareDrinkAppearanceChance;
+
         Drink.DrinkChanged += OnDrinkChanged;
         _coctailLibrary = Resources.LoadAll<CoctailRecipeSO>("Coctails");
 
@@ -60,7 +62,7 @@ public class DrinkProvider : MonoBehaviour
         return _drinkTable[rarity][UnityEngine.Random.Range(0, _drinkTable[rarity].Count)];
     }
 
-    public CoctailRecipeSO CheckCoctail(List<DrinkSO> stomach)
+    public CoctailRecipeSO CheckCocktail(List<DrinkSO> stomach)
     {
         foreach( var coctail in _coctailLibrary)
         {
@@ -73,7 +75,6 @@ public class DrinkProvider : MonoBehaviour
     }
     public CoctailRecipeSO[] GetAllRecipies()
     {
-        
         return _coctailLibrary.OrderBy(x => x.CoinCost).ThenBy(y => !SaveProvider.Instace.SaveData.RecipeIsUnlocked(y)).ToArray(); 
     }
 

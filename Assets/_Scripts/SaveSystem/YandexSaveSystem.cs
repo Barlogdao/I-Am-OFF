@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 using YG;
 
 public class YandexSaveSystem : ISaveSystem
@@ -12,6 +10,13 @@ public class YandexSaveSystem : ISaveSystem
 
     public void Save(SaveData data)
     {
-        
+        SavesYG savedata = YandexGame.savesData;
+
+        savedata.AlkodzillaUnlocked = data.AlkodzillaUnlocked;
+        savedata.SoberManUnlocked = data.SoberManUnlocked;
+        savedata.PlayerCoins = data.PlayerCoins;
+        savedata.MaxScore = data.MaxScore;
+        savedata.UnlockedRecipes = data.UnlockedRecipes;
+        YandexGame.SaveProgress();
     }
 }

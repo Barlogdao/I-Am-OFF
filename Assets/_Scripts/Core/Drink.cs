@@ -9,7 +9,7 @@ public class Drink : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
     private CircleCollider2D _circleCollider;
-    private LayerMask _mask;
+
     private Vector3 _localTransform;
     private DrinkSO _drinkData;
     private HumanPlayer _player;
@@ -31,7 +31,6 @@ public class Drink : MonoBehaviour
     
     public void Init(Game game)
     {
-        _mask = game.PlayerMask;
         _player = game.Player;
         _drinkData = DrinkChanged?.Invoke();
         _spriteRenderer.sprite = _drinkData.Image;

@@ -6,21 +6,20 @@ using DG.Tweening;
 
 public class HumanPlayer : MonoBehaviour
 {
+    [SerializeField] private Canvas _offCanvas;
+    [SerializeField] private SpriteRenderer _drinkVisual;
+    private Animator _animator;
 
     private int _drunkLevel;
     private int _score;
-    private List<DrinkSO> _stomach = new();
-    [SerializeField] private Canvas _offCanvas;
-    public int Score => _score;
     private int _StaminaLevel;
-    public SobrietyLevel Sobriety { get; private set; }
-    public CircleCollider2D PlayerCollider { get; private set; }
-    private Animator _animator;
-    [SerializeField]
-    private SpriteRenderer _drinkVisual;
+    private List<DrinkSO> _stomach = new();
     private int _drinkStrengtModifier;
     private int _secondStageLevel;
     private int _thirdStageLevel;
+    public int Score => _score;
+    public SobrietyLevel Sobriety { get; private set; }
+    public CircleCollider2D PlayerCollider { get; private set; }
     public bool PlayerIsOFF { get; private set; }
     public bool PlayerIsDrinking { get; private set; }
     public int DrunkStrikeCount { get; private set; }
@@ -75,22 +74,15 @@ public class HumanPlayer : MonoBehaviour
 
     private void CoctailCheck()
     {
-        var coctail = DrinkProvider.Instance.CheckCoctail(_stomach);
+        var coctail = DrinkProvider.Instance.CheckCocktail(_stomach);
         if (coctail != null)
         {
             _score += coctail.BonusScore;
             ScoreChanged?.Invoke(_score);
-            Game.Instance.GameTimer += coctail.BonusTime;
+            Game.Instance.AddBonusTime(coctail.BonusTime);
             CoctailDrinked?.Invoke(coctail);
             _stomach.Clear();
             StomachUpdated?.Invoke(_stomach);
-            // If Coctail Not Unlocked
-            //if (!SaveProvider.Instace.SaveData.RecipeIsUnlocked(coctail))
-            //{
-            //    SaveProvider.Instace.SaveData.UnlockRecipe(coctail);
-            //    CoctailUnlocked?.Invoke();
-            //}
-
         }
     }
 
@@ -192,7 +184,6 @@ public class HumanPlayer : MonoBehaviour
     }
     private void DrinkAnimation()
     {
-        
         _animator.Play("Drink");
     }
     private void DrunkAnimation()

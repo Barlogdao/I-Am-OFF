@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13ecc428c2119504d9ad6a5079fe5d9f, type: 3}
-  m_Name: Gundos
+  m_Name: SoberMan
   m_EditorClassIdentifier: 
-  Name: Gundos
-  Stamina: 110
-  SceondStageLevel: 25
-  ThirdStageLevel: 85
-  OFFTime: 4
-  Animator: {fileID: 22100000, guid: 9a940efda8852e4429fdce5fe5aaae0f, type: 2}
-  DrinkStrenghtModifier: 1
+  Name: SoberMan
+  Stamina: 120
+  SceondStageLevel: 20
+  ThirdStageLevel: 60
+  OFFTime: 2
+  Animator: {fileID: 22100000, guid: 47967c338c1ba5f46a5a7b714e19b5cc, type: 2}
+  DrinkStrenghtModifier: 4

@@ -35,13 +35,6 @@ namespace YG
             // Если после публикации игры изменить длину массива, то после обновления игры у пользователей сохранения могут поломаться
             // Если всё же необходимо увеличить длину массива, сдвиньте данное поле массива в самую нижнюю строку кода
         }
-        public SavesYG(SaveData data)
-        {
-            AlkodzillaUnlocked = data.AlkodzillaUnlocked;
-            SoberManUnlocked= data.SoberManUnlocked;
-            PlayerCoins = data.PlayerCoins;
-            MaxScore = data.MaxScore;
-            UnlockedRecipes= data.UnlockedRecipes;
-        }
+
     }
 }

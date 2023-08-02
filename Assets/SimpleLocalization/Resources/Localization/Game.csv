@@ -10,7 +10,7 @@ Menu.Exit,Exit,Выход,çıkış,Sortie,Ausfahrt
 Menu.Header,I AM OFF,Я ВСЁ!,BEN GİDİYORUM,Je suis parti,ICH BIN WEG
 Game.Score,Your Score:,Твой счет:,Puanın:,Ton score:,Ihr Ergebnis:
 Game.BestScore,Best Score: ,Лучший счет:,En iyi puan:,Meilleur score:,Bestes Ergebnis:
-Game.NewBestScore,New Best Score: ,Новый лучший счет:,Yeni En İyi Skor:,Nouveau meilleur score:,Neue beste Punktzahl:
+Game.NewBestScore,New Best Score: ,Новый лучший счет:,Yeni En İyi Puan:,Nouveau meilleur score:,Neue beste Punktzahl:
 Game.DrinkerUnlocked,New Drinker Unlocked!,Открыт новый выпивоха!,Yeni içen kilidi açıldı!,Nouveau buveur déverrouillé!,Neuer Trinker freigeschaltet!
 Cocktail.Bayles,Bayles,Бейлис,Baylar,Bayles,Bayles
 Cocktail.Bellini,Bellini,Беллини,Bellini,Bellini,Bellini
@@ -27,8 +27,8 @@ Cocktail.Redneck,Redneck,Селюк,Tiksinti,Redneck,Bauer
 Cocktail.RUFF,RUFF,Ёрш,Küstahlık,FRAISE,HALSKRAUSE
 Cocktail.Sangria,Sangria,Сангрия,Sangria,Sangria,Sangria
 Cocktail.Whiskey Cola,Whiskey Cola,Виски Кола,Viski kola,Whisky cola,Whisky Cola
-Cocktail.Points,Points,Очки,Puan,Points,Punkte
-Cocktail.Time,Time,Время,Zaman,Temps,Zeit
+Cocktail.Points,Bonus Points,Бонусные очки,Bonus puanlar,Points bonus,Bonuspunkte
+Cocktail.Time,Bonus Time,Бонусное Время,Bonus zamanı,Heure bonus,Bonuszeit
 Bob,Bob,Леха,Bob,Bob,Bob
 Gundos,Gundos,Гундос,Gundos,Gundos,Gundos
 SoberMan,SoberMan,Зожник,Ayı,Sobre,Nüchtern
