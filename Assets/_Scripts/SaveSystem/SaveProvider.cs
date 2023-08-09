@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,10 +16,13 @@ public class SaveProvider : MonoBehaviour
     {
         Instace = this;
         DontDestroyOnLoad(gameObject);
-        _saveSystem = new PlayerPrefSaveSystem();
+    }
+
+    public void Init()
+    {
+        _saveSystem = new YandexSaveSystem();
         SaveData = _saveSystem.Load();
         SceneManager.sceneLoaded += OnSceneLoadded;
-
     }
 
     private void OnSceneLoadded(Scene scene, LoadSceneMode arg1)

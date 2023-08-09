@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
 using Assets.SimpleLocalization.Scripts;
-
+using YG;
 public class EndGameWindow : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _gameScore;
@@ -77,6 +77,8 @@ public class EndGameWindow : MonoBehaviour
             saveProvider.SaveData.AlkodzillaUnlocked = true;
             ChampionUnlocked?.Invoke();
         }
+
+        YandexGame.NewLeaderboardScores( "DrinkLeaderBoard", oldScore < newScore? newScore:oldScore);
 
         _exitButton.gameObject.SetActive(true);
     }
