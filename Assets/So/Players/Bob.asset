@@ -18,4 +18,4 @@ MonoBehaviour:
   ThirdStageLevel: 80
   OFFTime: 4
   Animator: {fileID: 9100000, guid: 52a01be5e3c13724f8bd7db56a71952a, type: 2}
-  DrinkStrenghtModifier: 5
+  DrinkStrenghtModifier: 0

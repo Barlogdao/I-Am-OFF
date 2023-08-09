@@ -44,6 +44,7 @@ public class Game : MonoBehaviour
     public void AddBonusTime(int bonusTime)
     {
         _gameTimer += bonusTime;
+        TimerTicked?.Invoke(_gameTimer);
     }
 
     private void InitPlayer()

@@ -12,10 +12,10 @@ public class RecipeComboVisual : MonoBehaviour
     [SerializeField] Image _imagePref;
     [SerializeField] GameObject _lock;
     [SerializeField] Image _lockedImage;
-    private CoctailRecipeSO _coctail;
+    private CoctailRecipeSO _cocktail;
     public void Init(CoctailRecipeSO cocktail)
     {
-        _coctail = cocktail;
+        _cocktail = cocktail;
         _coctailImage.sprite = cocktail.Image;
         _coctailName.text = LocalizationManager.Localize($"Cocktail.{cocktail.Name}");
         _bonusScore.text = cocktail.BonusScore.ToString();
@@ -26,7 +26,7 @@ public class RecipeComboVisual : MonoBehaviour
             
         }
         _lock.SetActive(true);
-        for (int i = 0; i < _coctail.CoinCost; i++)
+        for (int i = 0; i < _cocktail.CoinCost; i++)
         {
             Instantiate(_lockedImage, _lock.transform);
         }
@@ -43,12 +43,12 @@ public class RecipeComboVisual : MonoBehaviour
 
     public void UnlockRecipe()
     {
-        if(!SaveProvider.Instace.SaveData.RecipeIsUnlocked(_coctail)
-            && SaveProvider.Instace.SaveData.PlayerCoins >= _coctail.CoinCost)
+        if(!SaveProvider.Instace.SaveData.RecipeIsUnlocked(_cocktail)
+            && SaveProvider.Instace.SaveData.PlayerCoins >= _cocktail.CoinCost)
         {
             _lock.SetActive(false);
-            SaveProvider.Instace.SaveData.UnlockRecipe(_coctail);
-            SaveProvider.Instace.SpendCoins(_coctail.CoinCost);
+            SaveProvider.Instace.SaveData.UnlockRecipe(_cocktail);
+            SaveProvider.Instace.SpendCoins(_cocktail.CoinCost);
         }
     }
 }

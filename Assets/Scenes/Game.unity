@@ -308,10 +308,10 @@ RectTransform:
   - {fileID: 60640403}
   m_Father: {fileID: 900165499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.045, y: 0}
-  m_AnchorMax: {x: 0.11375, y: 1}
-  m_AnchoredPosition: {x: 1, y: 0}
-  m_SizeDelta: {x: -1.0600014, y: 0}
+  m_AnchorMin: {x: 0.013422279, y: 0}
+  m_AnchorMax: {x: 0.08082532, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -0.060001373, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &92162138
 MonoBehaviour:
@@ -531,7 +531,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -559,6 +559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -668,7 +672,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -795,6 +799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -861,6 +869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -980,7 +992,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1018,6 +1030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1084,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1149,7 +1169,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1165,50 +1184,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1292,6 +1267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1346,88 +1325,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
   m_PrefabInstance: {fileID: 587041415}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &619394800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 619394802}
-  - component: {fileID: 619394801}
-  m_Layer: 0
-  m_Name: Global Light 2D
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &619394801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619394800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_LightType: 4
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_LightVolumeIntensity: 1
-  m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000a74cf4d10d4959e7133b3294
-  m_LightCookieSprite: {fileID: 0}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 0
-  m_ShadowIntensity: 0.75
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
---- !u!4 &619394802
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619394800}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &637224095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1440,6 +1337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1506,6 +1407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1567,6 +1472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1628,6 +1537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1723,7 +1636,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1886,6 +1799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1970,8 +1887,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.700012, y: -8}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: -12.700012, y: -6.971924}
+  m_SizeDelta: {x: 68, y: 70}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &758875921
 MonoBehaviour:
@@ -1986,7 +1903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8301887, g: 0.7773014, b: 0.70879316, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2419,6 +2336,7 @@ RectTransform:
   - {fileID: 1277147445}
   - {fileID: 1570701613}
   - {fileID: 758875920}
+  - {fileID: 1381508582}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2899,7 +2817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1130292852}
-  - component: {fileID: 1130292851}
+  - component: {fileID: 1130292853}
   m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
@@ -2907,14 +2825,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!331 &1130292851
+--- !u!224 &1130292852
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130292850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.79, y: 0.79, z: 0.79}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 717323700}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!331 &1130292853
 SpriteMask:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130292850}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2927,7 +2864,7 @@ SpriteMask:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15d0c3709176029428a0da2f8cecf0b5, type: 2}
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2948,8 +2885,8 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_MaskAlphaCutoff: 0.347
+  m_Sprite: {fileID: 21300000, guid: a665b79e1931ed4419d53a09a9189fe4, type: 3}
+  m_MaskAlphaCutoff: 0.39
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
   m_FrontSortingLayer: 0
@@ -2958,21 +2895,6 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
---- !u!4 &1130292852
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130292850}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.65, y: 18.65, z: 18.65}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 717323700}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135774197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,6 +3055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3199,6 +3125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3567,7 +3497,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1381508582}
   - component: {fileID: 1381508581}
-  - component: {fileID: 1381508580}
   - component: {fileID: 1381508579}
   - component: {fileID: 1381508578}
   m_Layer: 5
@@ -3610,29 +3539,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1381508580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381508577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 0.6
-  m_PresetInfoIsWorld: 0
 --- !u!223 &1381508581
 Canvas:
   m_ObjectHideFlags: 0
@@ -3663,20 +3569,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381508577}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.48112527, y: 0.48112527, z: 0.48112527}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1462451884}
   - {fileID: 1500691444}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 900165499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 461.88028, y: 259.80762}
+  m_SizeDelta: {x: 1920.0001, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1384775200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3862,7 +3768,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3903,7 +3809,7 @@ Transform:
   m_GameObject: {fileID: 1394795887}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.45, y: -4.33, z: 0}
+  m_LocalPosition: {x: -10.35, y: -4.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4055,6 +3961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4136,7 +4046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4235,7 +4145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -22.28003, y: -299.83997}
+  m_AnchoredPosition: {x: -117.99994, y: -251}
   m_SizeDelta: {x: -1308.41, y: -955.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1462640922
@@ -4250,6 +4160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4311,6 +4225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4398,7 +4316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.697}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11.099998, y: -25.699997}
+  m_AnchoredPosition: {x: 11.099976, y: -25.699997}
   m_SizeDelta: {x: -88.490005, y: -81.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485593838
@@ -4580,10 +4498,10 @@ RectTransform:
   - {fileID: 87928569}
   m_Father: {fileID: 1381508582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.42400002, y: 0.57214814}
-  m_AnchorMax: {x: 0.5836251, y: 0.6687037}
-  m_AnchoredPosition: {x: -0.88009644, y: -0.87490845}
-  m_SizeDelta: {x: -25.76, y: -8.25}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -84.99994, y: -61}
+  m_SizeDelta: {x: -1638.76, y: -984.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1546631473
 GameObject:
@@ -4637,7 +4555,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4712,6 +4630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5104,6 +5026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5311,9 +5237,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -190, y: -34.100006}
+  m_AnchoredPosition: {x: -337, y: -59.100006}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1723861760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5436,6 +5362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5570,6 +5500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5779,6 +5713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5916,6 +5854,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5977,6 +5919,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6186,6 +6132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6247,6 +6197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drink
       objectReference: {fileID: 0}
+    - target: {fileID: 6843661250954355400, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6492,10 +6446,6 @@ PrefabInstance:
       value: Drink
       objectReference: {fileID: 0}
     - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7335692300450115721, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -6654,11 +6604,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 619394802}
   - {fileID: 1877766047}
   - {fileID: 1553468858}
   - {fileID: 900165499}
-  - {fileID: 1381508582}
   - {fileID: 829981982}
   - {fileID: 1394795889}
   - {fileID: 784070333}

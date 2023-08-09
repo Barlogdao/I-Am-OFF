@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5de5fe9d361b4409a5ec310eb0526f, type: 3}
+  m_Name: CocktailSheet
+  m_EditorClassIdentifier: 
+  CocktailRecipes:
+  - {fileID: 11400000, guid: cf628b93af7ff9e4281c68bcf49cc333, type: 2}
+  - {fileID: 11400000, guid: d1651e9653a83334fbc2fbd31368dc6c, type: 2}
+  - {fileID: 11400000, guid: da36149792e1b2a4c8b45c366aa4301a, type: 2}
+  - {fileID: 11400000, guid: e63f8764b2c4d1648b4f9ce8227f7ed7, type: 2}
+  - {fileID: 11400000, guid: bc14dabbd052c2e4a9244d1c09ee605f, type: 2}
+  - {fileID: 11400000, guid: e993f570e20b51e45a6d7b4fe1d849b6, type: 2}
+  - {fileID: 11400000, guid: dceeabba1d5b1bb4eaaa80a99de7cd3c, type: 2}
+  - {fileID: 11400000, guid: 5ccc4f9a71f4cf449874f755f49c8868, type: 2}
+  - {fileID: 11400000, guid: acf3e0ad1bac918429f256347bc086d3, type: 2}
+  - {fileID: 11400000, guid: bde1bd8be09b30b4da8cf6ac19f9fec7, type: 2}
+  - {fileID: 11400000, guid: 053eed5947cc7c8499fe6a5f124d8856, type: 2}
+  - {fileID: 11400000, guid: 07495f08e7cf1fb488401790e2c990cd, type: 2}
+  - {fileID: 11400000, guid: 3a0b700c1f8980245b044de70cc329a1, type: 2}
+  - {fileID: 11400000, guid: af33e228bc11eb4469deebfd4dec0d8b, type: 2}
+  - {fileID: 11400000, guid: 93b21e743ec601b449800229c6db129e, type: 2}

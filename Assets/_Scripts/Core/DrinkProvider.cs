@@ -5,10 +5,12 @@ using UnityEngine;
 public class DrinkProvider : MonoBehaviour
 {
     [SerializeField] private GameConfig _gameConfig;
+    [SerializeField] DrinkSheet _drinkSheet;
+    [SerializeField] CocktailSheet _cocktailSheet;
     public static DrinkProvider Instance { get; private set; } 
 
     private Dictionary<DrinkRarity, List<DrinkSO>> _drinkTable = new();
-    private CoctailRecipeSO[] _coctailLibrary;
+    private CoctailRecipeSO[] _cocktailLibrary;
 
     private int _uncommonDrinkChance;
     private int _rareDrinkChance;
@@ -26,9 +28,9 @@ public class DrinkProvider : MonoBehaviour
         _rareDrinkChance = _gameConfig.RareDrinkAppearanceChance;
 
         Drink.DrinkChanged += OnDrinkChanged;
-        _coctailLibrary = Resources.LoadAll<CoctailRecipeSO>("Coctails");
+        _cocktailLibrary = _cocktailSheet.CocktailRecipes;
 
-        foreach (DrinkSO drink in Resources.LoadAll<DrinkSO>("Drinks"))
+        foreach (DrinkSO drink in _drinkSheet.Drinks)
         {
             if (!_drinkTable.ContainsKey(drink.Rarity))
             {
@@ -64,7 +66,7 @@ public class DrinkProvider : MonoBehaviour
 
     public CoctailRecipeSO CheckCocktail(List<DrinkSO> stomach)
     {
-        foreach( var coctail in _coctailLibrary)
+        foreach( var coctail in _cocktailLibrary)
         {
             if (coctail.StomachHasRecipe(stomach))
             {
@@ -75,7 +77,7 @@ public class DrinkProvider : MonoBehaviour
     }
     public CoctailRecipeSO[] GetAllRecipies()
     {
-        return _coctailLibrary.OrderBy(x => x.CoinCost).ThenBy(y => !SaveProvider.Instace.SaveData.RecipeIsUnlocked(y)).ToArray(); 
+        return _cocktailLibrary.OrderBy(x => x.CoinCost).ThenBy(y => !SaveProvider.Instace.SaveData.RecipeIsUnlocked(y)).ToArray(); 
     }
 
     private void OnDestroy()

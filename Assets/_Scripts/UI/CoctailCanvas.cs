@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using Assets.SimpleLocalization.Scripts;
 
 public class CoctailCanvas : MonoBehaviour
 {
@@ -18,17 +19,17 @@ public class CoctailCanvas : MonoBehaviour
 
     private void OnEnable()
     {
-        HumanPlayer.CoctailDrinked += OnCoctailDrinked;
+        HumanPlayer.CoctailDrinked += OnCocktailDrinked;
     }
 
-    private void OnCoctailDrinked(CoctailRecipeSO coctail)
+    private void OnCocktailDrinked(CoctailRecipeSO cocktail)
     {
         _coctailImage.enabled = true;
         _score.enabled = true;
         _coctailName.enabled = true;
-        _coctailImage.sprite = coctail.Image;
-        _score.text = $"+{coctail.BonusScore}";
-        _coctailName.text = coctail.Name;
+        _coctailImage.sprite = cocktail.Image;
+        _score.text = $"+{cocktail.BonusScore}";
+        _coctailName.text = LocalizationManager.Localize($"Cocktail.{cocktail.Name}");
         _score.transform.DOScale(1.2f, _showDuration).SetEase(Ease.OutSine).OnComplete(() =>
         {
             _score.transform.localScale = Vector3.one;
@@ -47,6 +48,6 @@ public class CoctailCanvas : MonoBehaviour
 
     private void OnDisable()
     {
-        HumanPlayer.CoctailDrinked -= OnCoctailDrinked;
+        HumanPlayer.CoctailDrinked -= OnCocktailDrinked;
     }
 }

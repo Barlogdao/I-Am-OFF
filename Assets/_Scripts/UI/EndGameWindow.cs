@@ -77,8 +77,10 @@ public class EndGameWindow : MonoBehaviour
             saveProvider.SaveData.AlkodzillaUnlocked = true;
             ChampionUnlocked?.Invoke();
         }
-
-        YandexGame.NewLeaderboardScores( "DrinkLeaderBoard", oldScore < newScore? newScore:oldScore);
+        if(oldScore < newScore && oldScore != 0)
+        {
+            YandexGame.NewLeaderboardScores("DrinkLeaderBoard", newScore);
+        }
 
         _exitButton.gameObject.SetActive(true);
     }
