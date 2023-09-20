@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a5daab98a38ef449dc8a4e92c22313, type: 3}
+  m_Name: BackgroundSheet
+  m_EditorClassIdentifier: 
+  Backgrounds:
+  - {fileID: 11400000, guid: 80715351a3bf02e4daeb83166b519bb0, type: 2}
+  - {fileID: 11400000, guid: 8f6fa3072d0e3144d87f236967c9ec06, type: 2}
+  - {fileID: 11400000, guid: 88831213780ac534eb93134f3903decc, type: 2}
+  - {fileID: 11400000, guid: bd5552ee2b030f54295e2d78e5e0100d, type: 2}
+  - {fileID: 11400000, guid: 8ffce93083417a24b9f30f1f9247e4ea, type: 2}
+  - {fileID: 11400000, guid: 22f117125a5b4a54084bf5f9b5ca3ba0, type: 2}
+  - {fileID: 11400000, guid: 5781370e43be34a4e99d7169e4708a9f, type: 2}
+  - {fileID: 11400000, guid: 010e62d11bbc26a4cbba02fbae1fb36b, type: 2}
+  - {fileID: 11400000, guid: 9e47356f9405cac45bd4806985cc7e42, type: 2}
+  - {fileID: 11400000, guid: 70add6754e731934a893bf8f0a192784, type: 2}

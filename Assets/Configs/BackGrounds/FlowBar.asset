@@ -15,4 +15,4 @@ MonoBehaviour:
   <ID>k__BackingField: 9
   <Image>k__BackingField: {fileID: 21300000, guid: 5548745656984104b943dbdfdf971c04, type: 3}
   <EarnType>k__BackingField: 1
-  <Cost>k__BackingField: 1
+  <CoinCost>k__BackingField: 1

@@ -17,6 +17,8 @@ public class YandexSaveSystem : ISaveSystem
         savedata.PlayerCoins = data.PlayerCoins;
         savedata.MaxScore = data.MaxScore;
         savedata.UnlockedRecipes = data.UnlockedRecipes;
+        savedata.UnlockedBackgrounds = data.UnlockedBackgrounds;
+        savedata.CurrentBackgroundID = data.CurrentBackGroundID;
         YandexGame.SaveProgress();
     }
 }

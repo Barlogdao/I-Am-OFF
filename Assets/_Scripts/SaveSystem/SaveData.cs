@@ -8,9 +8,9 @@ public class SaveData
     public bool SoberManUnlocked;
     public int PlayerCoins;
     public int MaxScore;
-
-    
     public string UnlockedRecipes = "Mega Beer";
+    public List<int> UnlockedBackgrounds = new() { 0 };
+    public int CurrentBackGroundID = 0;
 
     public SaveData()
     {
@@ -27,8 +27,9 @@ public class SaveData
         SoberManUnlocked= data.SoberManUnlocked;
         PlayerCoins = data.PlayerCoins;
         MaxScore = data.MaxScore;
-        UnlockedRecipes += data.UnlockedRecipes;
-
+        UnlockedRecipes = data.UnlockedRecipes;
+        UnlockedBackgrounds = data.UnlockedBackgrounds;
+        CurrentBackGroundID = data.CurrentBackgroundID;
     }
 
     public bool RecipeIsUnlocked(CoctailRecipeSO recipe)
@@ -36,8 +37,18 @@ public class SaveData
         return UnlockedRecipes.Contains(recipe.Name);
     }
 
+    public bool IsBackroundUnlocked(int backgroundID)
+    {
+        return UnlockedBackgrounds.Contains(backgroundID);
+    }
+
     public void UnlockRecipe(CoctailRecipeSO recipe)
     {
         UnlockedRecipes += $",{recipe.Name}";
+    }
+
+    public void UnlockBackground(int backgroundID)
+    {
+        UnlockedBackgrounds.Add(backgroundID);
     }
 }

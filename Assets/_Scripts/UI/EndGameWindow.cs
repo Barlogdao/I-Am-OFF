@@ -13,7 +13,7 @@ public class EndGameWindow : MonoBehaviour
     [SerializeField] private Button _exitButton;
     [SerializeField] private TextMeshProUGUI _coinAmountText;
 
-    
+
     public static event Action ChampionUnlocked;
     private void Awake()
     {
@@ -31,9 +31,9 @@ public class EndGameWindow : MonoBehaviour
     private void OnGameOvered()
     {
         gameObject.SetActive(true);
-        
+
         StartCoroutine(GameEndProcess());
-        
+
     }
     private void OnDestroy()
     {
@@ -67,17 +67,17 @@ public class EndGameWindow : MonoBehaviour
             _bestScore.text = $"{LocalizationManager.Localize("Game.BestScore")}{oldScore}";
         }
 
-        if(!saveProvider.SaveData.SoberManUnlocked && newScore <= 0)
+        if (!saveProvider.SaveData.SoberManUnlocked && newScore <= 0)
         {
             saveProvider.SaveData.SoberManUnlocked = true;
             ChampionUnlocked?.Invoke();
         }
-        if(!saveProvider.SaveData.AlkodzillaUnlocked && coinsEarned >= 4)
+        if (!saveProvider.SaveData.AlkodzillaUnlocked && coinsEarned >= 4)
         {
             saveProvider.SaveData.AlkodzillaUnlocked = true;
             ChampionUnlocked?.Invoke();
         }
-        if(oldScore < newScore && oldScore != 0)
+        if (oldScore < newScore && oldScore != 0)
         {
             YandexGame.NewLeaderboardScores("DrinkLeaderBoard", newScore);
         }
