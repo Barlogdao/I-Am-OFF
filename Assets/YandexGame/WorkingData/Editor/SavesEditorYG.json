@@ -1,11 +1,11 @@
 {
-    "idSave": 9,
+    "idSave": 37,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
     "AlkodzillaUnlocked": false,
     "SoberManUnlocked": false,
-    "PlayerCoins": 1,
+    "PlayerCoins": 4,
     "MaxScore": 1235,
     "UnlockedRecipes": [
         0,
@@ -13,7 +13,8 @@
     ],
     "UnlockedBackgrounds": [
         0,
-        2
+        2,
+        6
     ],
-    "CurrentBackgroundID": 2
+    "CurrentBackgroundID": 6
 }

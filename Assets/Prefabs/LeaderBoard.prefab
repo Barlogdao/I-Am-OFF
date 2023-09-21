@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 6895850703800868392}
   - component: {fileID: 5617650573528236285}
   m_Layer: 5
-  m_Name: Advanced LB Example
+  m_Name: LeaderBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
