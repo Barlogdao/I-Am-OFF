@@ -10,15 +10,20 @@ public class YandexSaveSystem : ISaveSystem
 
     public void Save(SaveData data)
     {
-        SavesYG savedata = YandexGame.savesData;
+        SavesYG saveData = YandexGame.savesData;
 
-        savedata.AlkodzillaUnlocked = data.AlkodzillaUnlocked;
-        savedata.SoberManUnlocked = data.SoberManUnlocked;
-        savedata.PlayerCoins = data.PlayerCoins;
-        savedata.MaxScore = data.MaxScore;
-        savedata.UnlockedRecipes = data.UnlockedRecipes;
-        savedata.UnlockedBackgrounds = data.UnlockedBackgrounds;
-        savedata.CurrentBackgroundID = data.CurrentBackGroundID;
+        saveData.AlkodzillaUnlocked = data.AlkodzillaUnlocked;
+        saveData.SoberManUnlocked = data.SoberManUnlocked;
+        saveData.PlayerCoins = data.PlayerCoins;
+        saveData.MaxScore = data.MaxScore;
+        saveData.UnlockedRecipes = data.UnlockedRecipes;
+        saveData.UnlockedBackgrounds = data.UnlockedBackgrounds;
+        saveData.CurrentBackgroundID = data.CurrentBackGroundID;
         YandexGame.SaveProgress();
+    }
+
+    public void Reset()
+    {
+        YandexGame.ResetSaveProgress();
     }
 }

@@ -22,7 +22,7 @@ public class CoctailCanvas : MonoBehaviour
         HumanPlayer.CoctailDrinked += OnCocktailDrinked;
     }
 
-    private void OnCocktailDrinked(CoctailRecipeSO cocktail)
+    private void OnCocktailDrinked(CocktailRecipeSO cocktail)
     {
         _coctailImage.enabled = true;
         _score.enabled = true;

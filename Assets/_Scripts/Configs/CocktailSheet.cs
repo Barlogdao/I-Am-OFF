@@ -2,5 +2,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CocktailSheet", menuName = "_drinkData/CocktailSheet")]
 public class CocktailSheet : ScriptableObject
 {
-    public CoctailRecipeSO[] CocktailRecipes;
+    public CocktailRecipeSO[] CocktailRecipes;
 }

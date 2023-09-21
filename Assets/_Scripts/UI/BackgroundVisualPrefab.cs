@@ -16,7 +16,7 @@ public class BackgroundVisualPrefab : MonoBehaviour, IPointerClickHandler
         _background = background;
         _backgroundImage.sprite = _background.Image;
 
-        if (_data.IsBackroundUnlocked(_background.ID))
+        if (_data.IsBackgroundUnlocked(_background.ID))
         {
             HideLock();
         }
@@ -58,7 +58,7 @@ public class BackgroundVisualPrefab : MonoBehaviour, IPointerClickHandler
 
     public void TryUnlockElement()
     {
-        if (_data.IsBackroundUnlocked(_background.ID))
+        if (_data.IsBackgroundUnlocked(_background.ID))
             return;
 
         switch (_background.EarnType)

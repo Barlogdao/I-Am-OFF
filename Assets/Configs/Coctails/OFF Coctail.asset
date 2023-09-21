@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacbec8bfc823a64f80388e6a0156fcd, type: 3}
   m_Name: OFF Coctail
   m_EditorClassIdentifier: 
+  <ID>k__BackingField: 10
+  <EarnType>k__BackingField: 1
   Image: {fileID: -1370255100, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: OFF COCTAIL
-  Description: 
   Recipe:
   - {fileID: 11400000, guid: 9041b576fc1563b4799d5efceb7dcd1a, type: 2}
   - {fileID: 11400000, guid: 151972ea8463e164dac60ed3fe0105b2, type: 2}

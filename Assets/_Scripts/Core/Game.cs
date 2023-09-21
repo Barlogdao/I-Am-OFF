@@ -90,10 +90,7 @@ public class Game : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
-
 }
-
-
 
 public enum GameState
 {

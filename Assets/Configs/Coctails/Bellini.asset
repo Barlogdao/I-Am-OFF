@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacbec8bfc823a64f80388e6a0156fcd, type: 3}
   m_Name: Bellini
   m_EditorClassIdentifier: 
+  <ID>k__BackingField: 2
+  <EarnType>k__BackingField: 1
   Image: {fileID: -746833577, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Bellini
-  Description: 
   Recipe:
   - {fileID: 11400000, guid: 8647adef6e30a964a92c78828db7c002, type: 2}
   - {fileID: 11400000, guid: 1170e7822e6ab874881fc61ad73b6a50, type: 2}
   BonusScore: 400
   BonusTime: 5
+  CoinCost: 1

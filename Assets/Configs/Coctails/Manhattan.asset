@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacbec8bfc823a64f80388e6a0156fcd, type: 3}
   m_Name: Manhattan
   m_EditorClassIdentifier: 
+  <ID>k__BackingField: 7
+  <EarnType>k__BackingField: 1
   Image: {fileID: -683009126, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Manhattan
-  Description: 
   Recipe:
   - {fileID: 11400000, guid: 151972ea8463e164dac60ed3fe0105b2, type: 2}
   - {fileID: 11400000, guid: c9a9ee204b3c66246b17d7324a283e4e, type: 2}
   - {fileID: 11400000, guid: c9a9ee204b3c66246b17d7324a283e4e, type: 2}
   BonusScore: 500
   BonusTime: 8
+  CoinCost: 1

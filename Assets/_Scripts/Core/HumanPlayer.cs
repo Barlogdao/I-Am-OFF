@@ -29,7 +29,7 @@ public class HumanPlayer : MonoBehaviour
     public static event Action<bool> PlayerMindChanged;
     public static event Action<SobrietyLevel> SobrietyChanged;
     public static event Action<List<DrinkSO>> StomachUpdated;
-    public static event Action<CoctailRecipeSO> CoctailDrinked;
+    public static event Action<CocktailRecipeSO> CoctailDrinked;
     public static event Action PlayerDrinked;
     private void Awake()
     {
@@ -72,15 +72,15 @@ public class HumanPlayer : MonoBehaviour
         
     }
 
-    private void CoctailCheck()
+    private void CocktailCheck()
     {
-        var coctail = DrinkProvider.Instance.CheckCocktail(_stomach);
-        if (coctail != null)
+        var cocktail = DrinkProvider.Instance.CheckCocktail(_stomach);
+        if (cocktail != null)
         {
-            _score += coctail.BonusScore;
+            _score += cocktail.BonusScore;
             ScoreChanged?.Invoke(_score);
-            Game.Instance.AddBonusTime(coctail.BonusTime);
-            CoctailDrinked?.Invoke(coctail);
+            Game.Instance.AddBonusTime(cocktail.BonusTime);
+            CoctailDrinked?.Invoke(cocktail);
             _stomach.Clear();
             StomachUpdated?.Invoke(_stomach);
         }
@@ -120,7 +120,7 @@ public class HumanPlayer : MonoBehaviour
         PlayerIsDrinking = true;
         yield return new WaitForSeconds(0.3f);
         PlayerIsDrinking = false;
-        CoctailCheck();
+        CocktailCheck();
         if (_drunkLevel >= _StaminaLevel)
         {
             _offCanvas.gameObject.SetActive(true);

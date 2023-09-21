@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacbec8bfc823a64f80388e6a0156fcd, type: 3}
   m_Name: Whiskey Cola
   m_EditorClassIdentifier: 
+  <ID>k__BackingField: 14
+  <EarnType>k__BackingField: 1
   Image: {fileID: -676721343, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Whiskey Cola
-  Description: 
   Recipe:
   - {fileID: 11400000, guid: 06a72e495ea544a4fbd8b83ca94d6cc1, type: 2}
   - {fileID: 11400000, guid: 4481b3f0ec3da9340a352cab6db1d6f5, type: 2}
   BonusScore: 250
   BonusTime: 3
+  CoinCost: 1

@@ -6,9 +6,9 @@ public class RecipeMenu : MonoBehaviour
 
     private void Start()
     {
-        foreach(var coctail in DrinkProvider.Instance.GetAllRecipies())
+        foreach(var cocktail in DrinkProvider.Instance.GetAllRecipies())
         {
-            Instantiate(_recipeComboPrefab, transform).Init(coctail);
+            Instantiate(_recipeComboPrefab, transform).Init(cocktail);
         }
     }
 

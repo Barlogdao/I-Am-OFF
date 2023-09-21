@@ -149,7 +149,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4087315646664637611}
         m_TargetAssemblyTypeName: RecipeComboVisual, Assembly-CSharp
-        m_MethodName: UnlockRecipe
+        m_MethodName: TryUnlockRecipe
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -984,7 +984,7 @@ MonoBehaviour:
   _comboblock: {fileID: 2233046187432989320}
   _imagePref: {fileID: 7373533868521233605, guid: 889464a4b73f8fe4da3d527c7eebf77e, type: 3}
   _lock: {fileID: 852255685781702265}
-  _lockedImage: {fileID: 5253088912825816516, guid: bcc88b8f9f23423439e6466496db545e, type: 3}
+  _coinPrefab: {fileID: 5253088912825816516, guid: bcc88b8f9f23423439e6466496db545e, type: 3}
 --- !u!1 &5769297668465103195
 GameObject:
   m_ObjectHideFlags: 0

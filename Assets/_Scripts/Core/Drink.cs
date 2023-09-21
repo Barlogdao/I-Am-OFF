@@ -38,13 +38,13 @@ public class Drink : MonoBehaviour
         _spriteRenderer.enabled = true;
         HumanPlayer.PlayerMindChanged += OnPlayerOFF;
         Game.GameOvered += OnGameOver;
-        Game.GameStarted += OnGameStartedl;
+        Game.GameStarted += OnGameStarted;
         HumanPlayer.SobrietyChanged += OnSobrietyChanged;
         _spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
         _questionLabel.enabled = false;
     }
 
-    private void OnGameStartedl()
+    private void OnGameStarted()
     {
         StartCoroutine(DrinkUpdate());
     }
@@ -114,7 +114,7 @@ public class Drink : MonoBehaviour
         Game.GameOvered -= OnGameOver;
         HumanPlayer.PlayerMindChanged -= OnPlayerOFF;
         HumanPlayer.SobrietyChanged -= OnSobrietyChanged;
-        Game.GameStarted -= OnGameStartedl;
+        Game.GameStarted -= OnGameStarted;
     }
     private IEnumerator DestroyDrink()
     {

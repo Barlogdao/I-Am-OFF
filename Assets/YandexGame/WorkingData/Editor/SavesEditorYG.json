@@ -1,18 +1,19 @@
 {
-    "idSave": 94,
+    "idSave": 9,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
     "AlkodzillaUnlocked": false,
     "SoberManUnlocked": false,
-    "PlayerCoins": 0,
-    "MaxScore": 785,
-    "UnlockedRecipes": "Mega BeerMega BeerMega BeerMega BeerMega BeerMega BeerMega BeerMega BeerMega BeerMega BeerMega BeerMega BeerMega BeerMega Beer,Bayles",
+    "PlayerCoins": 1,
+    "MaxScore": 1235,
+    "UnlockedRecipes": [
+        0,
+        2
+    ],
     "UnlockedBackgrounds": [
         0,
-        1,
-        3,
-        5
+        2
     ],
-    "CurrentBackgroundID": 5
+    "CurrentBackgroundID": 2
 }

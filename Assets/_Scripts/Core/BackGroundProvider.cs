@@ -18,8 +18,7 @@ public class BackGroundProvider : MonoBehaviour
     public BackgroundSO[] GetAllBackgrounds()
     {
         return _backgroundSheet.Backgrounds
-            .OrderBy(x => x.CoinCost)
-            .ThenBy(y => !SaveProvider.Instace.SaveData.IsBackroundUnlocked(y.ID))
+            .OrderBy(x => x.ID)
             .ToArray();
     }
 

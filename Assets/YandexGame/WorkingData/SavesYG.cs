@@ -18,7 +18,7 @@ namespace YG
         public bool SoberManUnlocked = false;
         public int PlayerCoins = 0;
         public int MaxScore = 0;
-        public string UnlockedRecipes = "Mega Beer";
+        public List<int> UnlockedRecipes = new List<int>() { 0 };
         public List<int> UnlockedBackgrounds = new List<int>() { 0 };
         public int CurrentBackgroundID = 0;
 

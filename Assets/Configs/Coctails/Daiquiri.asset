@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacbec8bfc823a64f80388e6a0156fcd, type: 3}
   m_Name: Daiquiri
   m_EditorClassIdentifier: 
+  <ID>k__BackingField: 5
+  <EarnType>k__BackingField: 1
   Image: {fileID: 163675951, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Daiquiri
-  Description: 
   Recipe:
   - {fileID: 11400000, guid: 151972ea8463e164dac60ed3fe0105b2, type: 2}
   - {fileID: 11400000, guid: 1170e7822e6ab874881fc61ad73b6a50, type: 2}
   - {fileID: 11400000, guid: 8787708574a7a3a4485497b6ef75a042, type: 2}
   BonusScore: 600
   BonusTime: 10
+  CoinCost: 1

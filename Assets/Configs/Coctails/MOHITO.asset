@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacbec8bfc823a64f80388e6a0156fcd, type: 3}
   m_Name: MOHITO
   m_EditorClassIdentifier: 
+  <ID>k__BackingField: 9
+  <EarnType>k__BackingField: 1
   Image: {fileID: -1194072489, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: MOHITO
-  Description: 
   Recipe:
   - {fileID: 11400000, guid: 20aec1359247d1544b4c15c77861d7f9, type: 2}
   - {fileID: 11400000, guid: 24f4aad0afe064d488f92cc60a77c242, type: 2}
   BonusScore: 150
   BonusTime: 3
+  CoinCost: 1

@@ -7,10 +7,9 @@ public class DrinkProvider : MonoBehaviour
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] DrinkSheet _drinkSheet;
     [SerializeField] CocktailSheet _cocktailSheet;
-    public static DrinkProvider Instance { get; private set; } 
+    public static DrinkProvider Instance { get; private set; }
 
     private Dictionary<DrinkRarity, List<DrinkSO>> _drinkTable = new();
-    private CoctailRecipeSO[] _cocktailLibrary;
 
     private int _uncommonDrinkChance;
     private int _rareDrinkChance;
@@ -28,8 +27,7 @@ public class DrinkProvider : MonoBehaviour
         _rareDrinkChance = _gameConfig.RareDrinkAppearanceChance;
 
         Drink.DrinkChanged += OnDrinkChanged;
-        _cocktailLibrary = _cocktailSheet.CocktailRecipes;
-
+   
         foreach (DrinkSO drink in _drinkSheet.Drinks)
         {
             if (!_drinkTable.ContainsKey(drink.Rarity))
@@ -42,12 +40,12 @@ public class DrinkProvider : MonoBehaviour
 
     private DrinkSO OnDrinkChanged()
     {
-      
+
         int chance = UnityEngine.Random.Range(0, 100);
-        if(chance <= _rareDrinkChance)
+        if (chance <= _rareDrinkChance)
         {
             return GetDrink(DrinkRarity.Rare);
-            
+
         }
         else if (chance <= _uncommonDrinkChance)
         {
@@ -64,20 +62,23 @@ public class DrinkProvider : MonoBehaviour
         return _drinkTable[rarity][UnityEngine.Random.Range(0, _drinkTable[rarity].Count)];
     }
 
-    public CoctailRecipeSO CheckCocktail(List<DrinkSO> stomach)
+    public CocktailRecipeSO CheckCocktail(List<DrinkSO> stomach)
     {
-        foreach( var coctail in _cocktailLibrary)
+        foreach (var cocktail in _cocktailSheet.CocktailRecipes)
         {
-            if (coctail.StomachHasRecipe(stomach))
+            if (cocktail.StomachHasRecipe(stomach) && SaveProvider.Instace.SaveData.IsRecipeUnlocked(cocktail.ID))
             {
-                return coctail;
+                return cocktail;
             }
         }
+
         return null;
     }
-    public CoctailRecipeSO[] GetAllRecipies()
+    public CocktailRecipeSO[] GetAllRecipies()
     {
-        return _cocktailLibrary.OrderBy(x => x.CoinCost).ThenBy(y => !SaveProvider.Instace.SaveData.RecipeIsUnlocked(y)).ToArray(); 
+        return _cocktailSheet.CocktailRecipes
+            .OrderBy(x => x.ID)
+            .ToArray();
     }
 
     private void OnDestroy()

@@ -53,7 +53,7 @@ public class AudioProvider : MonoBehaviour
         _audioService.PlaySound(GetRandomSound(_drinkSounds));
     }
 
-    private void OnCoctailDrinked(CoctailRecipeSO coctail)
+    private void OnCoctailDrinked(CocktailRecipeSO coctail)
     {
         _audioService.PlaySound(_coctalSound);
     }
