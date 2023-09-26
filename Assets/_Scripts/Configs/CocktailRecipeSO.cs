@@ -10,8 +10,7 @@ public class CocktailRecipeSO : CollectibleSO
     public List<DrinkSO> Recipe;
     public int BonusScore;
     public int BonusTime;
-    public int CoinCost = 1;
-
+    
     public bool StomachHasRecipe(List<DrinkSO> stomach)
     {
         if (Recipe.Count != stomach.Count)

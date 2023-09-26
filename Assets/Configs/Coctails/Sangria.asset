@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 13
   <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 5
   Image: {fileID: -2045687486, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Sangria
   Recipe:
@@ -22,4 +23,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 54d1fcb728e3ec346b7e309915f295da, type: 2}
   BonusScore: 400
   BonusTime: 5
-  CoinCost: 3

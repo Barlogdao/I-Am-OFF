@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using Assets.SimpleLocalization.Scripts;
 
-public class RecipeComboVisual : MonoBehaviour
+public class RecipeComboVisual : UnlockablePrefab
 {
 
     [SerializeField] private Image _coctailImage;
@@ -11,7 +11,7 @@ public class RecipeComboVisual : MonoBehaviour
     [SerializeField] private Transform _comboblock;
     [SerializeField] Image _imagePref;
     [SerializeField] GameObject _lock;
-    [SerializeField] Image _coinPrefab;
+    [SerializeField] private UnlockConditionVisual _unlockConditionVisual;
     private CocktailRecipeSO _cocktail;
     private SaveData _data;
 
@@ -48,25 +48,14 @@ public class RecipeComboVisual : MonoBehaviour
     private void ShowLock()
     {
         _lock.SetActive(true);
-
-        switch (_cocktail.EarnType)
+        if (_cocktail.EarnType == EarnType.Basic)
         {
-            case EarnType.Basic:
-                _lock.SetActive(false);
-                _data.UnlockBackground(_cocktail.ID);
-                break;
-
-            case EarnType.Purchase:
-                for (int i = 0; i < _cocktail.CoinCost; i++)
-                {
-                    Instantiate(_coinPrefab, _lock.transform);
-                }
-                break;
-
-            case EarnType.Reward:
-                break;
-            case EarnType.Trigger:
-                break;
+            _lock.SetActive(false);
+            _data.UnlockBackground(_cocktail.ID);
+        }
+        else
+        {
+            Instantiate(_unlockConditionVisual, _lock.transform).Initialize(_cocktail);
         }
     }
 
@@ -82,6 +71,7 @@ public class RecipeComboVisual : MonoBehaviour
                 {
                     SaveProvider.Instace.SpendCoins(_cocktail.CoinCost);
                     _data.UnlockRecipe(_cocktail.ID);
+                    RaisePurchaseEvent();
                     HideLock();
                 }
                 break;

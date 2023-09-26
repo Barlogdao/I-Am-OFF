@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bar2
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 2
-  <Image>k__BackingField: {fileID: 21300000, guid: 552da53ad724ad44aa5812205c4e5eeb, type: 3}
   <EarnType>k__BackingField: 1
-  <CoinCost>k__BackingField: 1
+  <CoinCost>k__BackingField: 3
+  <Image>k__BackingField: {fileID: 21300000, guid: 552da53ad724ad44aa5812205c4e5eeb, type: 3}

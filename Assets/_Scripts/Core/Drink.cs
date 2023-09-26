@@ -16,12 +16,13 @@ public class Drink : MonoBehaviour
     [SerializeField] SpriteRenderer _questionLabel;
     private bool _drinkIsTaken = false;
     private Tweener _tweener;
-
+    private Transform _transform;
 
     public static event Func<DrinkSO> DrinkChanged;
 
     private void Awake()
     {
+        _transform = transform;
         _circleCollider = GetComponent<CircleCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _circleCollider.enabled = false;
@@ -66,13 +67,13 @@ public class Drink : MonoBehaviour
 
     private void OnMouseDown()
     {
-        _localTransform = transform.localPosition;
+        _localTransform = _transform.localPosition;
         _drinkIsTaken = true;
 
     }
     private void OnMouseDrag()
     {
-        transform.position = GetMousePos();
+        _transform.position = GetMousePos();
     }
 
     private void OnMouseUp()
@@ -85,13 +86,13 @@ public class Drink : MonoBehaviour
         }
         else
         {
-            transform.localPosition = _localTransform;
+            _transform.localPosition = _localTransform;
         }
         _drinkIsTaken = false;
     }
     private void LateUpdate()
     {
-        transform.rotation = Quaternion.identity; 
+        _transform.rotation = Quaternion.identity; 
     }
     private void OnGameOver()
     {
@@ -119,7 +120,7 @@ public class Drink : MonoBehaviour
     private IEnumerator DestroyDrink()
     {
         // Напито обнуляется и становится недоступен
-        transform.localPosition = _localTransform;
+        _transform.localPosition = _localTransform;
         _circleCollider.enabled = false;
         _spriteRenderer.enabled = false;
         _questionLabel.enabled = false;
@@ -128,8 +129,8 @@ public class Drink : MonoBehaviour
         // обновляется СО
         _drinkData = DrinkChanged?.Invoke();
         // появляется новый Дринк
-        transform.localScale = Vector3.zero;
-        transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
+        _transform.localScale = Vector3.zero;
+        _transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
         _circleCollider.enabled = !_player.PlayerIsOFF;
         _spriteRenderer.enabled = true;
         DrinkVisibility(_player.Sobriety);
@@ -145,8 +146,8 @@ public class Drink : MonoBehaviour
             {
                 _drinkData = DrinkChanged?.Invoke();
                 _spriteRenderer.sprite = _drinkData.Image;
-                transform.localScale = Vector3.zero;
-                transform.DOScale(1f, 0.2f).SetEase(Ease.OutBack);
+                _transform.localScale = Vector3.zero;
+                _transform.DOScale(1f, 0.2f).SetEase(Ease.OutBack);
 
             }
             yield return new WaitForSeconds(UnityEngine.Random.Range(3f,5f));
@@ -176,13 +177,13 @@ public class Drink : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _tweener = transform.DOScale(1.15f, 0.2f).SetLoops(-1, LoopType.Yoyo);
+        _tweener = _transform.DOScale(1.15f, 0.2f).SetLoops(-1, LoopType.Yoyo);
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         _tweener.Kill();
-        transform.localScale = Vector3.one;
+        _transform.localScale = Vector3.one;
     }
 }
    

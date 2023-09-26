@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 9
   <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 3
   Image: {fileID: -1194072489, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: MOHITO
   Recipe:
@@ -21,4 +22,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 24f4aad0afe064d488f92cc60a77c242, type: 2}
   BonusScore: 150
   BonusTime: 3
-  CoinCost: 1

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 14
   <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 1
   Image: {fileID: -676721343, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Whiskey Cola
   Recipe:
@@ -21,4 +22,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4481b3f0ec3da9340a352cab6db1d6f5, type: 2}
   BonusScore: 250
   BonusTime: 3
-  CoinCost: 1

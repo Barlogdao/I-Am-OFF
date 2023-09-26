@@ -15,13 +15,13 @@ MonoBehaviour:
   scopes: 1
   playerPhotoSize: 0
   playerInfoSimulation:
-    authorized: 1
+    authorized: 0
     isMobile: 0
-    language: ru
+    language: en
     name: Player this
     uniqueID: 000
     photo: https://justplaygames.ru/public/icon_player.png
-  AdWhenLoadingScene: 0
+  AdWhenLoadingScene: 1
   showFirstAd: 1
   adDisplayCalls: 0
   fullscreenAdInterval: 60
@@ -50,7 +50,7 @@ MonoBehaviour:
     decimalOffset: 0
     type: numeric
     players:
-    - rank: 1
+    - rank: 10
       name: anonymous
       score: 10
       photo: https://justplaygames.ru/public/icon_player.png
@@ -60,28 +60,73 @@ MonoBehaviour:
       score: 15
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 321
-    - rank: 3
+    - rank: 5
       name: Tanya
       score: 23
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 456
     - rank: 4
       name: Player4
-      score: 30
+      score: 99009
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 321
-    - rank: 5
+    - rank: 11
       name: Player this
-      score: 40
+      score: 12
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 000
+    - rank: 10
+      name: Player6
+      score: 179
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 321
+    - rank: 6
+      name: Player6
+      score: 50
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 321
+    - rank: 7
+      name: Player6
+      score: 5
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 321
+    - rank: 6
+      name: Player6
+      score: 50
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 321
+    - rank: 6
+      name: Player6
+      score: 50
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 321
+    - rank: 8
+      name: Player6
+      score: 50
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 321
+    - rank: 6
+      name: Player6
+      score: 50
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 321
+    - rank: 6
+      name: Player6
+      score: 50
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 321
+    - rank: 6
+      name: Player6
+      score: 50
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 321
     - rank: 6
       name: Player6
       score: 50
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 321
     thisPlayer:
-      rank: 2
+      rank: 87
       score: 10
   - technoName: simple
     entries: "Test LeaderBoard\nName: simple\n1. \u0441\u043A\u0440\u044B\u0442:
@@ -289,7 +334,7 @@ MonoBehaviour:
   debug: 1
   archivingBuild: 1
   logoImageFormat: 1
-  backgroundImageFormat: 3
+  backgroundImageFormat: 2
   pixelRatioEnable: 0
   pixelRatioValue: 1
   SDKStartDelay: 0

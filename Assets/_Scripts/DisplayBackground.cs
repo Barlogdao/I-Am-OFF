@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 [RequireComponent(typeof(Image))]
 public class DisplayBackground : MonoBehaviour
@@ -23,5 +24,7 @@ public class DisplayBackground : MonoBehaviour
     private void OnBackGroundChanged()
     {
         _background.sprite = BackGroundProvider.Instance.GetBackground(SaveProvider.Instace.SaveData.CurrentBackGroundID);
+        YandexGame.savesData.CurrentBackgroundID = SaveProvider.Instace.SaveData.CurrentBackGroundID;
+
     }
 }

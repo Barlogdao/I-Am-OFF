@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 2
   <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 5
   Image: {fileID: -746833577, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Bellini
   Recipe:
@@ -21,4 +22,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1170e7822e6ab874881fc61ad73b6a50, type: 2}
   BonusScore: 400
   BonusTime: 5
-  CoinCost: 1

@@ -7,7 +7,6 @@ public class SaveProvider : MonoBehaviour
     private const string SAVEDATA = "SAVE_DATA";
     public static SaveProvider Instace { get; private set; }
     public SaveData SaveData { get; private set; }
-    public PlayerData CurrentPlayer;
     private ISaveSystem _saveSystem;
     public static event Action<int> CoinAmountChanged;
 
@@ -57,6 +56,7 @@ public class SaveProvider : MonoBehaviour
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoadded;
+        if (_saveSystem != null && SaveData != null)
         _saveSystem.Save(SaveData);
     }
 
@@ -66,5 +66,6 @@ public class SaveProvider : MonoBehaviour
     public void Reset()
     {
         PlayerPrefs.DeleteAll();
+        SaveData = new SaveData();
     }
 }

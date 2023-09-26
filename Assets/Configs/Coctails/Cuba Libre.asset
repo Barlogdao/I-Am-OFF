@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 4
   <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 8
   Image: {fileID: -1371428951, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Cuba Libre
   Recipe:
@@ -21,5 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4481b3f0ec3da9340a352cab6db1d6f5, type: 2}
   - {fileID: 11400000, guid: 1170e7822e6ab874881fc61ad73b6a50, type: 2}
   BonusScore: 600
-  BonusTime: 10
-  CoinCost: 1
+  BonusTime: 8

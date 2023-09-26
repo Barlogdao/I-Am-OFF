@@ -5,8 +5,8 @@ using UnityEngine;
 public class DrinkProvider : MonoBehaviour
 {
     [SerializeField] private GameConfig _gameConfig;
-    [SerializeField] DrinkSheet _drinkSheet;
-    [SerializeField] CocktailSheet _cocktailSheet;
+    [SerializeField] private DrinkSheet _drinkSheet;
+    [SerializeField] private CocktailSheet _cocktailSheet;
     public static DrinkProvider Instance { get; private set; }
 
     private Dictionary<DrinkRarity, List<DrinkSO>> _drinkTable = new();
@@ -77,7 +77,9 @@ public class DrinkProvider : MonoBehaviour
     public CocktailRecipeSO[] GetAllRecipies()
     {
         return _cocktailSheet.CocktailRecipes
-            .OrderBy(x => x.ID)
+            .OrderBy(x => x.EarnType)
+            .ThenBy(y => y.CoinCost)
+            .ThenBy(z => z.ID)
             .ToArray();
     }
 

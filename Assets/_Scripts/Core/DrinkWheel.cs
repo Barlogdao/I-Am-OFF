@@ -7,7 +7,7 @@ public class DrinkWheel : MonoBehaviour
     [SerializeField] private GameConfig _gameConfig;
     
     private float _currentSpeed;
-    
+    private Transform _transform;
 
     private void OnEnable()
     {
@@ -16,6 +16,7 @@ public class DrinkWheel : MonoBehaviour
     private void Start()
     {
         _currentSpeed = _gameConfig.NormalSpeed;
+        _transform = transform;
     }
 
 
@@ -44,7 +45,7 @@ public class DrinkWheel : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0f, 0f, _currentSpeed * Time.deltaTime);
+        _transform.Rotate(0f, 0f, _currentSpeed * Time.deltaTime);
     }
 
     private void OnDisable()

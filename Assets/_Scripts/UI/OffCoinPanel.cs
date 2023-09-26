@@ -1,29 +1,41 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class OffCoinPanel : MonoBehaviour
 {
-    [SerializeField] GameObject _offCoinPrefab;
-    [SerializeField] Transform _coinStartPosition;
-    [SerializeField] Transform _coinImage;
+    [SerializeField] private GameObject _offCoinPrefab;
+                   
+    [SerializeField] private RectTransform _coinTransform;
+    [SerializeField] private Image _coinImage;
+    [SerializeField] private float _transitionDiration;
+    [SerializeField] private float _maxCoinScale;
+    private Vector3 _startCoinScale;
+
+
+   
     private void OnEnable()
     {
         HumanPlayer.PlayerMindChanged += OnPlayerOFF;
-        _coinImage.position = _coinStartPosition.position;
-        _coinImage.gameObject.SetActive(false);
+       _coinImage.enabled = false;
+        _startCoinScale = _coinTransform.localScale;
     }
 
     private void OnPlayerOFF(bool playerIsOFF)
     {
         if (playerIsOFF == true)
         {
-            _coinImage.gameObject.SetActive(true);
-            _coinImage.DOMove(transform.position, 1f).SetEase(Ease.InBack).OnComplete(() =>
+            _coinImage.enabled = true;
+
+            _coinImage.transform.DOScale(_startCoinScale * _maxCoinScale,_transitionDiration/2)
+                .OnComplete(() => _coinImage.transform.DOScale(_startCoinScale, _transitionDiration / 2));
+            _coinTransform.DOMove(transform.position, _transitionDiration).SetEase(Ease.InBack)
+                .OnComplete(() =>
             {
                 Instantiate(_offCoinPrefab, transform);
-                _coinImage.position = _coinStartPosition.position;
-                _coinImage.gameObject.SetActive(false);
+                _coinTransform.anchoredPosition = Vector2.zero;
+                _coinImage.enabled = false;
             });
         }
     }

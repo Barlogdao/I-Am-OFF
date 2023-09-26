@@ -2,19 +2,23 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BackgroundVisualPrefab : MonoBehaviour, IPointerClickHandler
+public class BackgroundVisualPrefab : UnlockablePrefab, IPointerClickHandler
 {
     [SerializeField] private Image _backgroundImage;
-    [SerializeField] GameObject _lock;
-    [SerializeField] Image _coinPrefab;
+    [SerializeField] private GameObject _lock;
+
+    [SerializeField] private Image _frame;
+    [SerializeField] private UnlockConditionVisual _unlockConditionVisual;
+
     private BackgroundSO _background;
     private SaveData _data;
+    private Color _originFrameColor;
     public void Init(BackgroundSO background)
     {
         _data = SaveProvider.Instace.SaveData;
-
         _background = background;
         _backgroundImage.sprite = _background.Image;
+        _originFrameColor = _frame.color;
 
         if (_data.IsBackgroundUnlocked(_background.ID))
         {
@@ -31,28 +35,39 @@ public class BackgroundVisualPrefab : MonoBehaviour, IPointerClickHandler
         _lock.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        BackGroundProvider.BackgroundChanged += OnBackGroundChanged;
+    }
+    private void OnDisable()
+    {
+        BackGroundProvider.BackgroundChanged -= OnBackGroundChanged;
+    }
+
+    private void OnBackGroundChanged()
+    {
+        if (_data.CurrentBackGroundID == _background.ID)
+        {
+            _frame.color = Color.green;
+        }
+        else
+        {
+            _frame.color = _originFrameColor;
+        }
+    }
+
     private void ShowLock()
     {
         _lock.SetActive(true);
 
-        switch (_background.EarnType)
+        if (_background.EarnType == EarnType.Basic)
         {
-            case EarnType.Basic:
-                _lock.SetActive(false);
-                _data.UnlockBackground(_background.ID);
-                break;
-
-            case EarnType.Purchase:
-                for (int i = 0; i < _background.CoinCost; i++)
-                {
-                    Instantiate(_coinPrefab, _lock.transform);
-                }
-                break;
-
-            case EarnType.Reward:
-                break;
-            case EarnType.Trigger:
-                break;
+            _lock.SetActive(false);
+            _data.UnlockBackground(_background.ID);
+        }
+        else
+        {
+            Instantiate(_unlockConditionVisual, _lock.transform).Initialize(_background);
         }
     }
 
@@ -64,10 +79,11 @@ public class BackgroundVisualPrefab : MonoBehaviour, IPointerClickHandler
         switch (_background.EarnType)
         {
             case EarnType.Purchase:
-                if(_data.PlayerCoins >= _background.CoinCost)
+                if (_data.PlayerCoins >= _background.CoinCost)
                 {
                     SaveProvider.Instace.SpendCoins(_background.CoinCost);
                     _data.UnlockBackground(_background.ID);
+                    RaisePurchaseEvent();
                     HideLock();
                 }
                 break;
@@ -89,4 +105,6 @@ public class BackgroundVisualPrefab : MonoBehaviour, IPointerClickHandler
     {
         SetBackgroundAsCurrent();
     }
+
+
 }

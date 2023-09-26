@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 10
   <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 10
   Image: {fileID: -1370255100, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: OFF COCTAIL
   Recipe:
@@ -22,4 +23,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 20aec1359247d1544b4c15c77861d7f9, type: 2}
   BonusScore: 1000
   BonusTime: 10
-  CoinCost: 4

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 8
   <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 3
   Image: {fileID: -2145751042, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Mega Wine
   Recipe:
   - {fileID: 11400000, guid: c9a9ee204b3c66246b17d7324a283e4e, type: 2}
   - {fileID: 11400000, guid: c9a9ee204b3c66246b17d7324a283e4e, type: 2}
   - {fileID: 11400000, guid: c9a9ee204b3c66246b17d7324a283e4e, type: 2}
-  BonusScore: 260
+  BonusScore: 300
   BonusTime: 3
-  CoinCost: 1

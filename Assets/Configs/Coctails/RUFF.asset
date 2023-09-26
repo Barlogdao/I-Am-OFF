@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 12
   <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 4
   Image: {fileID: 1448117220, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: RUFF
   Recipe:
@@ -22,4 +23,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9041b576fc1563b4799d5efceb7dcd1a, type: 2}
   BonusScore: 300
   BonusTime: 4
-  CoinCost: 2

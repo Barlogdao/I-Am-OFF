@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' x 0'
+  m_text: ' x 9'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36c7c5a070a12f942997372d0a7e6d72, type: 2}
   m_sharedMaterial: {fileID: 1707464204327530879, guid: 36c7c5a070a12f942997372d0a7e6d72, type: 2}
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 8192
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -169,10 +169,10 @@ RectTransform:
   - {fileID: 1263995620204745600}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -107, y: -77}
-  m_SizeDelta: {x: 83.73, y: 50.09}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 853, y: -77}
+  m_SizeDelta: {x: 83.72998, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3580853264796232899
 CanvasRenderer:
@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 7926046173428540001}
   - component: {fileID: 4987660692000826255}
   - component: {fileID: 6211415517918964445}
+  - component: {fileID: 9117997915110993777}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -296,3 +297,29 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9117997915110993777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872649099181727808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 0
+  m_Width: 0.064
+  m_Rotation: 135
+  m_Softness: 1
+  m_Brightness: 0.451
+  m_Gloss: 0.423
+  m_EffectArea: 0
+  m_Player:
+    play: 1
+    initialPlayDelay: 1.53
+    duration: 2.16
+    loop: 1
+    loopDelay: 4.1
+    updateMode: 0

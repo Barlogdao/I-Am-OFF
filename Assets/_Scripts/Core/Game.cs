@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
     public static Game Instance { get; private set; }
     public GameState State {  get; private set; }
     public HumanPlayer Player { get; private set; }
-    public float PlayerOFFTime { get; private set; }
+    public float HangoverTime { get; private set; }
     [field: SerializeField] public int OffStrikeBonusScore { get; private set; }
     private PlayerData _playerData;
 
@@ -25,8 +25,8 @@ public class Game : MonoBehaviour
     }
     private void Start()
     {
-        _playerData = SaveProvider.Instace.CurrentPlayer;
-        PlayerOFFTime = _playerData.OFFTime;
+        _playerData = PlayerProvider.Instance.GetPlayer(SaveProvider.Instace.SaveData.CurrentPlayerID);
+        HangoverTime = _playerData.GetHangoverTime(_gameConfig);
         State = GameState.Init;
         StartCoroutine(InitGame());
     }

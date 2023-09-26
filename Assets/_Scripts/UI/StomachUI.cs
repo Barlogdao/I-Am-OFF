@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +6,9 @@ using DG.Tweening;
 public class StomachUI : MonoBehaviour
 {
     [SerializeField] private Image _slot1, _slot2, _slot3;
+    [SerializeField] Transform _stomachTransform;
+    [SerializeField] float _strenght = 1f;
+    [SerializeField] float _duration = 0.3f;
 
     private Image[] slotlist;
     private void Start()
@@ -29,6 +30,8 @@ public class StomachUI : MonoBehaviour
 
     private void UpdateVisual(int count, List<DrinkSO> stomach)
     {
+        _stomachTransform.DOShakePosition(_duration,_strenght);
+
         if (count == 0) 
         {
             HideSlots();

@@ -1,12 +1,25 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using YG;
 
-public class HoveredButton : MonoBehaviour, IPointerEnterHandler
+public class HoveredButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
     public static event Action ButtonHovered;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!YandexGame.EnvironmentData.isDesktop)
+        {
+            ButtonHovered?.Invoke();
+        }
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
-        ButtonHovered?.Invoke();
+        if (YandexGame.EnvironmentData.isDesktop)
+        {
+            ButtonHovered?.Invoke();
+        }
     }
 }

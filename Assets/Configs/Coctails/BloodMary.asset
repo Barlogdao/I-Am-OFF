@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 3
   <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 5
   Image: {fileID: 1526335002, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   Name: Blood Mary
   Recipe:
   - {fileID: 11400000, guid: 9041b576fc1563b4799d5efceb7dcd1a, type: 2}
   - {fileID: 11400000, guid: ee9d2a43203cc0e43a6e8e4fe20e0d16, type: 2}
-  BonusScore: 100
+  BonusScore: 300
   BonusTime: 5
-  CoinCost: 1

@@ -16,10 +16,14 @@ public class AudioProvider : MonoBehaviour
 
     [SerializeField] private AudioClip _winSound;
     [SerializeField] private AudioClip _menuButtonSound;
+    [SerializeField] private AudioClip _buySound;
 
     [SerializeField] private AudioClip _othodos;
     [SerializeField] private AudioClip _lightDrunkStage;
     [SerializeField] List<AudioClip> _veryDrunkStageSounds;
+
+    [SerializeField] private AudioClip _backgroundChangedSound;
+    [SerializeField] private AudioClip _playerChangedSound;
 
     private void Awake()
     {
@@ -40,7 +44,25 @@ public class AudioProvider : MonoBehaviour
         HumanPlayer.CoctailDrinked += OnCoctailDrinked;
         HumanPlayer.PlayerDrinked += OnPlayerDrinked;
         HoveredButton.ButtonHovered += OnButtonHover;
+        UnlockablePrefab.ElementPurchased += OnElementPurchased;
+        BackGroundProvider.BackgroundChanged += OnBackgroundChanged;
+        PlayerVisualPrefab.NewPlayerSelected += OnNewPlayerSelected;
 
+    }
+
+    private void OnNewPlayerSelected()
+    {
+        _audioService.PlaySound(_playerChangedSound);
+    }
+
+    private void OnBackgroundChanged()
+    {
+        _audioService.PlaySound(_backgroundChangedSound);
+    }
+
+    private void OnElementPurchased()
+    {
+        _audioService.PlaySound(_buySound);
     }
 
     private void OnButtonHover()
@@ -119,6 +141,9 @@ public class AudioProvider : MonoBehaviour
         HumanPlayer.CoctailDrinked -= OnCoctailDrinked;
         HumanPlayer.PlayerDrinked -= OnPlayerDrinked;
         HoveredButton.ButtonHovered -= OnButtonHover;
+        UnlockablePrefab.ElementPurchased -= OnElementPurchased;
+        BackGroundProvider.BackgroundChanged -= OnBackgroundChanged;
+        PlayerVisualPrefab.NewPlayerSelected -= OnNewPlayerSelected;
     }
 }
 

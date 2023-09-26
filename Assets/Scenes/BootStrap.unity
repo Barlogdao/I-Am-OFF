@@ -254,7 +254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7dced4c7cf836d459b01c8015f1592e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentPlayer: {fileID: 0}
 --- !u!4 &252508613
 Transform:
   m_ObjectHideFlags: 0
@@ -622,10 +621,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607, type: 3}
-      propertyPath: singleton
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: m_Name
       value: YandexGame
@@ -668,10 +663,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
-      propertyPath: pauseMethod
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -880,12 +871,15 @@ MonoBehaviour:
   _coctalSound: {fileID: 8300000, guid: feeece42705fee44c91cb3089760f056, type: 3}
   _winSound: {fileID: 8300000, guid: 266362ff8a1daf14682efee45a8f93bb, type: 3}
   _menuButtonSound: {fileID: 8300000, guid: e3b3060000d077644aaf9395cac818ba, type: 3}
+  _buySound: {fileID: 8300000, guid: 94f1e8b31917af14392d5879de607ebc, type: 3}
   _othodos: {fileID: 8300000, guid: 1c376faf541f44c468a65b1d30141f67, type: 3}
   _lightDrunkStage: {fileID: 8300000, guid: 3ee4e71104f493948aa524270d22063e, type: 3}
   _veryDrunkStageSounds:
   - {fileID: 8300000, guid: 3ac22fc64203f1845b731269f1763ef2, type: 3}
   - {fileID: 8300000, guid: a1a21eaeeb9962643b69aa0eae4a6666, type: 3}
   - {fileID: 8300000, guid: 90b903c32855897449b20484fa21905a, type: 3}
+  _backgroundChangedSound: {fileID: 8300000, guid: cf67149e1d35ce84393b2636041ac339, type: 3}
+  _playerChangedSound: {fileID: 8300000, guid: 3ee4e71104f493948aa524270d22063e, type: 3}
 --- !u!4 &1983702191
 Transform:
   m_ObjectHideFlags: 0
@@ -1006,6 +1000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _saveProvider: {fileID: 252508612}
+  _lang: en
 --- !u!4 &2118917665
 Transform:
   m_ObjectHideFlags: 0
@@ -1032,6 +1027,7 @@ GameObject:
   - component: {fileID: 2139808861}
   - component: {fileID: 2139808860}
   - component: {fileID: 2139808862}
+  - component: {fileID: 2139808863}
   m_Layer: 0
   m_Name: Databases
   m_TagString: Untagged
@@ -1082,6 +1078,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backgroundSheet: {fileID: 11400000, guid: ad8fe580c51c2f34db8eaac453cf9b8e, type: 2}
+--- !u!114 &2139808863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139808859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb7de8a21607d44aba29128add10e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerSheet: {fileID: 11400000, guid: af2b57766200aff4abd55d6956a407f1, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

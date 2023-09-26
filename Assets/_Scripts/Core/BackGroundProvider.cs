@@ -18,7 +18,9 @@ public class BackGroundProvider : MonoBehaviour
     public BackgroundSO[] GetAllBackgrounds()
     {
         return _backgroundSheet.Backgrounds
-            .OrderBy(x => x.ID)
+            .OrderBy(x => x.EarnType)
+            .ThenBy(y => y.CoinCost)
+            .ThenBy(z => z.ID)
             .ToArray();
     }
 

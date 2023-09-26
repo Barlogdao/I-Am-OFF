@@ -7,14 +7,22 @@ using YG;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] SaveProvider _saveProvider;
-    
+    [SerializeField] string _lang;
+
     private IEnumerator Start()
     {
         yield return null;
         LocalizationManager.Read();
-        yield return new WaitUntil(() => YandexGame.SDKEnabled );
+        yield return new WaitUntil(() => YandexGame.SDKEnabled);
+
+        //YandexGame.ResetSaveProgress();
+
         _saveProvider.Init();
-        LocalizationManager.Language = YandexGame.EnvironmentData.language;
+#if UNITY_EDITOR
+        LocalizationManager.Language = _lang;
+#else
+LocalizationManager.Language = YandexGame.EnvironmentData.language;
+#endif
         SceneManager.LoadScene(1);
     }
 }

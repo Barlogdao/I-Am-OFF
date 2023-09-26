@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60968d850498b7c4b94d94765cb86ec0, type: 3}
+  m_Name: PlayerSheet
+  m_EditorClassIdentifier: 
+  Players:
+  - {fileID: 11400000, guid: d78c9f1e7487ad6449ce911035f95ef3, type: 2}
+  - {fileID: 11400000, guid: b27fa2363016eb0499e77e71ac42adc7, type: 2}
+  - {fileID: 11400000, guid: 10adfd30a05127346919c408260e1998, type: 2}
+  - {fileID: 11400000, guid: 0385ac1db103819438b68db2828554e6, type: 2}

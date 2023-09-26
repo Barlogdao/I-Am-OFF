@@ -1,13 +1,13 @@
 Key,en,ru,tr,fr,de
-Menu.Play,Play,Играть,Oynamak,Jouer,Spielen
+Menu.Play,Drink!,Пить!,İçmek!,Boire!,Trinken!
 Menu.Back,Back,Назад,Geri,Dos,Zurück
 Menu.Credits,Credits,Авторы,Kredi,Crédits,Credits
 Menu.CocktailMenu,Cocktail Menu,Коктейли,Kokteyl menüsü,Cocktail,Cocktailmenü
 Menu.BestScore,Best Score,Лучший счет,En iyi puan,Meilleur score,Bestes Ergebnis
 Menu.Leaderboard,Leaderboard,Рекорды,Liderler Sıralaması,Classement,Bestenliste
 Menu.HowTo,How To Play,Справка,Nasıl oynanır,Comment jouer,Spielanleitung
-Menu.Exit,Exit,Выход,çıkış,Sortie,Ausfahrt
-Menu.Header,I AM OFF,Я ВСЁ!,BEN GİDİYORUM,Je suis parti,ICH BIN WEG
+Menu.Exit,Back,Домой,Geri,Dos,Zurück
+Menu.Header,JUST DRINK!,НАДО ПИТЬ!,SADECE İÇ!,Buvez juste!,TRINK EINFACH!
 Game.Score,Your Score:,Твой счет:,Puanın:,Ton score:,Ihr Ergebnis:
 Game.BestScore,Best Score: ,Лучший счет:,En iyi puan:,Meilleur score:,Bestes Ergebnis:
 Game.NewBestScore,New Best Score: ,Новый лучший счет:,Yeni En İyi Puan:,Nouveau meilleur score:,Neue beste Punktzahl:
@@ -29,7 +29,38 @@ Cocktail.Sangria,Sangria,Сангрия,Sangria,Sangria,Sangria
 Cocktail.Whiskey Cola,Whiskey Cola,Виски Кола,Viski kola,Whisky cola,Whisky Cola
 Cocktail.Points,Bonus Points,Бонусные очки,Bonus puanlar,Points bonus,Bonuspunkte
 Cocktail.Time,Bonus Time,Бонусное Время,Bonus zamanı,Heure bonus,Bonuszeit
-Bob,Bob,Леха,Bob,Bob,Bob
-Gundos,Gundos,Гундос,Gundos,Gundos,Gundos
-SoberMan,SoberMan,Зожник,Ayı,Sobre,Nüchtern
-Alkodzilla,Alkodzilla,Алкодзилла,Alkodzilla,Alkodzilla,Alkodzilla
+Bob,Bob,Бывалый,Bob,Bob,Bob
+Gundos,Gunya,Гуня,Gunya,Gunya,Gunya
+SoberMan,Rookie,Новичок,Çaylak,Débutant,Anfänger
+Alkodzilla,Alсodzilla,Алкодзилла,Alet,Alсodzilla,Aluodzilla
+How.Time,Drink until your time's up,Пей пока не вышло время,Zamanın bitene kadar iç,Boire jusqu'à ce que votre temps soit écoulé,Trinken Sie bis zu Ihrer Zeit läuft
+How.Stomach,"Mix cocktails in your stomach
+and get bonus points and time","Собирай коктейли в желудке
+и получай бонусные очки и время","Midenizdeki kokteylleri karıştırın
+Ve bonus puan ve zaman alın","Mélanger les cocktails dans votre estomac
+Et obtenez des points bonus et du temps","Mischen Sie Cocktails in Ihrem Magen
+und Bonuspunkte und Zeit erhalten"
+How.Drink,"Drag drinks into your mouth
+and get points","Направляй напитки в рот
+и получай очки","İçecekleri ağzınıza sürükleyin
+Ve puan al","Traîner des boissons dans votre bouche
+et obtenir des points","Ziehen Sie Getränke in Ihren Mund
+und Punkte bekommen"
+How.Bar,"Drink
+Fill drunk bar
+Earn coins","Пей
+Заполняй шкалу трезвости
+Зарабатывай монеты","İçmek
+Sarhoş çubuğu doldur
+Para kazanmak","Boire
+Ban de remplissage ivre
+Gagner des pièces","Trinken
+Füllen Sie betrunkene Bar
+Verdienen Sie Münzen"
+Leader.Name,Player,Игрок,oyuncu,Joueur,Spieler
+Leader.Place,Position,Место,Konum,Position,Position
+Leader.Score,Score,Очки,Gol,Score,Punktzahl
+Game.OFF,I Am OFF,Я Всё!,Ben gidiyorum,Je suis parti,Ich bin weg
+Characteristic.Stamina,Stamina,Выносливость,Dayanıklılık,Endurance,Ausdauer
+Characteristic.AlcoResist,Alcohol Resistance,Сопротивление Алкоголю,Alkol direnci,Résistance à l'alcool,Alkoholresistenz
+Characteristic.Hangover,Metabolism,Метаболизм,Metabolizma,Métabolisme,Stoffwechsel
