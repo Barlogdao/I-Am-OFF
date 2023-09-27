@@ -6208,6 +6208,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4577273585331703678, guid: bcdeb7c0f7d29c54c93977ce096707eb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1483727557, guid: f8a812740c4d33841a9f3406f5178c52, type: 3}
+    - target: {fileID: 4577273585331703678, guid: bcdeb7c0f7d29c54c93977ce096707eb, type: 3}
+      propertyPath: m_MaskAlphaCutoff
+      value: 0.261
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577273585331703678, guid: bcdeb7c0f7d29c54c93977ce096707eb, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4872536434080849593, guid: bcdeb7c0f7d29c54c93977ce096707eb, type: 3}
       propertyPath: _drunkEndScale
       value: 1.3
@@ -6223,6 +6235,18 @@ PrefabInstance:
     - target: {fileID: 4872536434080849593, guid: bcdeb7c0f7d29c54c93977ce096707eb, type: 3}
       propertyPath: _scoreScaleDuration
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276703521597160868, guid: bcdeb7c0f7d29c54c93977ce096707eb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276703521597160868, guid: bcdeb7c0f7d29c54c93977ce096707eb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276703521597160868, guid: bcdeb7c0f7d29c54c93977ce096707eb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6878482870853706780, guid: bcdeb7c0f7d29c54c93977ce096707eb, type: 3}
       propertyPath: m_LocalPosition.x

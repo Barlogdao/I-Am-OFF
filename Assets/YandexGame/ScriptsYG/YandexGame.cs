@@ -728,10 +728,6 @@ namespace YG
                 }
 
                 NewLeaderboardScores(nameLB, result);
-
-#if UNITY_EDITOR
-                Message($"New Liderboard '{nameLB}' Record: {secondsScore} (Time type)");
-#endif
             }
         }
 
@@ -986,23 +982,52 @@ namespace YG
 
             CloseVideoAd.Invoke();
             CloseVideoEvent?.Invoke();
+
+            if (rewardAdResult == RewardAdResult.Success)
+            {
+                RewardVideoAd.Invoke();
+                RewardVideoEvent?.Invoke(lastRewardAdID);
+            }
+            else if(rewardAdResult == RewardAdResult.Error)
+            {
+                ErrorVideo();
+            }
+
+            rewardAdResult = RewardAdResult.None;
         }
 
         public static Action<int> RewardVideoEvent;
+        private enum RewardAdResult { None, Success, Error };
+        private static RewardAdResult rewardAdResult = RewardAdResult.None;
+        private static int lastRewardAdID;
+
         public void RewardVideo(int id)
         {
+            lastRewardAdID = id;
 #if UNITY_EDITOR
             if (!Instance.infoYG.testErrorOfRewardedAdsInEditor)
                 timeOnOpenRewardedAds -= 3;
 #endif
+            rewardAdResult = RewardAdResult.None;
+
             if (Time.unscaledTime > timeOnOpenRewardedAds + 2)
             {
-                RewardVideoAd.Invoke();
-                RewardVideoEvent?.Invoke(id);
+                if (Instance.infoYG.rewardedAfterClosing)
+                {
+                    rewardAdResult = RewardAdResult.Success;
+                }
+                else
+                {
+                    RewardVideoAd.Invoke();
+                    RewardVideoEvent?.Invoke(id);
+                }
             }
             else
             {
-                ErrorVideo();
+                if (Instance.infoYG.rewardedAfterClosing)
+                    rewardAdResult = RewardAdResult.Error;
+                else
+                    ErrorVideo();
             }
         }
 

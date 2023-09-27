@@ -46,6 +46,9 @@ namespace YG
         [Tooltip("Показывать рекламу при загрузке игры? (Первая реклама при открытии страницы игры)")]
         public bool showFirstAd = true;
 
+        [Tooltip("Выдавать вознаграждение за просмотр рекламы только после закрытия рекламы?\n(true = после закрытия, false = сразу после того как таймер закончит свой отчёт)")]
+        public bool rewardedAfterClosing = true;
+
         public enum AdCallsMode
         {
             [InspectorName("Until Ad Is Shown")] until,
