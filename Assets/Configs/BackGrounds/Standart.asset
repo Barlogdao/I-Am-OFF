@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Standart
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 0
-  <Image>k__BackingField: {fileID: 21300000, guid: 0eeebf720d9477f4a80632978752aefa, type: 3}
   <EarnType>k__BackingField: 0
   <CoinCost>k__BackingField: 0
+  <Image>k__BackingField: {fileID: 21300000, guid: 27a17086c130fb64a872b98c99dd274c, type: 3}

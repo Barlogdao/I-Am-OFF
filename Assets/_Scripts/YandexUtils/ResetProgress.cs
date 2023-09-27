@@ -8,6 +8,6 @@ public class ResetProgress : MonoBehaviour,IPointerClickHandler
     {
         SaveProvider.Instace.Reset();
         YandexGame.ResetSaveProgress();
-        Debug.Log("Нажато");
+        YandexGame.NewLeaderboardScores("DrinkLeaderBoard", 0);
     }
 }
