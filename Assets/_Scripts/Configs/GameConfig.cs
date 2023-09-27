@@ -6,6 +6,10 @@ public class GameConfig : ScriptableObject
 {
     public int GameDuration;
     public float DrinkingDuration;
+    [Min(0)]
+    public int DrinksAmount;
+    public int DrinkRows;
+
     [Header("Шансы появления редкого напитка")]
     public int UncommonDrinkAppearanceChance;
     public int RareDrinkAppearanceChance;

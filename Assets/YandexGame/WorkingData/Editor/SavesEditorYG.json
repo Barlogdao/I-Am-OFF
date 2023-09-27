@@ -1,19 +1,22 @@
 {
-    "idSave": 71,
+    "idSave": 13,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "PlayerCoins": 2,
-    "MaxScore": 1530,
+    "PlayerCoins": 0,
+    "MaxScore": 1770,
     "UnlockedRecipes": [
-        0
+        0,
+        14
     ],
     "UnlockedBackgrounds": [
-        0
+        0,
+        1
     ],
     "UnlockedPlayers": [
-        0
+        0,
+        1
     ],
-    "CurrentBackgroundID": 0,
-    "CurrentPlayerID": 0
+    "CurrentBackgroundID": 1,
+    "CurrentPlayerID": 1
 }
