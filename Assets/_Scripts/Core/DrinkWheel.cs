@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System;
-using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class DrinkWheel : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class DrinkWheel : MonoBehaviour
     private float _currentSpeed;
     private Transform _transform;
     private SobrietyLevel _currentSobriety;
-
+    private float _timer = 0f;
 
     private void OnEnable()
     {
@@ -29,7 +29,7 @@ public class DrinkWheel : MonoBehaviour
     private void OnSobrietyChanged(SobrietyLevel sobriety)
     {
         _currentSobriety = sobriety;
-
+        _timer = 0f;
         switch (sobriety)
         {
             case SobrietyLevel.Sober:
@@ -50,9 +50,9 @@ public class DrinkWheel : MonoBehaviour
         DOTween.To(() => _currentSpeed, x => _currentSpeed = x, targetSpeed, 0.9f);
     }
 
-
     void Update()
     {
+        _timer += Time.deltaTime;
         MoveWheel();
     }
 
@@ -63,11 +63,12 @@ public class DrinkWheel : MonoBehaviour
         var distance = 3f;
         var offset = 0.1f;
         int rows = _gameConfig.DrinkRows;
+        float middleAngle = angle / rows;
 
         for (int i = 0; i < rows; i++)
         {
-            SetOnAngle(distance + (i * 1.2f), angle, count/rows, _drinkPrefab.gameObject, offset);
-            _transform.Rotate(0f,0f,30f);
+            SetOnAngle(distance + (i * 1.2f), angle, count / rows, _drinkPrefab.gameObject, offset);
+            _transform.Rotate(0f, 0f, middleAngle);
         }
     }
 
@@ -81,22 +82,28 @@ public class DrinkWheel : MonoBehaviour
             float y = _transform.position.y + (Mathf.Cos(angle / count * i) * distance);
             point.x = x;
             point.y = y;
+            if (Random.value > 0.85f)
+                continue;
             Instantiate(prefab, point, Quaternion.identity, _transform);
         }
     }
 
     private void MoveWheel()
     {
-        _transform.Rotate(0f, 0f, _currentSpeed * Time.deltaTime);
+        //_transform.Rotate(0f, 0f, _currentSpeed * Time.deltaTime);
         switch (_currentSobriety)
         {
             case SobrietyLevel.Sober:
+                _transform.Rotate(0f, 0f, _currentSpeed * Time.deltaTime);
+                _transform.position = Vector2.MoveTowards(_transform.position, Vector2.zero, 1f * Time.deltaTime);
                 break;
             case SobrietyLevel.Drunk:
-                _transform.position = new Vector3(MathF.Sin(Time.time), MathF.Cos(Time.time), 0f);
+                _transform.Rotate(0f, 0f, _currentSpeed * Time.deltaTime);
+                _transform.position = Vector2.MoveTowards(_transform.position, new Vector2(MathF.Sin(Time.time), MathF.Cos(Time.time)), 1f * Time.deltaTime);
                 break;
             case SobrietyLevel.DrunkAsHell:
-                _transform.position = new Vector3(MathF.Sin(Time.time), MathF.Cos(Time.time), 0f);
+                _transform.Rotate(0f, 0f, (_currentSpeed + Mathf.Sign(_currentSpeed) * _timer * 2) * Time.deltaTime);
+                _transform.position = Vector2.MoveTowards(_transform.position, new Vector2(MathF.Sin(Time.time), MathF.Cos(Time.time)) * 2, 1f * Time.deltaTime);
                 break;
         }
     }

@@ -14,11 +14,12 @@ public class Drink : MonoBehaviour
     private DrinkSO _drinkData;
     private HumanPlayer _player;
     [SerializeField] SpriteRenderer _questionLabel;
-    private bool _drinkIsTaken = false;
+    private bool _isDrinkTaken = false;
     private Tweener _tweener;
     private Transform _transform;
 
     public static event Func<DrinkSO> DrinkChanged;
+    private bool _isDrunkAsHellStage = false;
 
     private void Awake()
     {
@@ -68,7 +69,14 @@ public class Drink : MonoBehaviour
     private void OnMouseDown()
     {
         _localTransform = _transform.localPosition;
-        _drinkIsTaken = true;
+        _isDrinkTaken = true;
+        if (_isDrunkAsHellStage)
+        {
+            _spriteRenderer.enabled = true;
+            _spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+            _questionLabel.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
+        }
+        
 
     }
     private void OnMouseDrag()
@@ -88,12 +96,20 @@ public class Drink : MonoBehaviour
         {
             _transform.localPosition = _localTransform;
         }
-        _drinkIsTaken = false;
+        _isDrinkTaken = false;
+        if (_isDrunkAsHellStage)
+        {
+            _spriteRenderer.enabled = false;
+            _spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
+            _questionLabel.maskInteraction = SpriteMaskInteraction.None;
+        }
     }
+
     private void LateUpdate()
     {
         _transform.rotation = Quaternion.identity; 
     }
+
     private void OnGameOver()
     {
         StopAllCoroutines();
@@ -142,36 +158,23 @@ public class Drink : MonoBehaviour
         yield return new WaitForSeconds(UnityEngine.Random.Range(3f, 5f));
         while(Game.Instance.State != GameState.GameOver)
         {
-            if (_drinkIsTaken == false)
+            if (_isDrinkTaken == false)
             {
                 _drinkData = DrinkChanged?.Invoke();
                 _spriteRenderer.sprite = _drinkData.Image;
                 _transform.localScale = Vector3.zero;
                 _transform.DOScale(1f, 0.2f).SetEase(Ease.OutBack);
-
             }
+
             yield return new WaitForSeconds(UnityEngine.Random.Range(3f,5f));
         }
     }
 
     private void DrinkVisibility(SobrietyLevel sobrietyLevel)
     {
-        switch (sobrietyLevel)
-        {
-            case SobrietyLevel.Sober:
-                _spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
-                _questionLabel.enabled = false;
-                break;
-            case SobrietyLevel.Drunk:
-                _spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
-                _questionLabel.enabled = false;
-                break;
-            case SobrietyLevel.DrunkAsHell:
-                _spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
-                _questionLabel.enabled = true;
-                _questionLabel.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
-                break;
-        }
+        _isDrunkAsHellStage = sobrietyLevel == SobrietyLevel.DrunkAsHell;
+        _questionLabel.enabled = _isDrunkAsHellStage;
+        _spriteRenderer.enabled = !_isDrunkAsHellStage||_isDrinkTaken;
     }
 
 

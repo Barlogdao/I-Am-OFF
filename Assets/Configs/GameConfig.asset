@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameDuration: 60
   DrinkingDuration: 0.3
-  DrinksAmount: 40
-  DrinkRows: 4
+  DrinksAmount: 44
+  DrinkRows: 5
   UncommonDrinkAppearanceChance: 50
   RareDrinkAppearanceChance: 10
   NormalSpeed: 35
   FastSpeed: 60
-  SuperFastSpeed: -100
+  SuperFastSpeed: -200
   MinStamina: 60
   MaxStamina: 200
   MinDrunkModifier: -2
