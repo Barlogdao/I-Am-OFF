@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameDuration: 60
   DrinkingDuration: 0.3
-  DrinksAmount: 44
+  DrinksAmount: 38
   DrinkRows: 5
   UncommonDrinkAppearanceChance: 50
   RareDrinkAppearanceChance: 10
