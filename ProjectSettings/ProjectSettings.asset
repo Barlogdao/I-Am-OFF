@@ -306,9 +306,10 @@ PlayerSettings:
     BANNER_DYNAMIC_2: 
     BANNER_STATIC_1: 
     BANNER_STATIC_2: 
-    CHANGE_BAR_COLOR: 'background-image: linear-gradient(#fffc00, #ff8400);'
-    CHANGE_LOADING_SCREEN_BACKGROUND: 'background-image: radial-gradient(circle,
-      rgba(255,204,92,1) 0%, rgba(77,36,2,1) 100%);'
+    CHANGE_BAR_COLOR: 'background-image: radial-gradient(circle, rgba(255,204,92,1)
+      0%, rgba(77,36,2,1) 100%);'
+    CHANGE_LOADING_SCREEN_BACKGROUND: 'background-image: linear-gradient(#fffc00,
+      #ff8400);'
     CONFIGURE_SHADOWS: 0px 5px 10px 10px rgba(86, 57, 15, 0.2);
     CONNECT_WEB_AUDIO_PLUGIN_FILES: 
     ENABLE_CONSOLE: 

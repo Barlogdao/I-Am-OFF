@@ -16,14 +16,16 @@ MonoBehaviour:
   DrinkingDuration: 0.3
   DrinksAmount: 38
   DrinkRows: 5
+  Distance: 3
+  SpawnForm: 0
   UncommonDrinkAppearanceChance: 50
   RareDrinkAppearanceChance: 10
   NormalSpeed: 35
   FastSpeed: 60
-  SuperFastSpeed: -200
-  MinStamina: 60
+  SuperFastSpeed: -120
+  MinStamina: 80
   MaxStamina: 200
   MinDrunkModifier: -2
   MaxDrunkModifier: 4
   MinHangoverTime: 2
-  MaxHangoverTime: 10
+  MaxHangoverTime: 9

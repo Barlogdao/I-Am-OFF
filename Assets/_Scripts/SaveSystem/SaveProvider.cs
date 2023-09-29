@@ -22,14 +22,20 @@ public class SaveProvider : MonoBehaviour
         _saveSystem = new YandexSaveSystem();
         SaveData = _saveSystem.Load();
         SceneManager.sceneLoaded += OnSceneLoadded;
+        UnlockablePrefab.ElementPurchased += OnElementPurchase;
+    }
+
+    private void OnElementPurchase()
+    {
+        _saveSystem.Save(SaveData);
+        _saveSystem.UpdateCloud();
     }
 
     private void OnSceneLoadded(Scene scene, LoadSceneMode arg1)
     {
         if (scene.buildIndex == 1)
         {
-            _saveSystem.Save(SaveData);
-
+            _saveSystem.UpdateCloud();
         }
     }
 
@@ -50,14 +56,16 @@ public class SaveProvider : MonoBehaviour
     {
         SaveData.MaxScore = score;
         _saveSystem.Save(SaveData);
+        _saveSystem.UpdateCloud();
     }
 
 
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoadded;
+        UnlockablePrefab.ElementPurchased -= OnElementPurchase;
         if (_saveSystem != null && SaveData != null)
-        _saveSystem.Save(SaveData);
+        _saveSystem.UpdateCloud();
     }
 
     [ContextMenu ("Reset")]

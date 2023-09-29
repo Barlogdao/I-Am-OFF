@@ -3714,6 +3714,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameConfig: {fileID: 11400000, guid: 30116352f7d426a4dbb7f3ca1e2d1bf2, type: 2}
   _drinkPrefab: {fileID: 513706172870634056, guid: 568f4e53f4b473341aeb1b7618481259, type: 3}
+  _drinkLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &1936225000
 Transform:
   m_ObjectHideFlags: 0

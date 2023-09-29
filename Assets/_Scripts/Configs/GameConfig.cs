@@ -9,6 +9,8 @@ public class GameConfig : ScriptableObject
     [Min(0)]
     public int DrinksAmount;
     public int DrinkRows;
+    public float Distance = 2f;
+    public SpawnForm SpawnForm;
 
     [Header("Шансы появления редкого напитка")]
     public int UncommonDrinkAppearanceChance;
@@ -37,4 +39,12 @@ public class GameConfig : ScriptableObject
         if (MinHangoverTime >= MaxHangoverTime)
             MaxHangoverTime = MinHangoverTime + 1;
     }
+}
+
+public enum SpawnForm
+{
+    roundEqual,
+    spiral,
+    rows,
+    roundProgressive
 }

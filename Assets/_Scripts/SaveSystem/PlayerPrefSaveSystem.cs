@@ -22,4 +22,7 @@ public class PlayerPrefSaveSystem : ISaveSystem
         PlayerPrefs.Save();
     }
 
+    public void UpdateCloud()
+    {
+    }
 }

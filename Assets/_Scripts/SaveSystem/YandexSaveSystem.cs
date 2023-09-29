@@ -19,11 +19,15 @@ public class YandexSaveSystem : ISaveSystem
         saveData.UnlockedPlayers = data.UnlockedPlayers;
         saveData.CurrentBackgroundID = data.CurrentBackGroundID;
         saveData.CurrentPlayerID = data.CurrentPlayerID;
-        YandexGame.SaveProgress();
     }
 
     public void Reset()
     {
         YandexGame.ResetSaveProgress();
+    }
+
+    public void UpdateCloud()
+    {
+        YandexGame.SaveProgress();
     }
 }

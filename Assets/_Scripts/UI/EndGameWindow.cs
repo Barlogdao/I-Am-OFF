@@ -41,11 +41,12 @@ public class EndGameWindow : MonoBehaviour
     private IEnumerator GameEndProcess()
     {
         SaveProvider saveProvider = SaveProvider.Instace;
-        int coinsEarned = Game.Instance.Player.EarnedCoins;
+        HumanPlayer player = Game.Instance.Player;
+        int coinsEarned = player.EarnedCoins;
 
         _exitButton.gameObject.SetActive(false);
         var coinPanel = FindObjectOfType<OffCoinPanel>();
-        int newScore = Game.Instance.Player.Score;
+        int newScore = player.Score;
         int oldScore = saveProvider.SaveData.MaxScore;
         coinPanel.gameObject.SetActive(false);
         _coinAmountText.text = $" x {coinsEarned}";
@@ -65,7 +66,7 @@ public class EndGameWindow : MonoBehaviour
             _bestScore.text = $"{LocalizationManager.Localize("Game.BestScore")}{oldScore}";
         }
 
-        if (oldScore < newScore && oldScore != 0)
+        if (oldScore < newScore)
         {
             YandexGame.NewLeaderboardScores("DrinkLeaderBoard", newScore);
         }

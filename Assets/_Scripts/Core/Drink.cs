@@ -42,7 +42,7 @@ public class Drink : MonoBehaviour
         Game.GameOvered += OnGameOver;
         Game.GameStarted += OnGameStarted;
         HumanPlayer.SobrietyChanged += OnSobrietyChanged;
-        _spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
+
         _questionLabel.enabled = false;
     }
 
@@ -73,8 +73,7 @@ public class Drink : MonoBehaviour
         if (_isDrunkAsHellStage)
         {
             _spriteRenderer.enabled = true;
-            _spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
-            _questionLabel.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
+            _questionLabel.enabled = false;
         }
         
 
@@ -100,8 +99,7 @@ public class Drink : MonoBehaviour
         if (_isDrunkAsHellStage)
         {
             _spriteRenderer.enabled = false;
-            _spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
-            _questionLabel.maskInteraction = SpriteMaskInteraction.None;
+            _questionLabel.enabled = true;
         }
     }
 
