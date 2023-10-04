@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Elasticity: 0
   m_Inertia: 0
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 60
+  m_ScrollSensitivity: 80
   m_Viewport: {fileID: 1718272162}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -1697,6 +1697,7 @@ GameObject:
   - component: {fileID: 505878952}
   - component: {fileID: 505878951}
   - component: {fileID: 505878953}
+  - component: {fileID: 505878954}
   m_Layer: 0
   m_Name: RewardProvider
   m_TagString: Untagged
@@ -1744,6 +1745,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isMenuScene: 1
+--- !u!114 &505878954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505878950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ffa3239ccea80f40b6ccc112460c3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &541843020
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,7 +5817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eed96c7116bf962439c3c353a2e71209, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad7d2a341bd50c34cac427adcaa6d305, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

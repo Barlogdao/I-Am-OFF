@@ -21,6 +21,7 @@ MonoBehaviour:
     name: Player this
     uniqueID: 000
     photo: https://justplaygames.ru/public/icon_player.png
+  autoGameReadyAPI: 0
   AdWhenLoadingScene: 1
   showFirstAd: 1
   rewardedAfterClosing: 1
@@ -35,7 +36,7 @@ MonoBehaviour:
   saveOnQuitGame: 1
   leaderboardEnable: 1
   leaderboardSimulation:
-  - technoName: DrinkLeaderBoard
+  - technoName: advanced
     entries: 'Test LeaderBoard
 
       Name: advanced
@@ -125,7 +126,7 @@ MonoBehaviour:
     thisPlayer:
       rank: 0
       score: 0
-  - technoName: time
+  - technoName: time1
     entries: 'Test LeaderBoard
 
       Name: time
@@ -287,7 +288,7 @@ MonoBehaviour:
     consumed: 1
   metricaEnable: 0
   metricaCounterID: 0
-  debug: 0
+  debug: 1
   archivingBuild: 1
   logoImageFormat: 1
   backgroundImageFormat: 0

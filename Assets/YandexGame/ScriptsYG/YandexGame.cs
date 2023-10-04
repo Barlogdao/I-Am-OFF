@@ -161,7 +161,7 @@ namespace YG
                 else if (infoYG.playerPhotoSize == InfoYG.PlayerPhotoSize.large)
                     _photoSize = "large";
 
-                InitializationSDK();
+                InitializationGame();
             }
         }
 
@@ -411,12 +411,12 @@ namespace YG
 
         #region Initialization SDK
         [DllImport("__Internal")]
-        private static extern void InitSDK_Internal(string playerPhotoSize, bool scopes);
+        private static extern void InitGame_Internal(string playerPhotoSize, bool scopes, bool gameReadyApi);
 
-        public void InitializationSDK()
+        public void InitializationGame()
         {
 #if !UNITY_EDITOR
-            InitSDK_Internal(_photoSize, infoYG.scopes);
+            InitGame_Internal(_photoSize, infoYG.scopes, infoYG.autoGameReadyAPI);
 #else
             string auth = "resolved";
             string name = Instance.infoYG.playerInfoSimulation.name;
@@ -444,6 +444,22 @@ namespace YG
             SetInitializationSDK(json);
 #endif
         }
+
+        [DllImport("__Internal")]
+        private static extern void GameReadyAPI_Internal();
+
+        public static void GameReadyAPI()
+        {
+            if (!Instance.infoYG.autoGameReadyAPI)
+            {
+#if !UNITY_EDITOR
+                GameReadyAPI_Internal();
+#else
+                Message("Game Ready API");
+#endif
+            }
+        }
+        public void _GameReadyAPI() => GameReadyAPI();
         #endregion Initialization SDK
 
         #region Init Leaderboard
@@ -743,6 +759,13 @@ namespace YG
                     technoName = nameLB,
                     entries = "no data",
                     players = new LBPlayerData[1]
+                    {
+                        new LBPlayerData()
+                        {
+                            name = "no data",
+                            photo = null
+                        }
+                    }
                 };
                 onGetLeaderboard?.Invoke(lb);
             }
@@ -773,7 +796,7 @@ namespace YG
                     }
                 }
 
-                if (indexLB > -1)
+                if (indexLB >= 0)
                     onGetLeaderboard?.Invoke(lb[indexLB]);
                 else
                     NoData();

@@ -38,6 +38,8 @@ namespace YG
         public PlayerInfoSimulation playerInfoSimulation;
 #endif
 
+        public bool autoGameReadyAPI = true;
+
         [Header("———————  Advertisement  ———————")]
 
         [Tooltip("Показывать рекламу при переключении сцены? (после загрузки сцен)\n\nПо умолчанию = true — это значит, что показ рекламы будет вызываться при загрузке любой сцены в игре. Значение false — реклама не будет показываться при загрузке сцен.")]

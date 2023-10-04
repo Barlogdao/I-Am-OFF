@@ -12,8 +12,6 @@ namespace YG
         public string language = "ru";
         public bool promptDone;
 
-        // Ваши сохранения
-
         public int PlayerCoins = 0;
         public int MaxScore = 0;
         public List<int> UnlockedRecipes = new List<int>() { 0 };
@@ -22,10 +20,6 @@ namespace YG
         public int CurrentBackgroundID = 0;
         public int CurrentPlayerID = 0;
 
-        // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
-
-
-        // Вы можете выполнить какие то действия при загрузке сохранений
         public SavesYG()
         {
 
