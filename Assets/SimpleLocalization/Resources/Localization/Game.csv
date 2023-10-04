@@ -2,16 +2,20 @@ Key,en,ru,tr,fr,de
 Menu.Play,Drink!,Пить!,İçmek!,Boire!,Trinken!
 Menu.Back,Back,Назад,Geri,Dos,Zurück
 Menu.Credits,Credits,Авторы,Kredi,Crédits,Credits
-Menu.CocktailMenu,Cocktail Menu,Коктейли,Kokteyl menüsü,Menu de cocktails,Cocktailmenü
-Menu.BestScore,Best Score,Лучший счет,En iyi puan,Meilleur score,Bestes Ergebnis
+Menu.CocktailMenu,Cocktail Menu,Коктейли,Kokteyl menüsü,Cocktail,Cocktailmenü
+Menu.BestScore,Best Score,Твой рекорд:,En iyi puan,Meilleur score,Bestes Ergebnis
 Menu.Leaderboard,Leaderboard,Рекорды,Liderler Sıralaması,Classement,Bestenliste
 Menu.HowTo,How To Play,Справка,Nasıl oynanır,Comment jouer,Spielanleitung
 Menu.Exit,Back,Домой,Geri,Dos,Zurück
-Menu.Header,JUST DRINK,НАДО ПИТЬ,SADECE İÇ,Juste boire,TRINK EINFACH
+Menu.Header,JUST DRINK!,НАДО ПИТЬ!,SADECE İÇ!,Buvez juste!,TRINK EINFACH!
+Leader.Name,Player,Игрок,oyuncu,Joueur,Spieler
+Leader.Place,Position,Место,Konum,Position,Position
+Leader.Score,Score,Очки,Gol,Score,Punktzahl
 Game.Score,Your Score:,Твой счет:,Puanın:,Ton score:,Ihr Ergebnis:
 Game.BestScore,Best Score: ,Твой рекорд:,En iyi puan:,Meilleur score:,Bestes Ergebnis:
 Game.NewBestScore,New Best Score: ,Новый рекорд:,Yeni En İyi Puan:,Nouveau meilleur score:,Neue beste Punktzahl:
 Game.DrinkerUnlocked,New Drinker Unlocked!,Открыт новый выпивоха!,Yeni içen kilidi açıldı!,Nouveau buveur déverrouillé!,Neuer Trinker freigeschaltet!
+Game.OFF,I Am OFF,Я Всё!,Ben gidiyorum,Je suis parti,Ich bin weg
 Cocktail.Bayles,Bayles,Бейлис,Baylar,Bayles,Bayles
 Cocktail.Bellini,Bellini,Беллини,Bellini,Bellini,Bellini
 Cocktail.Blood Mary,Blood Mary,Кровавая Мери,Blood Mary,Blood Mary,Blut Mary
@@ -27,12 +31,30 @@ Cocktail.Redneck,Redneck,Селюк,Tiksinti,Redneck,Bauer
 Cocktail.RUFF,RUFF,Ёрш,Küstahlık,FRAISE,HALSKRAUSE
 Cocktail.Sangria,Sangria,Сангрия,Sangria,Sangria,Sangria
 Cocktail.Whiskey Cola,Whiskey Cola,Виски Кола,Viski kola,Whisky cola,Whisky Cola
+Cocktail.Margarita,Margarita,Маргарита,Margarita,Margarita,Margarita
+Cocktail.Tequila boom,Tequila boom,Текила Бум,Tekila patlaması,Boom de la tequila,Tequila -Boom
+Cocktail.Black Russian,Black Russian,Черный русский,Siyah Rusyalı,Russe noir,Schwarzer Russe
+Cocktail.Long Island,Long Island,Лонг Айленд,Long Island,Long Island,Long Island
+Cocktail.Green fairy,Green fairy,Зеленая фея,Yeşil Peri,Fée verte,Grüne Fee
+Cocktail.Screwdriver,Screwdriver,Отвертка,Tornavida,Tournevis,Schraubendreher
+Cocktail.Tequila Sunrise,Tequila Sunrise,Текила Санрайз,Tekila gündoğumu,Tequila Sunrise,Tequila Sonnenaufgang
+Cocktail.Sangrit,Sangrit,Сангрита,Sangrit,Chanteur,Sangrit
+Cocktail.Blood and Sand,Blood and Sand,Кровь и песок,Kan ve Kum,Sang et sable,Blut und Sand
+Cocktail.Jellyfish,Jellyfish,Медуза,Deniz anası,Méduse,Qualle
+Cocktail.Zombie,Zombie,Зомби,Zombi,Zombi,Zombie
+Cocktail.Control shot,Control shot,Контрольный выстрел,Kontrol Çekimi,Tir de contrôle,Kontrollschuss
+Cocktail.Sazorak,Sazorak,Сазерак,Sazorak,Sazorak,Sazorak
+Cocktail.Recharge,Recharge,Разрядка,Şarj etmek,Recharger,Aufladen
+Cocktail.Bahus Pati,Bahus Pati,Бахус Пати,Bahus Pati,Bahus Pati,Bahus Pati
 Cocktail.Points,Bonus Points,Бонусные очки,Bonus puanlar,Points bonus,Bonuspunkte
 Cocktail.Time,Bonus Time,Бонусное Время,Bonus zamanı,Heure bonus,Bonuszeit
 Bob,Bob,Бывалый,Bob,Bob,Bob
 Gundos,Gunya,Гуня,Gunya,Gunya,Gunya
 SoberMan,Rookie,Новичок,Çaylak,Débutant,Anfänger
 Alkodzilla,Alсodzilla,Алкодзилла,Albüm,Alсodzilla,Aluodzilla
+Characteristic.Stamina,Stamina,Выносливость,Dayanıklılık,Endurance,Ausdauer
+Characteristic.AlcoResist,Alcohol Resistance,Сопротивление Алкоголю,Alkol direnci,Résistance à l'alcool,Alkoholresistenz
+Characteristic.Hangover,Metabolism,Метаболизм,Metabolizma,Métabolisme,Stoffwechsel
 How.Time,Drink until your time's up,Пей пока не вышло время,Zamanın bitene kadar iç,Boire jusqu'à ce que votre temps soit écoulé,Trinken Sie bis zu Ihrer Zeit läuft
 How.Stomach,"Mix cocktails in your stomach
 and get bonus points and time","Собирай коктейли в желудке
@@ -46,21 +68,14 @@ and get points","Направляй напитки в рот
 Ve puan al","Traîner des boissons dans la bouche
 et obtenir des points","Ziehen Sie Getränke in Ihren Mund
 und Punkte bekommen"
-How.Bar,"Drink
-Fill drunk bar
-Earn coins","Пей
-Заполняй шкалу трезвости
-Зарабатывай монеты","İçmek
-Sarhoş çubuğu doldur
-Para kazanmak","Boire
-Ban de remplissage ivre
-Gagner des pièces","Trinken
-Füllen Sie betrunkene Bar
-Verdienen Sie Münzen"
-Leader.Name,Player,Игрок,oyuncu,Joueur,Spieler
-Leader.Place,Position,Место,Konum,Position,Position
-Leader.Score,Score,Очки,Gol,Score,Punktzahl
-Game.OFF,I Am OFF,Я Всё!,Ben gidiyorum,Je suis parti,Ich bin weg
-Characteristic.Stamina,Stamina,Выносливость,Dayanıklılık,Endurance,Ausdauer
-Characteristic.AlcoResist,Alcohol Resistance,Сопротивление Алкоголю,Alkol direnci,Résistance à l'alcool,Alkoholresistenz
-Characteristic.Hangover,Metabolism,Метаболизм,Metabolizma,Métabolisme,Stoffwechsel
+How.Bar,"Drink!
+Fill drunk bar!
+Earn coins!","Пей!
+Повышый уровень алкоголя в крови!
+Зарабатывай монеты!","İçmek!
+Sarhoş çubuğu doldurun!
+Para kazanmak!","Boire!
+VIGHT BAR DIVER!
+Gagner des pièces!","Trinken!
+Füllen Sie betrunkene Bar!
+Verdienen Sie Münzen!"

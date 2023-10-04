@@ -1,5 +1,4 @@
 using RB.Services.Audio;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class AudioProvider : MonoBehaviour
 {
     private AudioService _audioService;
+
+    public static AudioProvider Instance { get; private set; }
 
     [SerializeField] private AudioClip _levelOneSobriety;
     [SerializeField] private AudioClip _levelTwoSobriety;
@@ -27,6 +28,7 @@ public class AudioProvider : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
     private void Start()
@@ -38,7 +40,7 @@ public class AudioProvider : MonoBehaviour
     private void OnEnable()
     {
         HumanPlayer.SobrietyChanged += OnSobrietyChanged;
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        //SceneManager.sceneLoaded += OnSceneLoaded;
         Game.GameOvered += OnGameOvered;
         HumanPlayer.PlayerMindChanged += OnMindChanged;
         HumanPlayer.CoctailDrinked += OnCoctailDrinked;
@@ -97,21 +99,33 @@ public class AudioProvider : MonoBehaviour
         }
     }
 
+
+
     private void OnGameOvered()
     {
         _audioService.PlaySound(_winSound);
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    //private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    //{
+    //    if (scene.buildIndex == 1)
+    //    {
+    //        _audioService.PlayMusic(_levelOneSobriety);
+    //    }
+    //    else if (scene.buildIndex == 3)
+    //    {
+    //        _audioService.PlayMusic(_levelThreeSobriety);
+    //    }
+    //}
+
+    public void PlayMenuMusic()
     {
-        if (scene.buildIndex == 1)
-        {
-            _audioService.PlayMusic(_levelOneSobriety);
-        }
-        else if (scene.buildIndex == 3)
-        {
-            _audioService.PlayMusic(_levelThreeSobriety);
-        }
+        _audioService.PlayMusic(_levelOneSobriety);
+    }
+
+    public void PlayCreditMusic()
+    {
+        _audioService.PlayMusic(_levelThreeSobriety);
     }
 
     private void OnSobrietyChanged(SobrietyLevel sobrietyLevel)
@@ -135,7 +149,7 @@ public class AudioProvider : MonoBehaviour
     private void OnDisable()
     {
         HumanPlayer.SobrietyChanged -= OnSobrietyChanged;
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        //SceneManager.sceneLoaded -= OnSceneLoaded;
         Game.GameOvered -= OnGameOvered;
         HumanPlayer.PlayerMindChanged -= OnMindChanged;
         HumanPlayer.CoctailDrinked -= OnCoctailDrinked;

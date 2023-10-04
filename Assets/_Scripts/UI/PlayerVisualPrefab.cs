@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using Assets.SimpleLocalization.Scripts;
 using System;
 
+
 public class PlayerVisualPrefab : UnlockablePrefab, IPointerClickHandler
 {
     [SerializeField] private Image _playerImage;
@@ -72,13 +73,13 @@ public class PlayerVisualPrefab : UnlockablePrefab, IPointerClickHandler
                 if (_saveData.PlayerCoins >= _playerData.CoinCost)
                 {
                     SaveProvider.Instace.SpendCoins(_playerData.CoinCost);
-                    _saveData.UnlockPlayer(_playerData.ID);
-                    RaisePurchaseEvent();
-                    HideLock();
+                    UnlockProcess();
                 }
                 break;
 
             case EarnType.Reward:
+                RewardProvider.RewardRequested?.Invoke(UnlockProcess);
+
                 break;
             case EarnType.Trigger:
                 break;
@@ -116,7 +117,14 @@ public class PlayerVisualPrefab : UnlockablePrefab, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (_saveData.CurrentPlayerID != _playerData.ID)
         SetPlayerAsCurrent();
+    }
+    private void UnlockProcess()
+    {
+        _saveData.UnlockPlayer(_playerData.ID);
+        RaisePurchaseEvent();
+        HideLock();
     }
 
 }

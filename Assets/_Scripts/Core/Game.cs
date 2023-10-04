@@ -8,6 +8,7 @@ public class Game : MonoBehaviour
 
     private int _gameTimer;
     [SerializeField] private GameConfig _gameConfig;
+    [SerializeField] private DrinkWheel _drinkWheel;
     public static Game Instance { get; private set; }
     public GameState State {  get; private set; }
     public HumanPlayer Player { get; private set; }
@@ -18,6 +19,8 @@ public class Game : MonoBehaviour
     public static event Action<int> TimerTicked;
     public static event Action GameStarted;
     public static event Action GameOvered;
+
+    private WaitForSeconds _tick = new WaitForSeconds(1f);
 
     private void Awake()
     {
@@ -36,8 +39,10 @@ public class Game : MonoBehaviour
     {
         _gameTimer = _gameConfig.GameDuration;
         InitPlayer();
+        CreateDrinks();
+
         yield return null;
-        InitDrinks();
+        
         StartCoroutine(StartGame());
     }
 
@@ -52,12 +57,9 @@ public class Game : MonoBehaviour
         Player = FindObjectOfType<HumanPlayer>();
         Player.Init(_playerData);
     }
-    private void InitDrinks()
+    private void CreateDrinks()
     {
-        foreach (var drink in FindObjectsByType<Drink>(FindObjectsSortMode.None))
-        {
-            drink.Init(this);
-        }
+        _drinkWheel.Init(this);
     }
 
     private IEnumerator StartGame()
@@ -69,7 +71,7 @@ public class Game : MonoBehaviour
         TimerTicked?.Invoke(_gameTimer);
         while (_gameTimer > 0)
         {
-            yield return new WaitForSeconds(1f);
+            yield return _tick;
             _gameTimer--;
             TimerTicked?.Invoke(_gameTimer);
         }

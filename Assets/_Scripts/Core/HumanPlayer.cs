@@ -34,6 +34,9 @@ public class HumanPlayer : MonoBehaviour
     private int _thirdStageLevel;
 
 
+    private WaitForSeconds _drinkTime;
+    private WaitForSeconds _offCanvasLiveTime = new WaitForSeconds(1.2f);
+
     public int Score => _score;
     public SobrietyLevel Sobriety { get; private set; }
     public CircleCollider2D PlayerCollider { get; private set; }
@@ -51,6 +54,7 @@ public class HumanPlayer : MonoBehaviour
     private void Awake()
     {
         PlayerCollider = GetComponent<CircleCollider2D>();
+        _drinkTime = new WaitForSeconds(_config.DrinkingDuration);
     }
 
     public void Init(PlayerData data)
@@ -158,7 +162,7 @@ public class HumanPlayer : MonoBehaviour
     private void VisualizeDrunkLevel(int drunkAmount)
     {
         _drunkScoreLabel.enabled = true;
-        _drunkScoreLabel.text = $"+{drunkAmount}";
+        _drunkScoreLabel.text = $"{drunkAmount}";
         _drunkScoreLabel.transform.DOScale(_drunkStartScale * _drunkEndScale, _drunkScaleDuration).OnComplete(() =>
         {
             _drunkScoreLabel.transform.localScale = _drunkStartScale;
@@ -170,10 +174,13 @@ public class HumanPlayer : MonoBehaviour
     {
         DrinkAnimation();
         PlayerIsDrinking = true;
-        yield return new WaitForSeconds(0.3f);
+
+        yield return _drinkTime;
+
         VisualizeDrunkLevel(drunkAmount);
         PlayerIsDrinking = false;
         CocktailCheck();
+
         if (_drunkLevel >= _StaminaLevel)
         {
             _offCanvas.gameObject.SetActive(true);
@@ -181,8 +188,11 @@ public class HumanPlayer : MonoBehaviour
             PlayerIsOFF = true;
             PlayerMindChanged?.Invoke(PlayerIsOFF);
             EarnedCoins += 1;
-            yield return new WaitForSeconds(1f);
+
+            yield return _offCanvasLiveTime;
+
             _offCanvas.gameObject.SetActive(false);
+
             yield return new WaitForSeconds(Game.Instance.HangoverTime - 1f);
 
             _drunkLevel = 0;
@@ -197,10 +207,7 @@ public class HumanPlayer : MonoBehaviour
         {
             CheckSobriety();
         }
-
-
     }
-
 
     private void CheckSobriety()
     {

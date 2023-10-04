@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 10
   <EarnType>k__BackingField: 1
-  <CoinCost>k__BackingField: 10
-  Image: {fileID: -1370255100, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
+  <CoinCost>k__BackingField: 11
+  Image: {fileID: 1990393031, guid: 1f28022151f59bc489c123991d62204c, type: 3}
   Name: OFF COCTAIL
   Recipe:
-  - {fileID: 11400000, guid: 9041b576fc1563b4799d5efceb7dcd1a, type: 2}
   - {fileID: 11400000, guid: 151972ea8463e164dac60ed3fe0105b2, type: 2}
-  - {fileID: 11400000, guid: 20aec1359247d1544b4c15c77861d7f9, type: 2}
+  - {fileID: 11400000, guid: 88a4de4bcb6c39e4ead7f11ea8600aca, type: 2}
+  - {fileID: 11400000, guid: f1116e7f824dbc04ebdd1a8f52dbff9d, type: 2}
   BonusScore: 1000
-  BonusTime: 10
+  BonusTime: 6

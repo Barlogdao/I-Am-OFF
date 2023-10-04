@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cognac
   m_EditorClassIdentifier: 
   Name: Wine
-  Image: {fileID: 187050140, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
-  BonusStrength: 5
+  Image: {fileID: -1463234542, guid: 1f28022151f59bc489c123991d62204c, type: 3}
+  BonusStrength: 3
   Rarity: 2
   Strength: 3

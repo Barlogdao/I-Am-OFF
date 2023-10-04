@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,6 +8,7 @@ public class Drink : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
     private CircleCollider2D _circleCollider;
+    private Transform _parent;
 
     private Vector3 _localTransform;
     private DrinkSO _drinkData;
@@ -20,6 +20,7 @@ public class Drink : MonoBehaviour
 
     public static event Func<DrinkSO> DrinkChanged;
     private bool _isDrunkAsHellStage = false;
+    private WaitForSeconds _respawnTime = new WaitForSeconds(1.2f);
 
     private void Awake()
     {
@@ -30,10 +31,11 @@ public class Drink : MonoBehaviour
         _spriteRenderer.enabled = false;
         _questionLabel.enabled = false;
     }
-    
-    public void Init(Game game)
+
+    public void Init(Game game, Transform parent)
     {
         _player = game.Player;
+        _parent = parent;
         _drinkData = DrinkChanged?.Invoke();
         _spriteRenderer.sprite = _drinkData.Image;
         _circleCollider.enabled = true;
@@ -58,24 +60,25 @@ public class Drink : MonoBehaviour
 
     private void OnPlayerOFF(bool playerIsOFF)
     {
-        
+
 
         _circleCollider.enabled = !playerIsOFF;
         _spriteRenderer.color = playerIsOFF ? Color.gray : Color.white;
-        _questionLabel.color = playerIsOFF ? Color.gray : Color.white; 
+        _questionLabel.color = playerIsOFF ? Color.gray : Color.white;
 
     }
 
     private void OnMouseDown()
     {
         _localTransform = _transform.localPosition;
+        _transform.parent = null;
         _isDrinkTaken = true;
         if (_isDrunkAsHellStage)
         {
             _spriteRenderer.enabled = true;
             _questionLabel.enabled = false;
         }
-        
+
 
     }
     private void OnMouseDrag()
@@ -85,7 +88,7 @@ public class Drink : MonoBehaviour
 
     private void OnMouseUp()
     {
- 
+
         if (_circleCollider.IsTouching(_player.PlayerCollider) && Game.Instance.State != GameState.GameOver && !_player.PlayerIsDrinking)
         {
             _player.Drink(_drinkData);
@@ -93,7 +96,7 @@ public class Drink : MonoBehaviour
         }
         else
         {
-            _transform.localPosition = _localTransform;
+            ReturnDrinkToWheel();
         }
         _isDrinkTaken = false;
         if (_isDrunkAsHellStage)
@@ -105,7 +108,7 @@ public class Drink : MonoBehaviour
 
     private void LateUpdate()
     {
-        _transform.rotation = Quaternion.identity; 
+        _transform.rotation = Quaternion.identity;
     }
 
     private void OnGameOver()
@@ -134,12 +137,12 @@ public class Drink : MonoBehaviour
     private IEnumerator DestroyDrink()
     {
         // Напито обнуляется и становится недоступен
-        _transform.localPosition = _localTransform;
+        ReturnDrinkToWheel();
         _circleCollider.enabled = false;
         _spriteRenderer.enabled = false;
         _questionLabel.enabled = false;
         // проходит время
-        yield return new WaitForSeconds(1f);
+        yield return _respawnTime;
         // обновляется СО
         _drinkData = DrinkChanged?.Invoke();
         // появляется новый Дринк
@@ -151,10 +154,16 @@ public class Drink : MonoBehaviour
         _spriteRenderer.sprite = _drinkData.Image;
     }
 
+    private void ReturnDrinkToWheel()
+    {
+        _transform.parent = _parent;
+        _transform.localPosition = _localTransform;
+    }
+
     private IEnumerator DrinkUpdate()
     {
         yield return new WaitForSeconds(UnityEngine.Random.Range(3f, 5f));
-        while(Game.Instance.State != GameState.GameOver)
+        while (Game.Instance.State != GameState.GameOver)
         {
             if (_isDrinkTaken == false)
             {
@@ -164,7 +173,7 @@ public class Drink : MonoBehaviour
                 _transform.DOScale(1f, 0.2f).SetEase(Ease.OutBack);
             }
 
-            yield return new WaitForSeconds(UnityEngine.Random.Range(3f,5f));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(3f, 5f));
         }
     }
 
@@ -172,19 +181,24 @@ public class Drink : MonoBehaviour
     {
         _isDrunkAsHellStage = sobrietyLevel == SobrietyLevel.DrunkAsHell;
         _questionLabel.enabled = _isDrunkAsHellStage;
-        _spriteRenderer.enabled = !_isDrunkAsHellStage||_isDrinkTaken;
+        _spriteRenderer.enabled = !_isDrunkAsHellStage || _isDrinkTaken;
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _tweener = _transform.DOScale(1.15f, 0.2f).SetLoops(-1, LoopType.Yoyo);
-
+        if (_isDrinkTaken)
+        {
+            _tweener = _transform.DOScale(1.15f, 0.2f).SetLoops(-1, LoopType.Yoyo);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _tweener.Kill();
+        if (_tweener != null)
+        {
+            _tweener.Kill();
+        }
         _transform.localScale = Vector3.one;
     }
 }
-   
+

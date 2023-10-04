@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacbec8bfc823a64f80388e6a0156fcd, type: 3}
+  m_Name: Blood and Sand
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 28
+  <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 4
+  Image: {fileID: -1938209766, guid: 1f28022151f59bc489c123991d62204c, type: 3}
+  Name: Blood and Sand
+  Recipe:
+  - {fileID: 11400000, guid: 06a72e495ea544a4fbd8b83ca94d6cc1, type: 2}
+  - {fileID: 11400000, guid: c9a9ee204b3c66246b17d7324a283e4e, type: 2}
+  - {fileID: 11400000, guid: 54d1fcb728e3ec346b7e309915f295da, type: 2}
+  BonusScore: 300
+  BonusTime: 3

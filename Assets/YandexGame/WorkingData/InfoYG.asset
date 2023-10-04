@@ -290,7 +290,7 @@ MonoBehaviour:
   debug: 0
   archivingBuild: 1
   logoImageFormat: 1
-  backgroundImageFormat: 3
+  backgroundImageFormat: 0
   pixelRatioEnable: 0
   pixelRatioValue: 1
   SDKStartDelay: 0

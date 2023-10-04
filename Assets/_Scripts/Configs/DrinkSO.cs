@@ -19,13 +19,13 @@ public class DrinkSO : ScriptableObject
                 strength = 2;
                 break;
             case DrinkStrength.Light:
-                strength = 5;
+                strength = 4;
                 break;
             case DrinkStrength.Medium:
-                strength = 8;
+                strength = 7;
                 break;
             case DrinkStrength.Hard:
-                strength = 12;
+                strength = 10;
                 break;
         }
         return strength + BonusStrength;
@@ -36,13 +36,13 @@ public class DrinkSO : ScriptableObject
         switch (Rarity)
         {
             case DrinkRarity.Common:
-                score = 10;
+                score = 15;
                 break;
             case DrinkRarity.Uncommon:
-                score = 30;
+                score = 35;
                 break;
             case DrinkRarity.Rare:
-                score = 60;
+                score = 50;
                 break;
         }
         return score;

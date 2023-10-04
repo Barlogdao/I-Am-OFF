@@ -14,13 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 3
   <EarnType>k__BackingField: 1
-  <CoinCost>k__BackingField: 15
+  <CoinCost>k__BackingField: 25
   <_visualImage>k__BackingField: {fileID: 366352675, guid: a3581dca4ac915845aeb862799020db4, type: 3}
   Name: Alkodzilla
-  Stamina: 200
-  SceondStageLevel: 20
-  ThirdStageLevel: 150
-  OFFTime: 10
   Animator: {fileID: 22100000, guid: bc1fc5421aff7024a85e5cb6b46dd424, type: 2}
   DrinkStrenghtModifier: -2
   StaminaValue: 1

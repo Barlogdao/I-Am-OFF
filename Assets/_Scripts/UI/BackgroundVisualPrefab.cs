@@ -82,13 +82,12 @@ public class BackgroundVisualPrefab : UnlockablePrefab, IPointerClickHandler
                 if (_data.PlayerCoins >= _background.CoinCost)
                 {
                     SaveProvider.Instace.SpendCoins(_background.CoinCost);
-                    _data.UnlockBackground(_background.ID);
-                    RaisePurchaseEvent();
-                    HideLock();
+                    UnlockProcess();
                 }
                 break;
 
             case EarnType.Reward:
+                RewardProvider.RewardRequested?.Invoke(UnlockProcess);
                 break;
             case EarnType.Trigger:
                 break;
@@ -98,13 +97,20 @@ public class BackgroundVisualPrefab : UnlockablePrefab, IPointerClickHandler
     public void SetBackgroundAsCurrent()
     {
         _data.CurrentBackGroundID = _background.ID;
+        
         BackGroundProvider.BackgroundChanged?.Invoke();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if(_data.CurrentBackGroundID != _background.ID)
         SetBackgroundAsCurrent();
     }
 
-
+    private void UnlockProcess()
+    {
+        _data.UnlockBackground(_background.ID);
+        RaisePurchaseEvent();
+        HideLock();
+    }
 }

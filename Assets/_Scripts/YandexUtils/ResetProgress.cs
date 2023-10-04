@@ -8,6 +8,7 @@ public class ResetProgress : MonoBehaviour,IPointerClickHandler
     {
         SaveProvider.Instace.Reset();
         YandexGame.ResetSaveProgress();
+        YandexGame.Instance.RemoveLocalSaves();
         YandexGame.NewLeaderboardScores("DrinkLeaderBoard", 0);
     }
 }

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 9
   <EarnType>k__BackingField: 1
-  <CoinCost>k__BackingField: 6
+  <CoinCost>k__BackingField: 8
   <Image>k__BackingField: {fileID: 21300000, guid: 5548745656984104b943dbdfdf971c04, type: 3}

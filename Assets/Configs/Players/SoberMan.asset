@@ -14,17 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 2
   <EarnType>k__BackingField: 1
-  <CoinCost>k__BackingField: 10
+  <CoinCost>k__BackingField: 15
   <_visualImage>k__BackingField: {fileID: -324795951, guid: 6e9816a3c3c83c848b3a9bb04e09c902, type: 3}
   Name: SoberMan
-  Stamina: 120
-  SceondStageLevel: 20
-  ThirdStageLevel: 60
-  OFFTime: 2
   Animator: {fileID: 22100000, guid: 47967c338c1ba5f46a5a7b714e19b5cc, type: 2}
   DrinkStrenghtModifier: 4
-  StaminaValue: 0.415
-  SecondStageValue: 0.409
-  ThirdStageValue: 0.706
+  StaminaValue: 0.355
+  SecondStageValue: 0.195
+  ThirdStageValue: 0.738
   AlcoholResistanceValue: 0
   HangoverResistanceValue: 1

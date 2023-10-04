@@ -17,14 +17,10 @@ MonoBehaviour:
   <CoinCost>k__BackingField: 0
   <_visualImage>k__BackingField: {fileID: 1590392769, guid: 3e81583501af6774587003c1342362ea, type: 3}
   Name: Bob
-  Stamina: 120
-  SceondStageLevel: 40
-  ThirdStageLevel: 80
-  OFFTime: 4
   Animator: {fileID: 9100000, guid: 52a01be5e3c13724f8bd7db56a71952a, type: 2}
   DrinkStrenghtModifier: 0
-  StaminaValue: 0.571
+  StaminaValue: 0.5
   SecondStageValue: 0.33
   ThirdStageValue: 0.66
-  AlcoholResistanceValue: 0.609
-  HangoverResistanceValue: 0.626
+  AlcoholResistanceValue: 0.5
+  HangoverResistanceValue: 0.5

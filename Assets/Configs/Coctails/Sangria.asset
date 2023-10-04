@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Sangria
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 13
-  <EarnType>k__BackingField: 1
-  <CoinCost>k__BackingField: 5
-  Image: {fileID: -2045687486, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
+  <EarnType>k__BackingField: 2
+  <CoinCost>k__BackingField: 6
+  Image: {fileID: 1437085802, guid: 1f28022151f59bc489c123991d62204c, type: 3}
   Name: Sangria
   Recipe:
-  - {fileID: 11400000, guid: 151972ea8463e164dac60ed3fe0105b2, type: 2}
   - {fileID: 11400000, guid: c9a9ee204b3c66246b17d7324a283e4e, type: 2}
-  - {fileID: 11400000, guid: 54d1fcb728e3ec346b7e309915f295da, type: 2}
-  BonusScore: 400
-  BonusTime: 5
+  - {fileID: 11400000, guid: 20aec1359247d1544b4c15c77861d7f9, type: 2}
+  - {fileID: 11400000, guid: 8647adef6e30a964a92c78828db7c002, type: 2}
+  BonusScore: 300
+  BonusTime: 3

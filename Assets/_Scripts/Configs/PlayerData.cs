@@ -5,10 +5,7 @@ public class PlayerData : CollectibleSO
 {
     [field: SerializeField] public Sprite _visualImage { get; private set; }
     public string Name;
-    public int Stamina;
-    public int SceondStageLevel;
-    public int ThirdStageLevel;
-    public float OFFTime;
+   
     public RuntimeAnimatorController Animator;
     public int DrinkStrenghtModifier;
 

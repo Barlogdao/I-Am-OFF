@@ -13,18 +13,14 @@ MonoBehaviour:
   m_Name: Gundos
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 1
-  <EarnType>k__BackingField: 1
+  <EarnType>k__BackingField: 2
   <CoinCost>k__BackingField: 5
   <_visualImage>k__BackingField: {fileID: -1885408227, guid: 8cc68d1e2aa359146a114071d18428ae, type: 3}
   Name: Gundos
-  Stamina: 130
-  SceondStageLevel: 30
-  ThirdStageLevel: 90
-  OFFTime: 4
   Animator: {fileID: 22100000, guid: 9a940efda8852e4429fdce5fe5aaae0f, type: 2}
   DrinkStrenghtModifier: 1
-  StaminaValue: 0.734
+  StaminaValue: 0.7
   SecondStageValue: 0.23
   ThirdStageValue: 0.708
-  AlcoholResistanceValue: 0.311
-  HangoverResistanceValue: 0.462
+  AlcoholResistanceValue: 0.72
+  HangoverResistanceValue: 0.4

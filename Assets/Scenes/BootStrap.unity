@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 2103916639}
   - component: {fileID: 2103916638}
   m_Layer: 0
-  m_Name: DrinkSheet_1
+  m_Name: Drink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1052,8 +1052,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -413578995
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1856775992, guid: ceb518ef51c82734fb1017f018cf8190, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1063,7 +1063,7 @@ SpriteRenderer:
   m_Size: {x: 1.2, y: 1.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2103916640
@@ -1111,7 +1111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _saveProvider: {fileID: 252508612}
-  _lang: en
+  _lang: ru
 --- !u!4 &2118917665
 Transform:
   m_ObjectHideFlags: 0

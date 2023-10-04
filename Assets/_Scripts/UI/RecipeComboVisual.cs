@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using Assets.SimpleLocalization.Scripts;
 
+
 public class RecipeComboVisual : UnlockablePrefab
 {
 
@@ -70,17 +71,23 @@ public class RecipeComboVisual : UnlockablePrefab
                 if (_data.PlayerCoins >= _cocktail.CoinCost)
                 {
                     SaveProvider.Instace.SpendCoins(_cocktail.CoinCost);
-                    _data.UnlockRecipe(_cocktail.ID);
-                    RaisePurchaseEvent();
-                    HideLock();
+                    UnlockProcess();
                 }
                 break;
 
             case EarnType.Reward:
+                RewardProvider.RewardRequested?.Invoke(UnlockProcess);
                 break;
 
             case EarnType.Trigger:
                 break;
         }
+    }
+
+    private void UnlockProcess()
+    {
+        _data.UnlockRecipe(_cocktail.ID);
+        RaisePurchaseEvent();
+        HideLock();
     }
 }

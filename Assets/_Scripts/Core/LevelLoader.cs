@@ -14,15 +14,10 @@ public class LevelLoader : MonoBehaviour
         yield return null;
         LocalizationManager.Read();
         yield return new WaitUntil(() => YandexGame.SDKEnabled);
-
-        //YandexGame.ResetSaveProgress();
-
         _saveProvider.Init();
-#if UNITY_EDITOR
-        LocalizationManager.Language = _lang;
-#else
-LocalizationManager.Language = YandexGame.EnvironmentData.language;
-#endif
+
+        LocalizationManager.Language = YandexGame.EnvironmentData.language;
+
         SceneManager.LoadScene(1);
     }
 }

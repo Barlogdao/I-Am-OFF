@@ -14,13 +14,15 @@ public class DrinkWheel : MonoBehaviour
     private SobrietyLevel _currentSobriety;
     private float _timer = 0f;
     [SerializeField] private LayerMask _drinkLayerMask;
+    private Game _game;
 
     private void OnEnable()
     {
         HumanPlayer.SobrietyChanged += OnSobrietyChanged;
     }
-    private void Start()
+    public void Init(Game game)
     {
+        _game = game;
         _currentSpeed = _gameConfig.NormalSpeed;
         _transform = transform;
         _currentSobriety = SobrietyLevel.Sober;
@@ -59,7 +61,6 @@ public class DrinkWheel : MonoBehaviour
 
     private void CreateDrinks()
     {
-        //float colliderRadius = _drinkPrefab.GetComponent<CircleCollider2D>().radius;
         var angle = 360;
         var count = _gameConfig.DrinksAmount;
         var distance = _gameConfig.Distance;
@@ -71,7 +72,7 @@ public class DrinkWheel : MonoBehaviour
         {
             for (int i = 0; i < rows; i++)
             {
-                SetOnAngle(distance + (1.2f * i), angle, count / rows, _drinkPrefab.gameObject, 0);
+                SetOnAngle(distance + (1.2f * i), angle, count / rows, _drinkPrefab, 0);
                 _transform.Rotate(0f, 0f, 30f);
             }
         }
@@ -82,17 +83,15 @@ public class DrinkWheel : MonoBehaviour
 
             for (int i = 0; i < rows; i++)
             {
-                SetOnAngle(distance + (1.2f * i), angle, step * (i + 1), _drinkPrefab.gameObject, 0);
+                SetOnAngle(distance + (1.2f * i), angle, step * (i + 1), _drinkPrefab, 0);
                 _transform.Rotate(0f, 0f, 45f);
             }
         }
         else if (spawnForm == SpawnForm.spiral)
         {
-            int step = count / GetProportion(rows);
-
             for (int i = 0; i < rows; i++)
             {
-                SetOnAngle(distance + (1.1f * i), angle, count / rows, _drinkPrefab.gameObject, offset);
+                SetOnAngle(distance + (1.1f * i), angle, count / rows, _drinkPrefab, offset);
                 _transform.Rotate(0f, 0f, 20f);
             }
         }
@@ -100,7 +99,7 @@ public class DrinkWheel : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                SetRow(distance + 0.3f * i, angle, count / 4, _drinkPrefab.gameObject, offset);
+                SetRow(distance + 0.3f * i, angle, count / 4, _drinkPrefab, offset);
                 _transform.Rotate(0f, 0f, 90f);
             }
         }
@@ -118,7 +117,7 @@ public class DrinkWheel : MonoBehaviour
         }
     }
 
-    private void SetRow(float distance, float angle, int count, GameObject prefab, float offset)
+    private void SetRow(float distance, float angle, int count, Drink prefab, float offset)
     {
         Vector3 point = _transform.position;
         for (int i = 0; i < count; i++)
@@ -128,11 +127,11 @@ public class DrinkWheel : MonoBehaviour
             point.x = x;
             point.y = y;
 
-            Instantiate(prefab, point, Quaternion.identity, _transform);
+            SpawnDrink(prefab, point);
         }
     }
 
-    private void SetOnAngle(float distance, float angle, int count, GameObject prefab, float offset)
+    private void SetOnAngle(float distance, float angle, int count, Drink prefab, float offset)
     {
         Vector3 point = _transform.position;
         angle *= Mathf.Deg2Rad;
@@ -142,15 +141,16 @@ public class DrinkWheel : MonoBehaviour
             float y = _transform.position.y + (Mathf.Cos(angle / count * i) * distance) + offset * i;
             point.x = x;
             point.y = y;
+
             if (Random.value > 0.9f)
                 continue;
-            Instantiate(prefab, point, Quaternion.identity, _transform);
+
+            SpawnDrink(prefab, point);
         }
     }
 
     private void MoveWheel()
     {
-        //_transform.Rotate(0f, 0f, _currentSpeed * Time.deltaTime);
         switch (_currentSobriety)
         {
             case SobrietyLevel.Sober:
@@ -166,6 +166,11 @@ public class DrinkWheel : MonoBehaviour
                 _transform.position = Vector2.MoveTowards(_transform.position, new Vector2(MathF.Sin(Time.time), MathF.Cos(Time.time)) * 1.5f, Time.deltaTime);
                 break;
         }
+    }
+
+    private void SpawnDrink(Drink prefab, Vector3 position)
+    {
+        Instantiate(prefab, position, Quaternion.identity, _transform).Init(_game,_transform);
     }
 
     private void OnDisable()

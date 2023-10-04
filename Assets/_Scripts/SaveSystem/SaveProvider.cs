@@ -69,8 +69,6 @@ public class SaveProvider : MonoBehaviour
     }
 
     [ContextMenu ("Reset")]
-    
-
     public void Reset()
     {
         PlayerPrefs.DeleteAll();
