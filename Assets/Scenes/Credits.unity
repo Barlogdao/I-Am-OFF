@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 451249427}
   - component: {fileID: 451249429}
   - component: {fileID: 451249428}
+  - component: {fileID: 451249430}
   m_Layer: 5
   m_Name: Koz
   m_TagString: Untagged
@@ -501,7 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -558,7 +559,7 @@ MonoBehaviour:
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
-  m_isRichText: 1
+  m_isRichText: 0
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -584,6 +585,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451249426}
   m_CullTransparentMesh: 1
+--- !u!114 &451249430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451249426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42e05b3a9698594db5c08d2e110920e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &564094246
 GameObject:
   m_ObjectHideFlags: 0

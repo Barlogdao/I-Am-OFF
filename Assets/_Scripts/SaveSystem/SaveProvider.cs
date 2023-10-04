@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -73,5 +75,23 @@ public class SaveProvider : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         SaveData = new SaveData();
+    }
+
+    public void UnlockAll()
+    {
+        SaveData.UnlockedPlayers = GetAllID(PlayerProvider.Instance.GetAllPlayers().Length);
+        SaveData.UnlockedBackgrounds = GetAllID(BackGroundProvider.Instance.GetAllBackgrounds().Length);
+        SaveData.UnlockedRecipes = GetAllID(DrinkProvider.Instance.GetAllRecipies().Length);
+        _saveSystem.Save(SaveData);
+
+        List<int> GetAllID(int size)
+        {
+            List<int> list = new List<int>();
+            for (int i = 0; i < size; i++)
+            {
+                list.Add(i);
+            }
+            return list;
+        }
     }
 }
