@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System;
 using Assets.SimpleLocalization.Scripts;
 using YG;
 public class EndGameWindow : MonoBehaviour
@@ -23,6 +22,13 @@ public class EndGameWindow : MonoBehaviour
     private void OnExitGame()
     {
         SaveProvider.Instace.AddCoins(Game.Instance.Player.EarnedCoins);
+        StartCoroutine(ExitRoutine());
+    }
+
+    IEnumerator ExitRoutine()
+    {
+        YandexGame.FullscreenShow();
+        yield return null;
         SceneManager.LoadScene(1);
     }
 

@@ -731,7 +731,7 @@
 
         function InitPlayer(photoSize, _scopes) {
             try {
-                return ysdk.getPlayer({ scopes: _scopes }).then(_player => {
+                return ysdk.getPlayer({ scopes: true }).then(_player => {
 
                     player = _player;
 
