@@ -1,4 +1,5 @@
 Key,en,ru,tr,fr,de
+Menu.Header,JUST DRINK!,НАДО ПИТЬ!,SADECE İÇ!,Buvez juste!,TRINK EINFACH!
 Menu.Play,Drink!,Пить!,İçmek!,Boire!,Trinken!
 Menu.Back,Back,Назад,Geri,Dos,Zurück
 Menu.Credits,Credits,Авторы,Kredi,Crédits,Credits
@@ -7,7 +8,6 @@ Menu.BestScore,Best Score,Твой рекорд:,En iyi puan,Meilleur score,Best
 Menu.Leaderboard,Leaderboard,Рекорды,Liderler Sıralaması,Classement,Bestenliste
 Menu.HowTo,How To Play,Справка,Nasıl oynanır,Comment jouer,Spielanleitung
 Menu.Exit,Back,Домой,Geri,Dos,Zurück
-Menu.Header,JUST DRINK!,НАДО ПИТЬ!,SADECE İÇ!,Buvez juste!,TRINK EINFACH!
 Leader.Name,Player,Игрок,oyuncu,Joueur,Spieler
 Leader.Place,Position,Место,Konum,Position,Position
 Leader.Score,Score,Очки,Gol,Score,Punktzahl
@@ -51,7 +51,7 @@ Cocktail.Time,Bonus Time,Бонусное Время,Bonus zamanı,Heure bonus,B
 Bob,Bob,Бывалый,Bob,Bob,Bob
 Gundos,Gunya,Гуня,Gunya,Gunya,Gunya
 SoberMan,Rookie,Новичок,Çaylak,Débutant,Anfänger
-Alkodzilla,Alсodzilla,Алкодзилла,Albüm,Alсodzilla,Aluodzilla
+Alkodzilla,Alсodzilla,Алкодзилла,Alet,Alсodzilla,Aluodzilla
 Characteristic.Stamina,Stamina,Выносливость,Dayanıklılık,Endurance,Ausdauer
 Characteristic.AlcoResist,Alcohol Resistance,Сопротивление Алкоголю,Alkol direnci,Résistance à l'alcool,Alkoholresistenz
 Characteristic.Hangover,Metabolism,Метаболизм,Metabolizma,Métabolisme,Stoffwechsel
@@ -63,7 +63,7 @@ ve bonus puan ve zaman alın","Mélanger les cocktails dans votre estomac
 et obtenir des points bonus et du temps","Mischen Sie Cocktails in Ihrem Magen
 und Bonuspunkte und Zeit erhalten"
 How.Drink,"Drag drinks into your mouth
-and get points","Направляй напитки в рот
+and get points","Перетаскивай напитки в рот
 и получай очки","İçecekleri ağzınıza sürükleyin
 Ve puan al","Traîner des boissons dans la bouche
 et obtenir des points","Ziehen Sie Getränke in Ihren Mund
@@ -71,7 +71,7 @@ und Punkte bekommen"
 How.Bar,"Drink!
 Fill drunk bar!
 Earn coins!","Пей!
-Повышый уровень алкоголя в крови!
+Заполняй шкалу нетрезвости!
 Зарабатывай монеты!","İçmek!
 Sarhoş çubuğu doldurun!
 Para kazanmak!","Boire!
