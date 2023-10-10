@@ -41,9 +41,6 @@ public class CoctailCanvas : MonoBehaviour
             _coctailName.transform.localScale = Vector3.one;
             _coctailName.enabled = false;
         });
-
-
-
     }
 
     private void OnDisable()

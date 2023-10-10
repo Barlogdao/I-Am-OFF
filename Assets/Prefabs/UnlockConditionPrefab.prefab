@@ -196,7 +196,7 @@ MonoBehaviour:
   _unlockVisual: {fileID: 8662726851756594484}
   _coinAmount: {fileID: 3165075565186546332}
   _purchaseIcon: {fileID: 21300000, guid: f3f47a7838b093142b5de68f613ba82f, type: 3}
-  _rewardedIcon: {fileID: 21300000, guid: ada9de156c2ab7f439e31716f36a6099, type: 3}
+  _rewardedIcon: {fileID: 21300000, guid: a23b28b3b0d12e6409c7066fe12a19b4, type: 3}
   _triggerIcon: {fileID: 21300000, guid: 07a26439187b013438d576f37456cdea, type: 3}
 --- !u!114 &8662726851756594484
 MonoBehaviour:

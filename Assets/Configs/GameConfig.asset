@@ -18,11 +18,11 @@ MonoBehaviour:
   DrinkRows: 5
   Distance: 3
   SpawnForm: 0
-  UncommonDrinkAppearanceChance: 60
+  UncommonDrinkAppearanceChance: 40
   RareDrinkAppearanceChance: 10
   NormalSpeed: 35
   FastSpeed: 60
-  SuperFastSpeed: -120
+  SuperFastSpeed: -110
   MinStamina: 80
   MaxStamina: 220
   MinDrunkModifier: -3

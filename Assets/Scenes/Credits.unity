@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 451249429}
   - component: {fileID: 451249428}
   - component: {fileID: 451249430}
+  - component: {fileID: 451249431}
   m_Layer: 5
   m_Name: Koz
   m_TagString: Untagged
@@ -597,6 +598,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42e05b3a9698594db5c08d2e110920e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &451249431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451249426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b8e0b7e0599d44099a958f773039b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Koz
 --- !u!1 &564094246
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +623,7 @@ GameObject:
   - component: {fileID: 564094249}
   - component: {fileID: 564094248}
   - component: {fileID: 564094250}
+  - component: {fileID: 564094251}
   m_Layer: 5
   m_Name: Fed
   m_TagString: Untagged
@@ -698,7 +713,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -744,6 +759,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b903ce3ee3e7b4ca99bd669d09bf28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &564094251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564094246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b8e0b7e0599d44099a958f773039b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Fed
 --- !u!1 &705781402
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +933,7 @@ GameObject:
   - component: {fileID: 851533428}
   - component: {fileID: 851533430}
   - component: {fileID: 851533429}
+  - component: {fileID: 851533431}
   m_Layer: 5
   m_Name: Gor
   m_TagString: Untagged
@@ -945,7 +974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1030,6 +1059,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851533427}
   m_CullTransparentMesh: 1
+--- !u!114 &851533431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851533427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b8e0b7e0599d44099a958f773039b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Gord
 --- !u!1 &928860101
 GameObject:
   m_ObjectHideFlags: 0

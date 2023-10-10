@@ -1,20 +1,60 @@
 {
-    "idSave": 15,
+    "idSave": 93,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "PlayerCoins": 0,
-    "MaxScore": 1240,
+    "PlayerCoins": 12,
+    "MaxScore": 4575,
     "UnlockedRecipes": [
         0,
-        14
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
     ],
     "UnlockedBackgrounds": [
-        0
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
     ],
     "UnlockedPlayers": [
-        0
+        0,
+        1,
+        2,
+        3
     ],
-    "CurrentBackgroundID": 0,
-    "CurrentPlayerID": 0
+    "CurrentBackgroundID": 1,
+    "CurrentPlayerID": 3
 }

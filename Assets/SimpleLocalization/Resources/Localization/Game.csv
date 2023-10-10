@@ -51,7 +51,7 @@ Cocktail.Time,Bonus Time,Бонусное Время,Bonus zamanı,Heure bonus,B
 Bob,Bob,Бывалый,Bob,Bob,Bob
 Gundos,Gunya,Гуня,Gunya,Gunya,Gunya
 SoberMan,Rookie,Новичок,Çaylak,Débutant,Anfänger
-Alkodzilla,Alсodzilla,Алкодзилла,Alet,Alсodzilla,Aluodzilla
+Alkodzilla,Alсodzilla,Алкодзилла,Albüm,Alсodzilla,Aluodzilla
 Characteristic.Stamina,Stamina,Выносливость,Dayanıklılık,Endurance,Ausdauer
 Characteristic.AlcoResist,Alcohol Resistance,Сопротивление Алкоголю,Alkol direnci,Résistance à l'alcool,Alkoholresistenz
 Characteristic.Hangover,Metabolism,Метаболизм,Metabolizma,Métabolisme,Stoffwechsel
@@ -79,3 +79,6 @@ VIGHT BAR DIVER!
 Gagner des pièces!","Trinken!
 Füllen Sie betrunkene Bar!
 Verdienen Sie Münzen!"
+Fed,Aleksandr Fedotov,Александр Федотов,,,
+Koz,Sergey Kozlov,Сергей Козлов,,,
+Gord,Vladimir Gordeev,Владимир Гордеев,,,

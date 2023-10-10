@@ -231,10 +231,10 @@ TextureImporter:
       name: DrinksSheet_5
       rect:
         serializedVersion: 2
-        x: 132
+        x: 131
         y: 227
-        width: 13
-        height: 18
+        width: 15
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: DrinksSheet_16
       rect:
         serializedVersion: 2
-        x: 161
+        x: 160
         y: 195
-        width: 13
-        height: 18
+        width: 15
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -819,10 +819,10 @@ TextureImporter:
       name: DrinksSheet_33
       rect:
         serializedVersion: 2
-        x: 57
+        x: 56
         y: 102
-        width: 17
-        height: 23
+        width: 19
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -945,10 +945,10 @@ TextureImporter:
       name: DrinksSheet_39
       rect:
         serializedVersion: 2
-        x: 140
-        y: 92
-        width: 13
-        height: 13
+        x: 137
+        y: 89
+        width: 19
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
