@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using Assets.SimpleLocalization.Scripts;
 using YG;
+using YG.Utils.LB;
+
 public class EndGameWindow : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _gameScore;
@@ -66,16 +68,14 @@ public class EndGameWindow : MonoBehaviour
         {
             _bestScore.text = $" {LocalizationManager.Localize("Game.NewBestScore")}{newScore}";
             saveProvider.ChangeMaxScore(newScore);
+            YandexGame.NewLeaderboardScores("DrinkLeaderBoard", newScore);
         }
         else
         {
             _bestScore.text = $"{LocalizationManager.Localize("Game.BestScore")}{oldScore}";
+            YandexGame.NewLeaderboardScores("DrinkLeaderBoard", oldScore);
         }
 
-        if (oldScore < newScore)
-        {
-            YandexGame.NewLeaderboardScores("DrinkLeaderBoard", newScore);
-        }
 
         _exitButton.gameObject.SetActive(true);
     }

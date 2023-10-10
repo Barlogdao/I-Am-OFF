@@ -5,7 +5,7 @@ Menu.Back,Back,Назад,Geri,Dos,Zurück
 Menu.Credits,Credits,Авторы,Kredi,Crédits,Credits
 Menu.CocktailMenu,Cocktail Menu,Коктейли,Kokteyl menüsü,Cocktail,Cocktailmenü
 Menu.BestScore,Best Score,Твой рекорд:,En iyi puan,Meilleur score,Bestes Ergebnis
-Menu.Leaderboard,Leaderboard,Рекорды,Liderler Sıralaması,Classement,Bestenliste
+Menu.Leaderboard,Leaderboard,Таблица лидеров,Liderler Sıralaması,Classement,Bestenliste
 Menu.HowTo,How To Play,Справка,Nasıl oynanır,Comment jouer,Spielanleitung
 Menu.Exit,Back,Домой,Geri,Dos,Zurück
 Leader.Name,Player,Игрок,oyuncu,Joueur,Spieler
@@ -37,7 +37,7 @@ Cocktail.Black Russian,Black Russian,Черный русский,Siyah Rusyalı,
 Cocktail.Long Island,Long Island,Лонг Айленд,Long Island,Long Island,Long Island
 Cocktail.Green fairy,Green fairy,Зеленая фея,Yeşil Peri,Fée verte,Grüne Fee
 Cocktail.Screwdriver,Screwdriver,Отвертка,Tornavida,Tournevis,Schraubendreher
-Cocktail.Tequila Sunrise,Tequila Sunrise,Текила Санрайз,Tekila gündoğumu,Tequila Sunrise,Tequila Sonnenaufgang
+Cocktail.Tequila Sunrise,Tequila Sunrise,Текила Санрайз,Tekila gündoğumu,Tequila Sunrise,Tequila Sunrise
 Cocktail.Sangrit,Sangrit,Сангрита,Sangrit,Chanteur,Sangrit
 Cocktail.Blood and Sand,Blood and Sand,Кровь и песок,Kan ve Kum,Sang et sable,Blut und Sand
 Cocktail.Jellyfish,Jellyfish,Медуза,Deniz anası,Méduse,Qualle
@@ -79,6 +79,8 @@ VIGHT BAR DIVER!
 Gagner des pièces!","Trinken!
 Füllen Sie betrunkene Bar!
 Verdienen Sie Münzen!"
-Fed,Aleksandr Fedotov,Александр Федотов,,,
-Koz,Sergey Kozlov,Сергей Козлов,,,
-Gord,Vladimir Gordeev,Владимир Гордеев,,,
+Fed,Aleksandr Fedotov,Александр Федотов,Aleksandr Fedotov,Aleksandr Fedotov,Aleksandr Fedotov
+Koz,Sergey Kozlov,Сергей Козлов,Sergey Kozlov,Sergey Kozlov,Sergey Kozlov
+Gord,Vladimir Gordeev,Владимир Гордеев,Vladimir Gordeev,Vladimir Gordeev,Vladimir Gordeev
+Leader.Need,To track your progress on the leaderboard you must be logged in.,Чтобы отслеживать прогресс в таблице лидеров необходимо авторизоваться,Lider tablosundaki ilerlemenizi izlemek için giriş yapmanız gerekir.,"Pour suivre vos progrès dans le classement, vous devez être connecté.","Um Ihre Fortschritte auf der Rangliste zu verfolgen, müssen Sie angemeldet sein."
+Menu.Auth,Login,Авторизоваться,Giriş yapmak,Se connecter,Anmeldung

@@ -52,6 +52,7 @@ public class SaveProvider : MonoBehaviour
         SaveData.PlayerCoins += amount;
         CoinAmountChanged?.Invoke(SaveData.PlayerCoins);
         _saveSystem.Save(SaveData);
+        _saveSystem.UpdateCloud();
     }
 
     public void ChangeMaxScore(int score)
