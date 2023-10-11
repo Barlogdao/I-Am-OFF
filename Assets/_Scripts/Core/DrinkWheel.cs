@@ -1,11 +1,10 @@
-using UnityEngine;
-using DG.Tweening;
 using System;
+using DG.Tweening;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class DrinkWheel : MonoBehaviour
 {
-
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private Drink _drinkPrefab;
 
@@ -16,10 +15,6 @@ public class DrinkWheel : MonoBehaviour
     [SerializeField] private LayerMask _drinkLayerMask;
     private Game _game;
 
-    private void OnEnable()
-    {
-        HumanPlayer.SobrietyChanged += OnSobrietyChanged;
-    }
     public void Init(Game game)
     {
         _game = game;
@@ -27,6 +22,11 @@ public class DrinkWheel : MonoBehaviour
         _transform = transform;
         _currentSobriety = SobrietyLevel.Sober;
         CreateDrinks();
+    }
+
+    private void OnEnable()
+    {
+        HumanPlayer.SobrietyChanged += OnSobrietyChanged;
     }
 
     private void OnSobrietyChanged(SobrietyLevel sobriety)
@@ -48,12 +48,13 @@ public class DrinkWheel : MonoBehaviour
                 break;
         }
     }
+
     private void SpeedTransition(float targetSpeed)
     {
         DOTween.To(() => _currentSpeed, x => _currentSpeed = x, targetSpeed, 0.9f);
     }
 
-    void Update()
+    private void Update()
     {
         _timer += Time.deltaTime;
         MoveWheel();
@@ -64,7 +65,7 @@ public class DrinkWheel : MonoBehaviour
         var angle = 360;
         var count = _gameConfig.DrinksAmount;
         var distance = _gameConfig.Distance;
-        var spawnForm = GetSpawnform();
+        var spawnForm = GetSpawnForm();
         var offset = 0.1f;
         int rows = _gameConfig.DrinkRows;
 
@@ -79,7 +80,7 @@ public class DrinkWheel : MonoBehaviour
 
         else if (spawnForm == SpawnForm.roundProgressive)
         {
-            int step = count / GetProportion(rows) + 1;
+            int step = (count / GetProportion(rows)) + 1;
 
             for (int i = 0; i < rows; i++)
             {
@@ -99,20 +100,24 @@ public class DrinkWheel : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                SetRow(distance + 0.3f * i, angle, count / 4, _drinkPrefab, offset);
+                SetRow(distance + (0.3f * i), angle, count / 4, _drinkPrefab, offset);
                 _transform.Rotate(0f, 0f, 90f);
             }
         }
     }
 
-    private SpawnForm GetSpawnform()
+    private SpawnForm GetSpawnForm()
     {
         switch (Random.Range(0, 4))
         {
             case 0: return SpawnForm.spiral;
+
             case 1: return SpawnForm.rows;
+
             case 2: return SpawnForm.roundEqual;
+
             case 3: return SpawnForm.roundProgressive;
+
             default: return SpawnForm.spiral;
         }
     }
@@ -122,7 +127,7 @@ public class DrinkWheel : MonoBehaviour
         Vector3 point = _transform.position;
         for (int i = 0; i < count; i++)
         {
-            float x = _transform.position.x - count + i * 2f;
+            float x = _transform.position.x - count + (i * 2f);
             float y = distance + Mathf.Sin(i * 0.2f);
             point.x = x;
             point.y = y;
@@ -143,7 +148,9 @@ public class DrinkWheel : MonoBehaviour
             point.y = y;
 
             if (Random.value > 0.9f)
+            {
                 continue;
+            }
 
             SpawnDrink(prefab, point);
         }
@@ -157,10 +164,12 @@ public class DrinkWheel : MonoBehaviour
                 _transform.Rotate(0f, 0f, _currentSpeed * Time.deltaTime);
                 _transform.position = Vector2.MoveTowards(_transform.position, Vector2.zero, Time.deltaTime);
                 break;
+
             case SobrietyLevel.Drunk:
                 _transform.Rotate(0f, 0f, _currentSpeed * Time.deltaTime);
                 _transform.position = Vector2.MoveTowards(_transform.position, new Vector2(MathF.Sin(Time.time), MathF.Cos(Time.time)), Time.deltaTime);
                 break;
+
             case SobrietyLevel.DrunkAsHell:
                 _transform.Rotate(0f, 0f, (_currentSpeed + Mathf.Sign(_currentSpeed) * _timer * 2) * Time.deltaTime);
                 _transform.position = Vector2.MoveTowards(_transform.position, new Vector2(MathF.Sin(Time.time), MathF.Cos(Time.time)) * 1.5f, Time.deltaTime);
@@ -170,7 +179,7 @@ public class DrinkWheel : MonoBehaviour
 
     private void SpawnDrink(Drink prefab, Vector3 position)
     {
-        Instantiate(prefab, position, Quaternion.identity, _transform).Init(_game,_transform);
+        Instantiate(prefab, position, Quaternion.identity, _transform).Init(_game, _transform);
     }
 
     private void OnDisable()

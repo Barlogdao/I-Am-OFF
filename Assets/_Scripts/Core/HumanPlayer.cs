@@ -1,61 +1,65 @@
-using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEngine;
 
 public class HumanPlayer : MonoBehaviour
 {
+    private readonly List<DrinkSO> _stomach = new ();
+
     [SerializeField] private Canvas _offCanvas;
     [SerializeField] private SpriteRenderer _drinkVisual;
     [Header("score label")]
     [SerializeField] private TMPro.TextMeshProUGUI _scoreLabel;
-    [SerializeField] float _scoreEndScale;
+    [SerializeField] private float _scoreEndScale;
     private Vector3 _scoreStartScale;
-    [SerializeField] float _scoreScaleDuration;
+    [SerializeField] private float _scoreScaleDuration;
 
     [Header("drunk label")]
     [SerializeField] private TMPro.TextMeshProUGUI _drunkScoreLabel;
-    [SerializeField] float _drunkEndScale;
+    [SerializeField] private float _drunkEndScale;
     private Vector3 _drunkStartScale;
-    [SerializeField] float _drunkScaleDuration;
+    [SerializeField] private float _drunkScaleDuration;
     [SerializeField] private GameConfig _config;
-
-    private List<DrinkSO> _stomach = new();
 
     private Animator _animator;
     private int _drunkLevel;
     private int _score;
 
-
-    private int _StaminaLevel;
+    private int _staminaLevel;
     private int _drinkStrengthModifier;
     private int _secondStageLevel;
     private int _thirdStageLevel;
 
-
     private WaitForSeconds _drinkTime;
     private WaitForSeconds _offCanvasLiveTime = new WaitForSeconds(1.2f);
 
-    public int Score => _score;
-    public SobrietyLevel Sobriety { get; private set; }
-    public CircleCollider2D PlayerCollider { get; private set; }
-    public bool PlayerIsOFF { get; private set; }
-    public bool PlayerIsDrinking { get; private set; }
-    public int EarnedCoins { get; private set; }
-
     public static event Action<float> DrunkLevelChanged;
+
     public static event Action<int> ScoreChanged;
+
     public static event Action<bool> PlayerMindChanged;
+
     public static event Action<SobrietyLevel> SobrietyChanged;
+
     public static event Action<List<DrinkSO>> StomachUpdated;
+
     public static event Action<CocktailRecipeSO> CoctailDrinked;
+
     public static event Action PlayerDrinked;
-    private void Awake()
-    {
-        PlayerCollider = GetComponent<CircleCollider2D>();
-        _drinkTime = new WaitForSeconds(_config.DrinkingDuration);
-    }
+
+    public int Score => _score;
+
+    public SobrietyLevel Sobriety { get; private set; }
+
+    public CircleCollider2D PlayerCollider { get; private set; }
+
+    public bool PlayerIsOFF { get; private set; }
+
+    public bool PlayerIsDrinking { get; private set; }
+
+    public int EarnedCoins { get; private set; }
 
     public void Init(PlayerData data)
     {
@@ -79,9 +83,25 @@ public class HumanPlayer : MonoBehaviour
         _drunkScoreLabel.enabled = false;
     }
 
+    public void Drink(DrinkSO drink)
+    {
+        PlayerDrinked?.Invoke();
+        _drinkVisual.sprite = drink.Image;
+        AddDrinkToStomach(drink);
+        ScoreResolve(drink);
+        DrunkResolve(drink);
+
+    }
+
+    private void Awake()
+    {
+        PlayerCollider = GetComponent<CircleCollider2D>();
+        _drinkTime = new WaitForSeconds(_config.DrinkingDuration);
+    }
+
     private void SetPlayerCharacteristics(PlayerData data, GameConfig config)
     {
-        _StaminaLevel = data.GetStaminaLevel(config);
+        _staminaLevel = data.GetStaminaLevel(config);
         _secondStageLevel = data.GetSecondStageLevel(config);
         _thirdStageLevel = data.GetThirdStageLevel(config);
         _drinkStrengthModifier = data.GetDrinkModifier(config);
@@ -92,16 +112,6 @@ public class HumanPlayer : MonoBehaviour
         var sr = GetComponent<SpriteRenderer>();
         sr.sortingLayerName = "UI";
         sr.sortingOrder = 2;
-    }
-
-    public void Drink(DrinkSO drink)
-    {
-        PlayerDrinked?.Invoke();
-        _drinkVisual.sprite = drink.Image;
-        AddDrinkToStomach(drink);
-        ScoreResolve(drink);
-        DrunkResolve(drink);
-
     }
 
     private void CocktailCheck()
@@ -130,6 +140,7 @@ public class HumanPlayer : MonoBehaviour
             StomachUpdated?.Invoke(_stomach);
             _stomach.Add(drink);
         }
+
         StomachUpdated?.Invoke(_stomach);
     }
 
@@ -155,7 +166,7 @@ public class HumanPlayer : MonoBehaviour
     private void DrunkResolve(DrinkSO drink)
     {
         var drunkAmount = drink.GetDrinkStrengthLevel() + _drinkStrengthModifier;
-        _drunkLevel = Math.Clamp(_drunkLevel + drunkAmount, 0, _StaminaLevel);
+        _drunkLevel = Math.Clamp(_drunkLevel + drunkAmount, 0, _staminaLevel);
         StartCoroutine(DrunkProcess(drunkAmount));
     }
 
@@ -181,7 +192,7 @@ public class HumanPlayer : MonoBehaviour
         PlayerIsDrinking = false;
         CocktailCheck();
 
-        if (_drunkLevel >= _StaminaLevel)
+        if (_drunkLevel >= _staminaLevel)
         {
             _offCanvas.gameObject.SetActive(true);
             DrunkAnimation();
@@ -231,21 +242,25 @@ public class HumanPlayer : MonoBehaviour
             Sobriety = level;
             SobrietyChanged?.Invoke(Sobriety);
         }
+
         DrunkLevelChanged?.Invoke(GetDrunkLevel());
     }
 
     private float GetDrunkLevel()
     {
-        if (_drunkLevel >= _StaminaLevel)
+        if (_drunkLevel >= _staminaLevel)
         {
             return 0f;
         }
-        return (float)_drunkLevel / _StaminaLevel;
+
+        return (float)_drunkLevel / _staminaLevel;
     }
+
     private void DrinkAnimation()
     {
         _animator.Play("Drink");
     }
+
     private void DrunkAnimation()
     {
         _animator.Play("OFF");
@@ -256,8 +271,6 @@ public class HumanPlayer : MonoBehaviour
         Game.GameOvered -= OnGameOvered;
         DOTween.KillAll();
     }
-
-
 }
 
 public enum SobrietyLevel

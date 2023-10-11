@@ -1,31 +1,43 @@
-using System.Collections;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-
     private int _gameTimer;
+    private PlayerData _playerData;
     [SerializeField] private GameConfig _gameConfig;
     [SerializeField] private DrinkWheel _drinkWheel;
-    public static Game Instance { get; private set; }
-    public GameState State {  get; private set; }
-    public HumanPlayer Player { get; private set; }
-    public float HangoverTime { get; private set; }
-    [field: SerializeField] public int OffStrikeBonusScore { get; private set; }
-    private PlayerData _playerData;
+    private readonly WaitForSeconds _tick = new WaitForSeconds(1f);
 
     public static event Action<int> TimerTicked;
+
     public static event Action GameStarted;
+
     public static event Action GameOvered;
 
-    private WaitForSeconds _tick = new WaitForSeconds(1f);
+    public static Game Instance { get; private set; }
+
+    public GameState State { get; private set; }
+
+    public HumanPlayer Player { get; private set; }
+
+    public float HangoverTime { get; private set; }
+
+    [field: SerializeField] public int OffStrikeBonusScore { get; private set; }
+
+    public void AddBonusTime(int bonusTime)
+    {
+        _gameTimer += bonusTime;
+        TimerTicked?.Invoke(_gameTimer);
+    }
 
     private void Awake()
     {
         Instance = this;
     }
+
     private void Start()
     {
         _playerData = PlayerProvider.Instance.GetPlayer(SaveProvider.Instace.SaveData.CurrentPlayerID);
@@ -34,7 +46,6 @@ public class Game : MonoBehaviour
         StartCoroutine(InitGame());
     }
 
-
     private IEnumerator InitGame()
     {
         _gameTimer = _gameConfig.GameDuration;
@@ -42,14 +53,8 @@ public class Game : MonoBehaviour
         CreateDrinks();
 
         yield return null;
-        
-        StartCoroutine(StartGame());
-    }
 
-    public void AddBonusTime(int bonusTime)
-    {
-        _gameTimer += bonusTime;
-        TimerTicked?.Invoke(_gameTimer);
+        StartCoroutine(StartGame());
     }
 
     private void InitPlayer()
@@ -57,6 +62,7 @@ public class Game : MonoBehaviour
         Player = FindObjectOfType<HumanPlayer>();
         Player.Init(_playerData);
     }
+
     private void CreateDrinks()
     {
         _drinkWheel.Init(this);
@@ -65,16 +71,16 @@ public class Game : MonoBehaviour
     private IEnumerator StartGame()
     {
         State = GameState.Play;
-
-        GameStarted?.Invoke();
-        
+        GameStarted?.Invoke();        
         TimerTicked?.Invoke(_gameTimer);
+
         while (_gameTimer > 0)
         {
             yield return _tick;
             _gameTimer--;
             TimerTicked?.Invoke(_gameTimer);
         }
+
         StartCoroutine(GameOver());
     }
 
@@ -98,5 +104,5 @@ public enum GameState
 {
     Init,
     Play,
-    GameOver
+    GameOver,
 }

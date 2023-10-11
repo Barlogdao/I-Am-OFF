@@ -13,23 +13,21 @@ public class Drink : MonoBehaviour
     private Vector3 _localTransform;
     private DrinkSO _drinkData;
     private HumanPlayer _player;
-    [SerializeField] SpriteRenderer _questionLabel;
+    [SerializeField] private SpriteRenderer _questionLabel;
     private bool _isDrinkTaken = false;
     private Tweener _tweener;
     private Transform _transform;
 
     public static event Func<DrinkSO> DrinkChanged;
+
     private bool _isDrunkAsHellStage = false;
     private WaitForSeconds _respawnTime = new WaitForSeconds(1.2f);
 
-    private void Awake()
+    public static Vector3 GetMousePos()
     {
-        _transform = transform;
-        _circleCollider = GetComponent<CircleCollider2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _circleCollider.enabled = false;
-        _spriteRenderer.enabled = false;
-        _questionLabel.enabled = false;
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
+        return mousePos;
     }
 
     public void Init(Game game, Transform parent)
@@ -48,6 +46,16 @@ public class Drink : MonoBehaviour
         _questionLabel.enabled = false;
     }
 
+    private void Awake()
+    {
+        _transform = transform;
+        _circleCollider = GetComponent<CircleCollider2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _circleCollider.enabled = false;
+        _spriteRenderer.enabled = false;
+        _questionLabel.enabled = false;
+    }
+
     private void OnGameStarted()
     {
         StartCoroutine(DrinkUpdate());
@@ -60,12 +68,9 @@ public class Drink : MonoBehaviour
 
     private void OnPlayerOFF(bool playerIsOFF)
     {
-
-
         _circleCollider.enabled = !playerIsOFF;
         _spriteRenderer.color = playerIsOFF ? Color.gray : Color.white;
         _questionLabel.color = playerIsOFF ? Color.gray : Color.white;
-
     }
 
     private void OnMouseDown()
@@ -78,9 +83,8 @@ public class Drink : MonoBehaviour
             _spriteRenderer.enabled = true;
             _questionLabel.enabled = false;
         }
-
-
     }
+
     private void OnMouseDrag()
     {
         _transform.position = GetMousePos();
@@ -88,7 +92,6 @@ public class Drink : MonoBehaviour
 
     private void OnMouseUp()
     {
-
         if (_circleCollider.IsTouching(_player.PlayerCollider) && Game.Instance.State != GameState.GameOver && !_player.PlayerIsDrinking)
         {
             _player.Drink(_drinkData);
@@ -98,6 +101,7 @@ public class Drink : MonoBehaviour
         {
             ReturnDrinkToWheel();
         }
+
         _isDrinkTaken = false;
         if (_isDrunkAsHellStage)
         {
@@ -119,14 +123,6 @@ public class Drink : MonoBehaviour
         _questionLabel.enabled = false;
     }
 
-    public static Vector3 GetMousePos()
-    {
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
-        return mousePos;
-    }
-
-
     private void OnDestroy()
     {
         Game.GameOvered -= OnGameOver;
@@ -134,6 +130,7 @@ public class Drink : MonoBehaviour
         HumanPlayer.SobrietyChanged -= OnSobrietyChanged;
         Game.GameStarted -= OnGameStarted;
     }
+
     private IEnumerator DestroyDrink()
     {
         // Напито обнуляется и становится недоступен
@@ -141,10 +138,13 @@ public class Drink : MonoBehaviour
         _circleCollider.enabled = false;
         _spriteRenderer.enabled = false;
         _questionLabel.enabled = false;
+
         // проходит время
         yield return _respawnTime;
+
         // обновляется СО
         _drinkData = DrinkChanged?.Invoke();
+
         // появляется новый Дринк
         _transform.localScale = Vector3.zero;
         _transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
@@ -184,7 +184,6 @@ public class Drink : MonoBehaviour
         _spriteRenderer.enabled = !_isDrunkAsHellStage || _isDrinkTaken;
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (_isDrinkTaken)
@@ -192,13 +191,14 @@ public class Drink : MonoBehaviour
             _tweener = _transform.DOScale(1.15f, 0.2f).SetLoops(-1, LoopType.Yoyo);
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (_tweener != null)
         {
             _tweener.Kill();
         }
+
         _transform.localScale = Vector3.one;
     }
 }
-

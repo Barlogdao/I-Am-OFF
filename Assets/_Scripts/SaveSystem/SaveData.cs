@@ -4,12 +4,11 @@ using YG;
 [System.Serializable]
 public class SaveData
 {
-
     public int PlayerCoins;
     public int MaxScore;
-    public List<int> UnlockedRecipes = new() { 0 };
-    public List<int> UnlockedBackgrounds = new() { 0 };
-    public List<int> UnlockedPlayers = new() { 0 };
+    public List<int> UnlockedRecipes = new () { 0 };
+    public List<int> UnlockedBackgrounds = new () { 0 };
+    public List<int> UnlockedPlayers = new () { 0 };
     public int CurrentBackGroundID = 0;
     public int CurrentPlayerID = 0;
 
@@ -39,6 +38,7 @@ public class SaveData
     {
         return UnlockedBackgrounds.Contains(backgroundID);
     }
+
     public bool IsPlayerUnlocked(int playerID)
     {
         return UnlockedPlayers.Contains(playerID);
