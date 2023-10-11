@@ -33,11 +33,11 @@ MonoBehaviour:
       stream: 
     m_ActiveQueryGuid: 
     hideTabs: 0
-    sessionId: 17f6232dabe34f32bc7dff2f473c47ea
+    sessionId: 52a58b123eb344d1a8c079799f39eb1d
     sessionName: 
     excludeClearItem: 0
     tableConfig:
-      id: ec2b94b810a4416fa1a55aa821b92636
+      id: b6aa0b218150497f90ae053d04094edd
       name: t_ScriptableObject_cocktail
       columns:
       - path: Label
@@ -143,7 +143,7 @@ MonoBehaviour:
         m_Comparer:
           stream: 
       - path: CocktailRecipeSO/BonusTime
-        provider: Integer
+        provider: Experimental/SerializedProperty
         selector: '#BonusTime'
         width: 143
         options: 3178496
@@ -152,7 +152,24 @@ MonoBehaviour:
           m_Image: {fileID: 0}
           m_Tooltip: 
         m_Getter:
-          stream: AAEAAAD/////AQAAAAAAAAAEAQAAAC9TeXN0ZW0uUmVmbGVjdGlvbi5NZW1iZXJJbmZvU2VyaWFsaXphdGlvbkhvbGRlcgcAAAAETmFtZQxBc3NlbWJseU5hbWUJQ2xhc3NOYW1lCVNpZ25hdHVyZQpTaWduYXR1cmUyCk1lbWJlclR5cGUQR2VuZXJpY0FyZ3VtZW50cwEBAQEBAAMIDVN5c3RlbS5UeXBlW10GAgAAAA1EZWZhdWx0U2VsZWN0BgMAAABUVW5pdHlFZGl0b3IuUXVpY2tTZWFyY2hNb2R1bGUsIFZlcnNpb249MC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBgQAAAAfVW5pdHlFZGl0b3IuU2VhcmNoLlNlYXJjaENvbHVtbgYFAAAARVN5c3RlbS5PYmplY3QgRGVmYXVsdFNlbGVjdChVbml0eUVkaXRvci5TZWFyY2guU2VhcmNoQ29sdW1uRXZlbnRBcmdzKQYGAAAARVN5c3RlbS5PYmplY3QgRGVmYXVsdFNlbGVjdChVbml0eUVkaXRvci5TZWFyY2guU2VhcmNoQ29sdW1uRXZlbnRBcmdzKQgAAAAKCw==
+          stream: 
+        m_Setter:
+          stream: 
+        m_Drawer:
+          stream: 
+        m_Comparer:
+          stream: 
+      - path: CocktailRecipeSO/BonusScore
+        provider: Experimental/SerializedProperty
+        selector: '#BonusScore'
+        width: 72.8
+        options: 3178496
+        content:
+          m_Text: Bonus Score
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        m_Getter:
+          stream: 
         m_Setter:
           stream: 
         m_Drawer:
