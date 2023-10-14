@@ -20,5 +20,5 @@ MonoBehaviour:
   Recipe:
   - {fileID: 11400000, guid: 9041b576fc1563b4799d5efceb7dcd1a, type: 2}
   - {fileID: 11400000, guid: 54d1fcb728e3ec346b7e309915f295da, type: 2}
-  BonusScore: 250
+  BonusScore: 300
   BonusTime: 2

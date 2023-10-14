@@ -23,9 +23,9 @@ MonoBehaviour:
   NormalSpeed: 35
   FastSpeed: 60
   SuperFastSpeed: -110
-  MinStamina: 80
-  MaxStamina: 220
+  MinStamina: 90
+  MaxStamina: 240
   MinDrunkModifier: -3
   MaxDrunkModifier: 3
   MinHangoverTime: 2
-  MaxHangoverTime: 9
+  MaxHangoverTime: 8.5

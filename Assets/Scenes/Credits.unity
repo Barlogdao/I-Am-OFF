@@ -461,7 +461,6 @@ GameObject:
   - component: {fileID: 451249427}
   - component: {fileID: 451249429}
   - component: {fileID: 451249428}
-  - component: {fileID: 451249430}
   - component: {fileID: 451249431}
   m_Layer: 5
   m_Name: Koz
@@ -586,18 +585,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451249426}
   m_CullTransparentMesh: 1
---- !u!114 &451249430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451249426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42e05b3a9698594db5c08d2e110920e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &451249431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,7 +609,6 @@ GameObject:
   - component: {fileID: 564094247}
   - component: {fileID: 564094249}
   - component: {fileID: 564094248}
-  - component: {fileID: 564094250}
   - component: {fileID: 564094251}
   m_Layer: 5
   m_Name: Fed
@@ -747,18 +733,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564094246}
   m_CullTransparentMesh: 1
---- !u!114 &564094250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564094246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b903ce3ee3e7b4ca99bd669d09bf28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &564094251
 MonoBehaviour:
   m_ObjectHideFlags: 0

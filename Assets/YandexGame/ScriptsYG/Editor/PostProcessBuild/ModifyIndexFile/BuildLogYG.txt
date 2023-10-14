@@ -1,2 +1,2 @@
-Build path: E:/Unity Projects/Just Drink _18
-Build number: 26
+Build path: D:/Unity Projects/Builds/JustDrink_20
+Build number: 28

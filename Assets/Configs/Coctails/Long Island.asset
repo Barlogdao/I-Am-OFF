@@ -21,5 +21,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9041b576fc1563b4799d5efceb7dcd1a, type: 2}
   - {fileID: 11400000, guid: 88a4de4bcb6c39e4ead7f11ea8600aca, type: 2}
   - {fileID: 11400000, guid: 4481b3f0ec3da9340a352cab6db1d6f5, type: 2}
-  BonusScore: 450
+  BonusScore: 500
   BonusTime: 3
