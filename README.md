@@ -1,5 +1,5 @@
 # IAmOFF
- Unity game project made at gamejame in June 2023.
+ Unity game project made at gamejam in June 2023.
  
  https://barlogdao.itch.io/i-am-off
 
