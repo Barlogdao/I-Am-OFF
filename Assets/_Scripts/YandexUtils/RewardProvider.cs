@@ -10,7 +10,7 @@ public class RewardProvider : MonoBehaviour
     private void OnEnable()
     {
         RewardRequested += OnRewardRequested;
-        YandexGame.RewardVideoEvent += Rewarded;
+        //YandexGame.RewardVideoEvent += Rewarded;
     }
 
     private void Rewarded(int number)
@@ -22,12 +22,12 @@ public class RewardProvider : MonoBehaviour
     private void OnRewardRequested(Action action)
     {
         _unlockAction = action;
-        YandexGame.RewVideoShow(0);
+        //YandexGame.RewVideoShow(0);
     }
 
     private void OnDisable()
     {
         RewardRequested -= OnRewardRequested;
-        YandexGame.RewardVideoEvent -= Rewarded;
+        //YandexGame.RewardVideoEvent -= Rewarded;
     }
 }

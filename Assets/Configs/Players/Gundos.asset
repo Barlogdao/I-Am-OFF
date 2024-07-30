@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gundos
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 1
-  <EarnType>k__BackingField: 2
+  <EarnType>k__BackingField: 1
   <CoinCost>k__BackingField: 5
   <_visualImage>k__BackingField: {fileID: -1885408227, guid: 8cc68d1e2aa359146a114071d18428ae, type: 3}
   Name: Gundos

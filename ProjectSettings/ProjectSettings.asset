@@ -44,8 +44,8 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
-  defaultScreenWidthWeb: 1920
-  defaultScreenHeightWeb: 1080
+  defaultScreenWidthWeb: 1280
+  defaultScreenHeightWeb: 720
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   m_SpriteBatchVertexThreshold: 300
@@ -135,7 +135,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 1.4
+  bundleVersion: 1.5
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -317,7 +317,7 @@ PlayerSettings:
     ENABLE_CONSOLE: 
     LOCK_ASPECT_RATIO_ON_DESKTOP: true
     LOCK_ASPECT_RATIO_ON_MOBILE: 
-    PRODUCT_DESCRIPTION: 
+    PRODUCT_DESCRIPTION: GOTY Edition
     SET_ASPECT_RATIO_ON_DESKTOP: 16/9
     SET_ASPECT_RATIO_ON_MOBILE: 
     SET_WINDOW_HEIGHT_ON_DESKTOP: 
@@ -586,7 +586,7 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: PROJECT:ATP_YG1.5.2
+  webGLTemplate: APPLICATION:PWA
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 0

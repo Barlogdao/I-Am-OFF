@@ -29,7 +29,7 @@ public class EndGameWindow : MonoBehaviour
 
     IEnumerator ExitRoutine()
     {
-        YandexGame.FullscreenShow();
+        //YandexGame.FullscreenShow();
         yield return null;
         SceneManager.LoadScene(1);
     }

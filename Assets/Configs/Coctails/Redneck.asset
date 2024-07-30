@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Redneck
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 11
-  <EarnType>k__BackingField: 2
-  <CoinCost>k__BackingField: 1
+  <EarnType>k__BackingField: 1
+  <CoinCost>k__BackingField: 7
   Image: {fileID: 8484241, guid: 1f28022151f59bc489c123991d62204c, type: 3}
   Name: Redneck
   Recipe:

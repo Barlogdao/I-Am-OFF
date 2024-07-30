@@ -18,7 +18,7 @@ public class SaveProvider : MonoBehaviour
 
     public void Init()
     {
-        _saveSystem = new YandexSaveSystem();
+        _saveSystem = new PlayerPrefSaveSystem();
         SaveData = _saveSystem.Load();
         SceneManager.sceneLoaded += OnSceneLoaded;
         UnlockablePrefab.ElementPurchased += OnElementPurchase;
